@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "SearchResult";
+    Layout = "~/Views/Shared/_LayoutSearch.cshtml";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @*Header Files*@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/template_page/")css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/template_page/")css/templatemo-style.css">
+
+</head>
+
+<body>
+    <header id="main-header">
+        <div class="container">
+            <h1>GreenWeed</h1>
+            <p>A free webiste for farmers</p>
+        </div>
+    </header>
+    <div class="fixed-header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <section class="col-md-12 content" id="result">
+        <div id="wrapper">
+            <h1>Table of Search Result</h1>
+
+            <table id="keywords" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th><span>ID</span></th>
+                        <th><span>Common Name</span></th>
+                        <th><span>Scientific Name</span></th>
+                        <th><span>Link</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="lalign">1</td>
+                        <td>Alligator Weed</td>
+                        <td>Alternanthera philoxeroides (Mart.) Griseb.</td>
+                        <td><a @Html.ActionLink("Go for Detail", "Plant1", "Home")></a></td>
+                    </tr>
+                    <tr>
+                        <td class="lalign">2</td>
+                        <td>Bear-skin fescue</td>
+                        <td>Festuca gautieri (Hack.) K. Richt.</td>
+                        <td>Go for Detail</td>
+                    </tr>
+                    <tr>
+                        <td class="lalign">3</td>
+                        <td>Black knapweed</td>
+                        <td>Centaurea nigra L.</td>
+                        <td>Go for Detail</td>
+                    </tr>
+                    <tr>
+                        <td class="lalign">4</td>
+                        <td>Branched broomrape</td>
+                        <td>Orobanche ramosa L.</td>
+                        <td>Go for Detail</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <div class="text-center footer">
+        <div class="container">
+            Copyright 2017 T.A.R.S. | Design: T.A.R.S.
+        </div>
+    </div>
+</body>
+

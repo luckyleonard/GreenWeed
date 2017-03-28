@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    @*Header Files*@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/template_page/")css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/template_page/")css/templatemo-style.css">
+    
+</head>
+<body>
+    <div class="fixed-header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Alligator Weed</a>
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li><a @Html.ActionLink("Home", "Index", "Home")></a></li>
+                    <li><a href="#services">Identify</a></li>
+                    <li><a href="#clients">Control</a></li>
+                    <li><a href="#contact">Community</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <div>
+            @RenderBody()
+        </div>
+
+        <footer class="col-md-12 content" id="externals">
+            <div class="col-lg-6 col-md-6 last">
+                <img src="@Url.Content("~/Content/template_page/")images/5.png" alt="Image" class="tm-image">
+            </div>
+            <div class="col-lg-6 col-md-6 background last about-text-container">
+                <h2 class="section-title">About This Website</h2>
+                <p class="about-text"> </p>
+            </div>
+        </footer>
+
+    </div>
+
+    <div class="text-center footer">
+        <div class="container">
+            Copyright 2017 T.A.R.S. | Design: T.A.R.S.
+        </div>
+    </div>
+
+    <script src="@Url.Content("~/Content/template_page/")js/jquery.min.js"></script>
+    <script src="@Url.Content("~/Content/template_page/")js/bootstrap.min.js"></script>
+    <script src="@Url.Content("~/Content/template_page/")js/jquery.singlePageNav.min.js"></script>
+
+    <script>
+
+        // Check scroll position and add/remove background to navbar
+        function checkScrollPosition() {
+            if ($(window).scrollTop() > 50) {
+                $(".fixed-header").addClass("scroll");
+            } else {
+                $(".fixed-header").removeClass("scroll");
+            }
+        }
+
+        $(document).ready(function () {
+            // Single page nav
+            $('.fixed-header').singlePageNav({
+                offset: 59,
+                filter: ':not(.external)',
+                updateHash: true
+            });
+
+            checkScrollPosition();
+
+            // nav bar
+            $('.navbar-toggle').click(function () {
+                $('.main-menu').toggleClass('show');
+            });
+
+            $('.main-menu a').click(function () {
+                $('.main-menu').removeClass('show');
+            });
+        });
+
+        $(window).on("scroll", function () {
+            checkScrollPosition();
+        });
+    </script>
+    
+</body>
+</html>

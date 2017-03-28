@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_mytemplate.cshtml";
+}
+
+<!-- search by postcode -->
+<section class="call-to-action">
+    <div class="cta-container cf">
+        <p>Want to check the invasive plants list?<br /></p>
+        <p></p>
+        <a class="btn" @Html.ActionLink("Get Started", "SearchResult", "Home") ></a>
+    </div>
+</section>
+
+<!-- Macbook Section -->
+<section id="macbook">
+    <div class="container">
+        <h2>What's this website about?</h2>
+        <p>Greenweed was designed and built by T.A.R.S. It is released for.....</p>
+        <img src="@Url.Content("~/Content/mytemplate/")images/farm1.jpg" />
+        <p></p>
+</div>
+</section>
+
+
+<!-- Summary Section -->
+<section id="summary">
+    <div class="container">
+        <h2>What makes GreenWeed so great?</h2>
+        <p>It's responsive, beautiful, built with the latest code, includes all front end files, and (best of all) it is and always will be free. Didn't even see that comin', didya?</p>
+        <a class="btn" href="#">Button</a>
+    </div>
+</section>
+
+
+<!-- Three Images Section -->
+<section id="three-images">
+    <div class="container">
+        <header class="body-header">
+            <h2>You're probably feeling really inspired.</h2>
+            <p>Now just play with our website easily.</p>
+        </header>
+        <article class="cf">
+            <div class="img-circle-div">
+                <img src="@Url.Content("~/Content/mytemplate/")images/circle1.jpg" />
+                <h3>Explore My Area</h3>
+                <p>(details more...)</p>
+            </div>
+            <div class="img-circle-div">
+                <img src="@Url.Content("~/Content/mytemplate/")images/circle2.jpg" />
+                <h3>Report My Finding</h3>
+                <p>(details more...)</p>
+            </div>
+            <div class="img-circle-div">
+                <img src="@Url.Content("~/Content/mytemplate/")images/circle3.jpg" />
+                <h3>Find My Community</h3>
+                <p>(details more...)</p>
+            </div>
+        </article>
+    </div>
+</section>
