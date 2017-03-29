@@ -1,23 +1,89 @@
 ﻿
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_mytemplate.cshtml";
+
+    
 }
 
-<!-- search by postcode -->
-<section class="call-to-action">
-    <div class="cta-container cf">
-        <p>Want to check the invasive plants list?<br /></p>
-        <p></p>
-        <a class="btn" @Html.ActionLink("Get Started", "SearchResult", "Home") ></a>
+<section class="call-to-action" id="explore">
+    <h1 class="h1">Explore Your Area</h1>
+
+    <!-- search by postcode -->
+
+    <div class="flexsearch">
+        <div class="flexsearch--wrapper">
+            <form class="flexsearch--form" action="#" method="post">
+                <div class="flexsearch--input-wrapper">
+                    <input id="postcode" name="postcode" class="flexsearch--input" type="search" placeholder="postcode only (e.g. 3145)">
+                </div>
+                <input class="flexsearch--submit" type="button" value="&#10140;" onclick="showResult();" />
+                <div id="errors">
+                </div>
+            </form>
+        </div>
     </div>
 </section>
+
+<script> 
+    function showResult() {
+        var x = document.getElementById("postcode").value;
+        if (x == "3145") {
+            document.getElementById('errors').innerHTML = "*Here are the results for 3145*";
+            document.getElementById("resultTable").style.display = "inline";
+        }
+        else {
+            document.getElementById('errors').innerHTML = "*No result by this postcode*";
+            document.getElementById("resultTable").style.display = "none";
+        }
+    };
+</script>
+
+<section class="container" id="resultTable" style="display:none">
+    <div class="container" id="wrapper">
+        <h1>Table of Search Result</h1>
+
+        <table id="keywords" cellspacing="0" cellpadding="0">
+            <thead>
+                <tr>
+                    <th><span>Picture</span></th>
+                    <th><span>Common Name</span></th>
+                    <th><span>Description</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/alligator-profile.jpg" /></td>
+                    <td> @Html.ActionLink("Alligator Weed", "Plant1", "Home", new { target = "_blank" }) </td>
+                    <td>It is regarded as one of the worst weeds in Australia because of its invasiveness, potential for spread, and ... @Html.ActionLink("(more)", "Plant1", "Home", new { target = "_blank" })</td>
+                </tr>
+                <tr>
+                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Bear-skin fescue.jpg" /></td>
+                    <td>Bear-skin fescue</td>
+                    <td>Festuca gautieri (Hack.) K. Richt.</td>
+                </tr>
+                <tr>
+                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Black knapweed.jpg" /></td>
+                    <td>Black knapweed</td>
+                    <td>Centaurea nigra L.</td>
+                </tr>
+                <tr>
+                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Branched broomrape.jpg" /></td>
+                    <td>Branched broomrape</td>
+                    <td>Orobanche ramosa L.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
 
 <!-- Macbook Section -->
 <section id="macbook">
     <div class="container">
         <h2>What's this website about?</h2>
-        <p>Greenweed was designed and built by T.A.R.S. It is released for.....</p>
+        <p>Australia has many introduced invasive plants. These invasive plants spread rapidly damaging the environment and threatening the existence of native plants. The website, “Green Weeds”, will assist farmers by providing information and current sighting of invasive plants. Other functions include a plant identifier along with information on prevention and control methods for invasive plants."</p>
         <img src="@Url.Content("~/Content/mytemplate/")images/farm1.jpg" />
         <p></p>
 </div>
@@ -28,8 +94,8 @@
 <section id="summary">
     <div class="container">
         <h2>What makes GreenWeed so great?</h2>
-        <p>It's responsive, beautiful, built with the latest code, includes all front end files, and (best of all) it is and always will be free. Didn't even see that comin', didya?</p>
-        <a class="btn" href="#">Button</a>
+        <p>It will get you latest updates , real time sightings and control method on invasive plants Free, just a click away!
+<br />and if you get time put a banner on the options report my finding  and find the community as "coming soon"</p>    
     </div>
 </section>
 

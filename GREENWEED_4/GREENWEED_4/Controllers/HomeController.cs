@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Text.RegularExpressions;
+
 
 namespace GREENWEED_4.Controllers
 {
@@ -13,19 +15,6 @@ namespace GREENWEED_4.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
 
         public ActionResult Plant1()
         {
@@ -38,5 +27,6 @@ namespace GREENWEED_4.Controllers
             ViewBag.Message = "SearchResult page.";
             return View();
         }
+
     }
 }
