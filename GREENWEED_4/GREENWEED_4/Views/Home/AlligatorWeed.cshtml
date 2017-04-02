@@ -1,14 +1,14 @@
-﻿<!-- This is the page about Alligator Weed(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+﻿<!-- ***This is the page about Alligator Weed(one of invasive plants), this page is using _LayoutPlant.cshtml as the
     template, and customising it with the information about Alligator Weed. It has major 4 sections,
-    Home-Identify-Control-Contact. Details as followed. -->
+    Home-Identify-Control-Contact. Details as followed. ***-->
 @{
     ViewBag.Title = "Alligator Weed";
     Layout = "~/Views/Shared/_LayoutPlant.cshtml";
 }
 
 
-<!-- This is the home section, could provides general introduction about Alligator Weed, using the css file
-    from Content/template_page, assigned with ID=home to corresponding the function of navigator. -->
+<!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
 <section class="col-md-12 content" id="home">
     <div class="col-lg-6 col-md-6 content-item">
         <img src="@Url.Content("~/Content/template_page/")images/alligator1.jpg" alt="Image" class="tm-image">
@@ -23,8 +23,8 @@
 </section>
 
 
-<!-- This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
-    from Content/template_page, assigned with ID=identify to corresponding the function of navigator. -->
+<!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
 <section class="col-md-12 content padding" id="identify">
     <div class="col-lg-6 col-md-6 col-md-push-6 content-item">
         <img src="@Url.Content("~/Content/template_page/")images/alligator3.jpg" alt="Image" class="tm-image">
@@ -42,9 +42,9 @@
 </section>
 
 
-<!-- This is the control section, could provides suggestion about how to control Alligator Weed,
+<!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
     or the contact details about related organization to control them, this also using the css file
-    from Content/template_page, assigned with ID=control to corresponding the function of navigator. -->
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
 <section class="col-md-12 content" id="control">
     <div class="col-lg-6 col-md-6 content-item">
         <img src="@Url.Content("~/Content/template_page/")images/alligator4.jpg" alt="Image" class="tm-image">
@@ -72,10 +72,10 @@
 </section>
 
 
-<!-- This is the contact section, could provides the contact us form for users, and may be revised to
+<!-- ***This is the contact section, could provides the contact us form for users, and may be revised to
     link to the community function, which would be completed on Iteration 3, not support for now.
     this also using the css file from Content/template_page, assigned with ID=contact to corresponding 
-    the function of navigator.  -->
+    the function of navigator.***  -->
 <section class="col-md-12 content" id="contact">
     <div class="col-lg-6 col-md-6 col-md-push-6 content-item">
         <img src="@Url.Content("~/Content/template_page/")images/Community.jpg" alt="Image" class="tm-image">
@@ -84,7 +84,7 @@
         <h2 class="section-title">Contact Us(Not support yet)</h2>
         <p class="margin-b-25">Any question?</p>
 
-        <!-- table for contact form -->
+        <!-- ***table for contact form ***-->
         <form method="post" name="contact-form" class="contact-form">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="form-group">
@@ -108,12 +108,12 @@
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="form-group margin-b-0">
-                    <!-- submit button(not support yet) -->
+                    <!-- ***submit button(not support yet) ***-->
                     <button type="submit" id="form-submit" class="btn no-bg btn-contact">Submit(Not support yet)</button>
                 </div>
             </div>
         </form>
-        <!-- submit statu message(not support yet) -->
+        <!-- ***submit statu message(not support yet)*** -->
         <div id="msgSubmit" class="h3 text-center hidden">Message Submitted!</div>
     </div>
 </section>
