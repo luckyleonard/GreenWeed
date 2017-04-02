@@ -1,24 +1,29 @@
-﻿
+﻿<!-- This is the Index(Home) page of the whole website, users would be connected to this page every time 
+    he/she opens our website, this page contains all the information about our website, the design, description,
+    authors, copyright, title, declartion. And this page would provide the clear functionalities navigation
+    for the users, the instruction about how to use this website.
+    This page is using  _mytemplate.cshtml as the layout(tempalte) file.-->
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_mytemplate.cshtml";
-
     
 }
 
+
+<!-- This section is providing the function about search invasive plants list by postcode.-->
 <section class="call-to-action" id="explore">
     <h1 class="h1">Explore Your Area</h1>
-
-    <!-- search by postcode -->
-
+    <!-- place search bar -->
     <div class="flexsearch">
         <div class="flexsearch--wrapper">
             <form class="flexsearch--form" action="#" method="post">
                 <div class="flexsearch--input-wrapper">
                     <input id="postcode" name="postcode" class="flexsearch--input" type="search" placeholder="postcode only (e.g. 3145)">
                 </div>
+                <!-- onclick call the showResult() method on script -->
                 <input class="flexsearch--submit" type="button" value="&#10140;" onclick="showResult();" />
+                <!-- return error message -->
                 <div id="errors">
                 </div>
             </form>
@@ -26,37 +31,26 @@
     </div>
 </section>
 
-<script> 
-    function showResult() {
-        var x = document.getElementById("postcode").value;
-        if (x == "3145") {
-            document.getElementById('errors').innerHTML = "*Here are the results for 3145*";
-            document.getElementById("resultTable").style.display = "inline";
-        }
-        else {
-            document.getElementById('errors').innerHTML = "*No result by this postcode*";
-            document.getElementById("resultTable").style.display = "none";
-        }
-    };
-</script>
 
+<!-- This section is the search result table called by the postcode search, display as unvisible as original
+    status until validation gets right. This function would be more completed when the API function built
+    inside in Iteration 2, this is just a simply function showing for Interation 1-->
 <section class="container" id="resultTable" style="display:none">
     <div class="container" id="wrapper">
-        <h1>Table of Search Result</h1>
-
+        <h2>Search Result</h2>
         <table id="keywords" cellspacing="0" cellpadding="0">
             <thead>
-                <tr>
+                <tr><!-- Title of table-->
                     <th><span>Picture</span></th>
                     <th><span>Common Name</span></th>
                     <th><span>Description</span></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody><!-- Content of table-->
                 <tr>
                     <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/alligator-profile.jpg" /></td>
-                    <td> @Html.ActionLink("Alligator Weed", "Plant1", "Home", new { target = "_blank" }) </td>
-                    <td>It is regarded as one of the worst weeds in Australia because of its invasiveness, potential for spread, and ... @Html.ActionLink("(more)", "Plant1", "Home", new { target = "_blank" })</td>
+                    <td> @Html.ActionLink("Alligator Weed", "AlligatorWeed", "Home", new { target = "_blank" }) </td>
+                    <td>It is regarded as one of the worst weeds in Australia because of its invasiveness, potential for spread, and ... @Html.ActionLink("(more)", "AlligatorWeed", "Home", new { target = "_blank" })</td>
                 </tr>
                 <tr>
                     <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Bear-skin fescue.jpg" /></td>
@@ -79,8 +73,8 @@
 </section>
 
 
-<!-- Macbook Section -->
-<section id="macbook">
+<!-- Introduction Section, general description to users about who we are, what/how we do. -->
+<section id="introduction">
     <div class="container">
         <h2>What's this website about?</h2>
         <p>Australia has many introduced invasive plants. These invasive plants spread rapidly damaging the environment and threatening the existence of native plants. The website, “Green Weeds”, will assist farmers by providing information and current sighting of invasive plants. Other functions include a plant identifier along with information on prevention and control methods for invasive plants.</p>
@@ -90,7 +84,7 @@
 </section>
 
 
-<!-- Summary Section -->
+<!-- Summary Section, to introduce the unique/advantages of our website compared to others. -->
 <section id="summary">
     <div class="container">
         <h2>What makes GreenWeed so great?</h2>
@@ -99,7 +93,7 @@
 </section>
 
 
-<!-- Three Images Section -->
+<!-- Main Functions Section, introduce the three major function provided by this website -->
 <section id="three-images">
     <div class="container">
         <header class="body-header">
@@ -107,16 +101,19 @@
             <p>Now just play with our website easily.</p>
         </header>
         <article class="cf">
+            <!-- link to upcoming Map function(iteration 2) -->
             <div class="img-circle-div">
                 <img src="@Url.Content("~/Content/mytemplate/")images/circle1.jpg" />
                 <h3>Explore My Area</h3>
                 <p>(Coming Soon...)</p>
             </div>
+            <!-- link to upcoming report function(iteration 2) -->
             <div class="img-circle-div">
                 <img src="@Url.Content("~/Content/mytemplate/")images/circle2.jpg" />
                 <h3>Report My Finding</h3>
                 <p>(Coming Soon...)</p>
             </div>
+            <!-- link to upcoming community(experience sharing/comments) function(iteration 3) -->
             <div class="img-circle-div">
                 <img src="@Url.Content("~/Content/mytemplate/")images/circle3.jpg" />
                 <h3>Find My Community</h3>
@@ -125,3 +122,22 @@
         </article>
     </div>
 </section>
+
+
+<!-- javascrpt for the showResult() function, according to user input to give back the corresponding result.
+    would be more completed in Iteration 2 combines the API functions.-->
+<script>
+    function showResult() {
+        var x = document.getElementById("postcode").value;//get the input value
+        if (x == "3145") {
+            document.getElementById('errors').innerHTML = "*Here are the results for 3145*";//show the result only for 3145
+            document.getElementById("resultTable").style.display = "inline";//make table visible
+        }
+        else {
+            document.getElementById('errors').innerHTML = "*No result by this postcode*";//error message
+            document.getElementById("resultTable").style.display = "none";//make table keep unvisible
+        }
+    };
+</script>
+
+
