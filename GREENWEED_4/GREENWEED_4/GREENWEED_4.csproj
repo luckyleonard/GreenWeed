@@ -196,6 +196,8 @@
     <Content Include="Content\mytemplate\images\slide2.jpg" />
     <Content Include="Content\mytemplate\images\slide3.jpg" />
     <Content Include="Content\mytemplate\images\slide4.jpg" />
+    <Content Include="Content\mytemplate\images\stop.png" />
+    <Content Include="Content\mytemplate\images\stop1.png" />
     <Content Include="Content\mytemplate\images\summary.jpg" />
     <Content Include="Content\mytemplate\js\jquery.event.move.js" />
     <Content Include="Content\mytemplate\js\jquery.event.swipe.js" />

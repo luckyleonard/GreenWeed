@@ -12,41 +12,45 @@
 
 
 <!-- ***This section is providing the function about search invasive plants list by postcode.***-->
-<section class="call-to-action" id="explore">
-    <h1 class="h1">Explore Your Area</h1>
-    <!-- ***place search bar*** -->
-    <div class="flexsearch">
-        <div class="flexsearch--wrapper">
-            <form class="flexsearch--form" action="#" method="post">
-                <div class="flexsearch--input-wrapper">
-                    <input id="postcode" name="postcode" class="flexsearch--input" type="search" placeholder="postcode only (e.g. 3145)">
-                </div>
-                <!-- ***onclick call the showResult() method on script*** -->
-                <input class="flexsearch--submit" type="button" value="&#10140;" onclick="showResult();" />
-                <!-- ***return error message*** -->
-                <div id="errors">
-                </div>
-            </form>
+<section class="call-to-action" id="explore" >
+    <center>
+        <h1 class="h1">Explore Your Area</h1>
+        <!-- ***place search bar*** -->
+        <div class="flexsearch">
+            <div class="flexsearch--wrapper">
+                <form class="flexsearch--form" action="#" method="post">
+                    <div class="flexsearch--input-wrapper">
+                        <input id="postcode" name="postcode" class="flexsearch--input" type="text"
+                               placeholder="postcode only (e.g. 3145)" onkeypress="clickPress(event)">
+                    </div>
+                    <!-- ***onclick call the showResult() method on script*** -->
+                    <input id="enter-go" class="flexsearch--submit" type="button" value="&#10140;" onclick="showResult();" />
+                    <!-- ***return error message*** -->
+                    <div id="errors" class="errorMessage">
+                    </div>
+                </form>
+            </div>
         </div>
-    </div>
+    </center>
 </section>
-
 
 <!-- ***This section is the search result table called by the postcode search, display as unvisible as original
     status until validation gets right. This function would be more completed when the API function built
     inside in Iteration 2, this is just a simply function showing for Interation 1***-->
 <section class="container" id="resultTable" style="display:none">
     <div class="container" id="wrapper">
-        <h2>Search Result</h2>
+        <h3>Invasive Plant Here: </h3>
         <table id="keywords" cellspacing="0" cellpadding="0">
             <thead>
-                <tr><!-- ***Title of table***-->
+                <tr>
+                    <!-- ***Title of table***-->
                     <th><span>Picture</span></th>
                     <th><span>Common Name</span></th>
                     <th><span>Description</span></th>
                 </tr>
             </thead>
-            <tbody><!-- ***Content of table***-->
+            <tbody>
+                <!-- ***Content of table***-->
                 <tr>
                     <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/alligator-profile.jpg" /></td>
                     <td> @Html.ActionLink("Alligator Weed", "AlligatorWeed", "Home", new { target = "_blank" }) </td>
@@ -72,39 +76,14 @@
     </div>
 </section>
 
-
-<!-- ***Introduction Section, general description to users about who we are, what/how we do.*** -->
-<section id="introduction">
-    <div class="container">
-        <h2>What's this website about?</h2>
-        <p>Australia has many introduced invasive plants. These invasive plants spread rapidly damaging the environment and threatening the existence of native plants. The website, “Green Weeds”, will assist farmers by providing information and current sighting of invasive plants. Other functions include a plant identifier along with information on prevention and control methods for invasive plants.</p>
-        <img src="@Url.Content("~/Content/mytemplate/")images/farm1.jpg" />
-        <p></p>
-</div>
-</section>
-
-
-<!-- ***Summary Section, to introduce the unique/advantages of our website comparing to others.*** -->
-<section id="summary">
-    <div class="container">
-        <h2>What makes GreenWeed so great?</h2>
-        <p>It will get you latest updates , real time sightings and control method on invasive plants Free, just a click away!</p>    
-    </div>
-</section>
-
-
 <!-- ***Main Functions Section, introduce the three major function provided by this website*** -->
 <section id="three-images">
     <div class="container">
-        <header class="body-header">
-            <h2>You're probably feeling really inspired.</h2>
-            <p>Now just play with our website easily.</p>
-        </header>
         <article class="cf">
             <!-- ***link to upcoming Map function(iteration 2)*** -->
             <div class="img-circle-div">
                 <img src="@Url.Content("~/Content/mytemplate/")images/circle1.jpg" />
-                <h3>Explore My Area</h3>
+                <h3>Explore the Map</h3>
                 <p>(Coming Soon...)</p>
             </div>
             <!-- ***link to upcoming report function(iteration 2)*** -->
@@ -124,21 +103,61 @@
 </section>
 
 
+<!-- ***Summary Section, to introduce the unique/advantages of our website comparing to others.*** -->
+<section id="summary">
+    <div class="container">
+        <h2>What makes GREENWEED so great?</h2>
+        <p>It will get you latest updates , real time sightings and control method on invasive plants Free, just a click away!</p>
+    </div>
+</section>
+
+
+<!-- ***Introduction Section, general description to users about who we are, what/how we do.*** -->
+<section id="introduction">
+    <div class="container">
+        <h2>What's this website about?</h2>
+        <p>Australia has many introduced invasive plants. These invasive plants spread rapidly damaging the environment and threatening the existence of native plants. The website, “Green Weeds”, will assist farmers by providing information and current sighting of invasive plants. Other functions include a plant identifier along with information on prevention and control methods for invasive plants.</p>
+        <img src="@Url.Content("~/Content/mytemplate/")images/farm1.jpg" />
+        <p></p>
+</div>
+</section>
+
+
+
+
+
+
 <!-- ***javascrpt for the showResult() function, according to user input to give back the corresponding result.
     would be more completed in Iteration 2 combines the API functions.***-->
 <script>
+    function clickPress(event) {
+        if (event.keyCode == 13) {
+            $('#enter-go').focus().click();
+            event.preventDefault();
+        }
+    }
+
     function showResult() { //input validation and show result
         var x = document.getElementById("postcode").value;//get the input value
-        if (x == "3145") {
-            document.getElementById('errors').innerHTML = "*Here are the results for " + x +"*";//show the result only for 3145
-            document.getElementById("resultTable").style.display = "inline";//make table visible
-        }
-        else if((x.charAt(0) == "3") || (x.charAt(0) == "8")) { //validate the input is a victorian postcode
-            document.getElementById('errors').innerHTML = "*No result by postcode " + x +"*";//error message
-            document.getElementById("resultTable").style.display = "none";//make table keep unvisible
+        var regPostcode = /^([0-9]{4})$/;
+        if (regPostcode.test(x) == true) {
+            if ((x.charAt(0) == "3") || (x.charAt(0) == "8")){
+                 if (x == "3145") {
+                     location.href = '#explore';
+                     document.getElementById("resultTable").style.display = "inline";//make table visible
+                 }
+                else { //validate the input is a victorian postcode
+                     document.getElementById('errors').innerHTML = "***Congrats! No invasive plant found Here!***";//error message
+                     document.getElementById("resultTable").style.display = "none";//make table keep unvisible
+                 }
+            }
+            else {
+                document.getElementById('errors').innerHTML = "*Sorry, Victoria postcode only(3xxx or 8xxx).*";
+                document.getElementById("resultTable").style.display = "none";//make table keep unvisible
+            }
         }
         else {
-            document.getElementById('errors').innerHTML = "*Please input a valid Victoria postcode";//error message
+            document.getElementById('errors').innerHTML = "*Sorry, " + x + " is not a valid Austrailian postcode.*";//error message
             document.getElementById("resultTable").style.display = "none";//make table keep unvisible
         }
     };
