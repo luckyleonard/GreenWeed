@@ -191,6 +191,8 @@
     <Content Include="Content\mytemplate\images\Evergreen.jpg" />
     <Content Include="Content\mytemplate\images\farm.jpg" />
     <Content Include="Content\mytemplate\images\farm1.jpg" />
+    <Content Include="Content\mytemplate\images\Hawkweed.jpg" />
+    <Content Include="Content\mytemplate\images\Horsetail.jpg" />
     <Content Include="Content\mytemplate\images\macbookpro.png" />
     <Content Include="Content\mytemplate\images\slide1.jpg" />
     <Content Include="Content\mytemplate\images\slide2.jpg" />
@@ -222,6 +224,9 @@
     <Content Include="Content\template_page\images\Community.jpg" />
     <Content Include="Content\template_page\images\greenback.jpg" />
     <Content Include="Content\template_page\images\greenback1.jpg" />
+    <Content Include="Content\template_page\images\Hawkweed.jpg" />
+    <Content Include="Content\template_page\images\Horsetail.jpg" />
+    <Content Include="Content\template_page\images\Japanese knotweed.jpg" />
     <Content Include="Content\template_page\js\bootstrap.min.js" />
     <Content Include="Content\template_page\js\jquery.min.js" />
     <Content Include="Content\template_page\js\jquery.singlePageNav.min.js" />
