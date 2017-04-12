@@ -17,6 +17,11 @@ namespace GREENWEED_4.Controllers
             return View();
         }
 
+        public ActionResult Report()
+        {
+            return View();
+        }
+
         //method for return the Plant1 page view
         public ActionResult AlligatorWeed()
         {

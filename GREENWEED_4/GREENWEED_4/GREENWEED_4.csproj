@@ -171,7 +171,6 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\Plants.cs" />
     <Compile Include="Models\SQLConnClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -205,6 +204,9 @@
     <Content Include="Content\mytemplate\js\jquery.event.swipe.js" />
     <Content Include="Content\mytemplate\js\unslider.js" />
     <Content Include="Content\mytemplate\less\master.css" />
+    <Content Include="Content\mytemplate_report\images\circle2.jpg" />
+    <Content Include="Content\mytemplate_report\images\Evergreen.jpg" />
+    <Content Include="Content\mytemplate_report\master.css" />
     <Content Include="Content\template_page\css\bootstrap.min.css" />
     <Content Include="Content\template_page\css\templatemo-style.css" />
     <Content Include="Content\template_page\fonts\glyphicons-halflings-regular.svg" />
@@ -298,6 +300,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPlant.cshtml" />
     <Content Include="Views\Home\AlligatorWeed.cshtml" />
+    <Content Include="Views\Shared\_LayoutReport.cshtml" />
+    <Content Include="Views\Home\Report.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -306,9 +310,7 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DAL\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

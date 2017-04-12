@@ -37,52 +37,12 @@
 <!-- ***This section is the search result table called by the postcode search, display as unvisible as original
     status until validation gets right. This function would be more completed when the API function built
     inside in Iteration 2, this is just a simply function showing for Interation 1***-->
-<section class="container" id="resultTable" style="display:none">
-    <div class="container" id="wrapper">
-        <h3>Invasive Plant Here: </h3>
-        <table id="keywords" cellspacing="0" cellpadding="0">
-            <thead>
-                <tr>
-                    <!-- ***Title of table***-->
-                    <th><span>Picture</span></th>
-                    <th><span>Common Name</span></th>
-                    <th><span>Description</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- ***Content of table***-->
-                <tr>
-                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/alligator-profile.jpg" /></td>
-                    <td> @Html.ActionLink("Alligator Weed", "AlligatorWeed", "Home", new { target = "_blank" }) </td>
-                    <td>It is regarded as one of the worst weeds in Australia because of its invasiveness, potential for spread, and ... @Html.ActionLink("(more)", "AlligatorWeed", "Home", new { target = "_blank" })</td>
-                </tr>
-                <tr>
-                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Bear-skin fescue.jpg" /></td>
-                    <td>Bear-skin fescue</td>
-                    <td>Bear-skin fescue is a perennial tussock grass that grows to around 20 cm high. This grass has a low palatability to stock and may become a dominant species in suitable habitats. </td>
-                </tr>
-                <tr>
-                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Black knapweed.jpg" /></td>
-                    <td>Black knapweed</td>
-                    <td>Black knapweed is a tap-rooted perennial which reproduces by seed primarily, although some lateral sprouting of new stems does occur.
-                    </td>
-                </tr>
-                <tr>
-                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Branched broomrape.jpg" /></td>
-                    <td>Branched broomrape</td>
-                    <td>Branched broomrape has been in Australia for a number of years. It is a pest in agricultural fields, infesting crops including tobacco, potato and tomato.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
 <section class="container" id="resultTable2" style="display:none">
     <div class="container" id="wrapper">
         <h3>Invasive Plant Here: </h3>
         <table id="keywords" cellspacing="0" cellpadding="0">
             <thead>
-                <tr>
+                <tr id="title" style="display: none">
                     <!-- ***Title of table***-->
                     <th><span>Picture</span></th>
                     <th><span>Common Name</span></th>
@@ -91,117 +51,42 @@
             </thead>
             <tbody>
                 <!-- ***Content of table***-->
-                <tr>
+                <tr id="plant1" style="display: none">
                     <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/alligator-profile.jpg" /></td>
                     <td> @Html.ActionLink("Alligator Weed", "AlligatorWeed", "Home", new { target = "_blank" }) </td>
                     <td>It is regarded as one of the worst weeds in Australia because of its invasiveness, potential for spread, and ... @Html.ActionLink("(more)", "AlligatorWeed", "Home", new { target = "_blank" })</td>
                 </tr>
-                <tr>
+                <tr id="plant2" style="display: none">
                     <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Hawkweed.jpg" /></td>
                     <td>Hawkweed</td>
                     <td>Hawkweeds are perennial herbs native to Europe.</td>
                 </tr>
-                <tr>
-                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Branched broomrape.jpg" /></td>
+                <tr id="plant3" style="display: none">
+                    <td class="lalign">
+                        <img src="@Url.Content("~/Content/template_page/")images/Branched broomrape.jpg" />
+                    </td>
                     <td>Branched broomrape</td>
                     <td>Branched broomrape has been in Australia for a number of years. It is a pest in agricultural fields, infesting crops including tobacco, potato and tomato.</td>
                 </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section class="container" id="resultTable3" style="display:none">
-    <div class="container" id="wrapper">
-        <h3>Invasive Plant Here: </h3>
-        <table id="keywords" cellspacing="0" cellpadding="0">
-            <thead>
-                <tr>
-                    <!-- ***Title of table***-->
-                    <th><span>Picture</span></th>
-                    <th><span>Common Name</span></th>
-                    <th><span>Description</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- ***Content of table***-->
-                <tr>
+                <tr id="plant4" style="display: none">
                     <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Horsetail.jpg" /></td>
                     <td>Horsetail</td>
                     <td>Field horsetail is a primitive plant, characterized by slender, jointed stems that are of two types, fertile (reproductive) and sterile (vegetative).</td>
                 </tr>
-                <tr>
+                <tr id="plant5" style="display: none">
                     <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Black knapweed.jpg" /></td>
                     <td>Black knapweed</td>
                     <td>Black knapweed is a tap-rooted perennial which reproduces by seed primarily, although some lateral sprouting of new stems does occur.</td>
                 </tr>
-                <tr>
-                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Branched broomrape.jpg" /></td>
-                    <td>Branched broomrape</td>
-                    <td>Branched broomrape has been in Australia for a number of years. It is a pest in agricultural fields, infesting crops including tobacco, potato and tomato.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section class="container" id="resultTable4" style="display:none">
-    <div class="container" id="wrapper">
-        <h3>Invasive Plant Here: </h3>
-        <table id="keywords" cellspacing="0" cellpadding="0">
-            <thead>
-                <tr>
-                    <!-- ***Title of table***-->
-                    <th><span>Picture</span></th>
-                    <th><span>Common Name</span></th>
-                    <th><span>Description</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- ***Content of table***-->
-                <tr>
+                <tr id="plant6" style="display: none">
                     <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Bear-skin fescue.jpg" /></td>
                     <td>Bear-skin fescue</td>
                     <td>Bear-skin fescue is a perennial tussock grass that grows to around 20 cm high. This grass has a low palatability to stock and may become a dominant species in suitable habitats.</td>
                 </tr>
-                <tr>
+                <tr id="plant7" style="display: none">
                     <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Japanese knotweed.jpg" /></td>
                     <td>Japanese knotweed</td>
                     <td>Japanese knotweed is an aggressive semi-woody perennial plant that is native to eastern Asia.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
-
-<section class="container" id="resultTable5" style="display:none">
-    <div class="container" id="wrapper">
-        <h3>Invasive Plant Here: </h3>
-        <table id="keywords" cellspacing="0" cellpadding="0">
-            <thead>
-                <tr>
-                    <!-- ***Title of table***-->
-                    <th><span>Picture</span></th>
-                    <th><span>Common Name</span></th>
-                    <th><span>Description</span></th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- ***Content of table***-->
-                <tr>
-                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Japanese knotweed.jpg" /></td>
-                    <td>Japanese knotweed</td>
-                    <td>Japanese knotweed is an aggressive semi-woody perennial plant that is native to eastern Asia.</td>
-                </tr>
-                <tr>
-                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Horsetail.jpg" /></td>
-                    <td>Horsetail</td>
-                    <td>Field horsetail is a primitive plant, characterized by slender, jointed stems that are of two types, fertile (reproductive) and sterile (vegetative).</td>
-                </tr>
-                <tr>
-                    <td class="lalign"><img src="@Url.Content("~/Content/template_page/")images/Hawkweed.jpg" /></td>
-                    <td>Hawkweed</td>
-                    <td>Hawkweeds are perennial herbs native to Europe.</td>
                 </tr>
             </tbody>
         </table>
@@ -220,18 +105,20 @@
                 <p>(Coming Soon...)</p>
             </div>
             <!-- ***link to upcoming report function(iteration 2)*** -->
-            <div class="img-circle-div">
-                <img src="@Url.Content("~/Content/mytemplate/")images/circle2.jpg" />
-                <h3>Report My Finding</h3>
-                <p>(Coming Soon...)</p>
-            </div>
-            <!-- ***link to upcoming community(experience sharing/comments) function(iteration 3)*** -->
-            <div class="img-circle-div">
-                <img src="@Url.Content("~/Content/mytemplate/")images/circle3.jpg" />
-                <h3>Find My Community</h3>
-                <p>(Coming Soon...)</p>
-            </div>
-        </article>
+            <a href="@Url.Action("Report", "HomeController")">
+                <div class="img-circle-div">
+                    <img src="@Url.Content("~/Content/mytemplate/")images/circle2.jpg" />
+                    <h3>Report My Finding</h3>
+                    <p>Find an invasive plant by yourself? Report it!</p>
+                </div>
+            </a>
+                <!-- ***link to upcoming community(experience sharing/comments) function(iteration 3)*** -->
+                <div class="img-circle-div">
+                    <img src="@Url.Content("~/Content/mytemplate/")images/circle3.jpg" />
+                    <h3>Find My Community</h3>
+                    <p>(Coming Soon...)</p>
+                </div>
+         </article>
     </div>
 </section>
 
@@ -268,34 +155,132 @@
 
     function showResult() { //input validation and show result
         document.getElementById('errors').innerHTML = "";
-        document.getElementById("resultTable").style.display = "none";//make table keep unvisible
         document.getElementById("resultTable2").style.display = "none";
-        document.getElementById("resultTable3").style.display = "none";
-        document.getElementById("resultTable4").style.display = "none";
-        document.getElementById("resultTable5").style.display = "none";
+        document.getElementById("plant1").style.display = "none";//make table keep unvisible
+        document.getElementById("plant2").style.display = "none";    
+        document.getElementById("plant3").style.display = "none";
+        document.getElementById("plant4").style.display = "none";
+        document.getElementById("plant5").style.display = "none";
+        document.getElementById("plant6").style.display = "none";
+        document.getElementById("plant7").style.display = "none";
         var x = document.getElementById("postcode").value;//get the input value
         var regPostcode = /^([0-9]{4})$/;
         if (regPostcode.test(x) == true) {
             if ((x.charAt(0) == "3") || (x.charAt(0) == "8")) {
+                location.href = '#explore';
+                document.getElementById("resultTable2").style.display = "inline";//make table visible
+                document.getElementById("title").style.display = "inline";
                 if (x >= "3000" && x < "3125") {
-                    location.href = '#explore';
-                    document.getElementById("resultTable").style.display = "inline";//make table visible
+                    document.getElementById("plant1").style.display = "block";
+                    document.getElementById("plant5").style.display = "block";
+                    document.getElementById("plant4").style.display = "block";
                 }
-                else if (x >= "3125" && x < "3145") {
-                    location.href = '#explore';
-                    document.getElementById("resultTable2").style.display = "inline";//make table visible
+                else if (x >= "3125" && x < "3130") {
+                    document.getElementById("plant2").style.display = "inline";
+                    document.getElementById("plant3").style.display = "inline";
+                    document.getElementById("plant5").style.display = "inline";
                 }
-                else if (x >= "3145" && x < "3200") {
-                    location.href = '#explore';
-                    document.getElementById("resultTable3").style.display = "inline";//make table visible
+                else if (x >= "3130" && x < "3135") {
+                    document.getElementById("plant1").style.display = "inline";
+                    document.getElementById("plant3").style.display = "inline";
                 }
-                else if (x >= "3200" && x < "3500") {
-                    location.href = '#explore';
-                    document.getElementById("resultTable4").style.display = "inline";//make table visible
+                else if (x >= "3135" && x < "3140") {
+                    document.getElementById("plant4").style.display = "inline";
+                    document.getElementById("plant5").style.display = "inline";
                 }
-                else if (x >= "3500" && x < "3888") {
-                    location.href = '#explore';
-                    document.getElementById("resultTable5").style.display = "inline";//make table visible
+                else if (x >= "3140" && x < "3150") {
+                    document.getElementById("plant6").style.display = "inline";
+                    document.getElementById("plant7").style.display = "inline";
+                }
+                else if (x >= "3150" && x < "3160") {
+                    document.getElementById("plant1").style.display = "inline";
+                    document.getElementById("plant7").style.display = "inline";
+                }
+                else if (x >= "3160" && x < "3180") {
+                    document.getElementById("plant6").style.display = "inline";
+                    document.getElementById("plant7").style.display = "inline";
+                }
+                else if (x >= "3180" && x < "3190") {
+                    document.getElementById("plant2").style.display = "inline";
+                    document.getElementById("plant5").style.display = "inline";
+                }
+                else if (x >= "3190" && x < "3200") {
+                    document.getElementById("plant4").style.display = "inline";
+                    document.getElementById("plant6").style.display = "inline";
+                    document.getElementById("plant3").style.display = "inline";
+                }
+                else if (x >= "3200" && x < "3230") {
+                    document.getElementById("plant3").style.display = "inline";
+                    document.getElementById("plant7").style.display = "inline";
+                }
+                else if (x >= "3230" && x < "3250") {
+                    document.getElementById("plant2").style.display = "inline";
+                    document.getElementById("plant4").style.display = "inline";
+                }
+                else if (x >= "3250" && x < "3280") {
+                    document.getElementById("plant6").style.display = "inline";
+                    document.getElementById("plant2").style.display = "inline";
+                }
+                else if (x >= "3280" && x < "3300") {
+                    document.getElementById("plant1").style.display = "inline";
+                    document.getElementById("plant3").style.display = "inline";
+                    document.getElementById("plant7").style.display = "inline";
+                }
+                else if (x >= "3300" && x < "3330") {
+                    document.getElementById("plant2").style.display = "inline";
+                    document.getElementById("plant3").style.display = "inline";
+                    document.getElementById("plant6").style.display = "inline";
+                }
+                else if (x >= "3330" && x < "3380") {
+                    document.getElementById("plant1").style.display = "inline";
+                    document.getElementById("plant3").style.display = "inline";
+                    document.getElementById("plant7").style.display = "inline";
+                }
+                else if (x >= "3380" && x < "3430") {
+                    document.getElementById("plant5").style.display = "inline";
+                    document.getElementById("plant2").style.display = "inline";
+                }
+                else if (x >= "3430" && x < "3450") {
+                    document.getElementById("plant1").style.display = "inline";
+                    document.getElementById("plant3").style.display = "inline";
+                }
+                else if (x >= "3450" && x < "3500") {
+                    document.getElementById("plant6").style.display = "inline";
+                    document.getElementById("plant7").style.display = "inline";
+                }
+                else if (x >= "3500" && x < "3550") {
+                    document.getElementById("plant1").style.display = "inline";
+                    document.getElementById("plant6").style.display = "inline";
+                }
+                else if (x >= "3550" && x < "3599") {
+                    document.getElementById("plant4").style.display = "inline";
+                    document.getElementById("plant7").style.display = "inline";
+                }
+                else if (x >= "3600" && x < "3650") {
+                    document.getElementById("plant1").style.display = "inline";
+                    document.getElementById("plant3").style.display = "inline";
+                    document.getElementById("plant6").style.display = "inline";
+                }
+                else if (x >= "3650" && x < "3699") {
+                    document.getElementById("plant2").style.display = "inline";
+                    document.getElementById("plant1").style.display = "inline";
+                    document.getElementById("plant5").style.display = "inline";
+                }
+                else if (x >= "3700" && x < "3750") {
+                    document.getElementById("plant4").style.display = "inline";
+                    document.getElementById("plant7").style.display = "inline";
+                }
+                else if (x >= "3750" && x < "3799") {
+                    document.getElementById("plant2").style.display = "inline";
+                    document.getElementById("plant5").style.display = "inline";
+                }
+                else if (x >= "3799" && x < "3888") {
+                    document.getElementById("plant6").style.display = "inline";
+                    document.getElementById("plant3").style.display = "inline";
+                }
+                else if (x >= "3888" && x < "4000") {
+                    document.getElementById("plant6").style.display = "inline";
+                    document.getElementById("plant3").style.display = "inline";
                 }
                 else { //validate the input is a victorian postcode
                     document.getElementById('errors').innerHTML = "***Congrats! No invasive plant found Here!***";//error message                    
@@ -303,7 +288,6 @@
             }
             else {
                 document.getElementById('errors').innerHTML = "*Sorry, Victoria postcode only(3xxx or 8xxx).*";
-                document.getElementById("resultTable").style.display = "none";//make table keep unvisible
             }
         }
         else if (x == null || x == "")
