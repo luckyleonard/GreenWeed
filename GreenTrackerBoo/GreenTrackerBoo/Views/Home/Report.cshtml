@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Report";
+    Layout = "~/Views/Shared/_LayoutOther.cshtml";
+}
+
+
+<!--include api of the map function -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.0/mapbox-gl.js'></script>
+
+<!-- CSS, Normalize First, minify for production, using the master.css covering all less/css files -->
+<link rel="stylesheet" type='text/css' href="/Content/mytemplate_report/master.css" />
+
+                    <div class="form-style-5">
+                        <fieldset>
+                            <legend style='color: #3c763d'><span class="number">1</span> Report the Invasive Plant</legend>
+                            <label for="job">Plant: *</label>
+                            <select id="job" name="field4">
+                                <optgroup label="Common Name">
+                                    <option value="fishkeeping">Alligator Weed</option>
+                                    <option value="reading">Bear-skin fescue</option>
+                                    <option value="boxing">Black knapweed</option>
+                                    <option value="debate">Branched broomrape</option>
+                                    <option value="gaming">Camel thorn</option>
+                                    <option value="snooker">Giant knotweed</option>
+                                    <option value="other_indoor">Giraffe thorn</option>
+                                </optgroup>
+                                <optgroup label="Scientific Name">
+                                    <option value="football">Alternanthera philoxeroides (Mart.) Griseb.</option>
+                                    <option value="swimming">Festuca gautieri (Hack.) K. Richt.</option>
+                                    <option value="fishing">Centaurea nigra L.</option>
+                                    <option value="climbing">Orobanche ramosa L.</option>
+                                    <option value="cycling">Alhagi maurorum Medik.</option>
+                                    <option value="other_outdoor">Fallopia sachalinensis (F. Schmidt ex Maxim) Ronse Decr.</option>
+                                    <option value="Giraffe thorn">Acacia erioloba E. Mey</option>
+                                </optgroup>
+                            </select>
+                            <input type="email" name="field2" placeholder="Your Email: ">
+                            <input type="text" name="field1" placeholder="Your Name: ">
+                        </fieldset>
+                        <fieldset>
+                            <legend style='color: #3c763d'><span class="number">2</span> Additional Comments</legend>
+                            <textarea style='height: 135px;' name="field3" placeholder="More details about the plant you want to report:"></textarea>
+                        </fieldset>
+
+                    </div>
+
+              <div class="form-style-5">
+                            <fieldset >
+                                <legend style='color: #3c763d'><span class="number">3</span> Location Info</legend>
+                                <section class="container">
+                                    <div id="map" style='width: 82%; height: 300px;'></div>
+                                    <script>
+                                        L.mapbox.accessToken = 'pk.eyJ1IjoiZHpodTMxIiwiYSI6ImNqMTd3OTkxbTA1bWsyd3FxN3E1ZHIzbmIifQ.gdbgSUNiTB6Ho-5I-sPlBA';
+
+                                        if (navigator.geolocation) {
+                                            navigator.geolocation.getCurrentPosition(
+                                                function (position) {
+                                                    //initialLocation = new L.LatLng(position.coords.latitude, position.coords.longitude);
+
+
+                                                    //center the map accord to user's location
+                                                    var map = L.mapbox.map('map', 'mapbox.streets').setView([position.coords.latitude, position.coords.longitude], 12);
+                                                    var markerClick;
+
+                                                    map.on('click', function (e) {
+                                                        placeMarker(e.latlng);
+                                                        //e.latlng.lat是返回的lat e.latlng.lng返回lng
+                                                        document.getElementById('lattext').value = e.latlng;
+                                                        document.getElementById('lngtext').value = e.latlng.lng;
+                                                    })
+
+                                                    function placeMarker(location) {
+
+                                                        if (markerClick == null) {
+                                                            markerClick = L.marker(location);
+                                                            markerClick.addTo(map);
+
+                                                        }
+                                                        else {
+                                                            markerClick.setLatLng(location);
+                                                        }
+                                                    }
+                                                });
+                                        }
+                                    </script>
+                                    <div>
+                                        <input id="lattext" class="form-control" type="text" name="search" placeholder="Latitude" style="width: 82%;margin-top:2%" />
+                                        <input id="lngtext" class="form-control" type="text" name="search" placeholder="Longitude" style="display:none" />
+                                    </div>
+                                </section>
+                            </fieldset>
+                            <fieldset>
+                                <input type="submit" value="Submit" onclick="submit_click(event)" /> &ensp;
+                                <input type="submit" value="Cancel" />
+                            </fieldset>
+
+                        </div>
+<script>
+    function submit_click(event) {
+        alert("Your report had been submitted successfully! Thank you!");
+        location.reload();
+    }
+</script>

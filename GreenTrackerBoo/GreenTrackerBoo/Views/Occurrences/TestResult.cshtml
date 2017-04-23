@@ -1,0 +1,241 @@
+﻿@model IEnumerable<GreenTrackerBoo.Models.Occurrence>
+
+@{
+    ViewBag.Title = "TestResult";
+    Layout = "~/Views/Shared/_LayoutOther.cshtml";
+}
+
+<!--include api of the map function -->
+
+
+<body>
+    <div class="container" style="margin-top: 5%;">
+        <div class="col-md-6 col-md-offset-3">
+            <!-- Search Form -->
+            <form role="form">
+                <!-- Search Field -->
+                <div class="row">
+                    <h1 class="text-center">Explore Your Area</h1>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input id="input" class="form-control" type="text" name="search" placeholder="Address or Postcode" onkeypress="clickPress(event)" />
+                            <span class="input-group-btn">
+                                <button id="submit" class="btn btn-success" type="submit">
+                                    <span class="glyphicon glyphicon-search" aria-hidden="true">
+                                        <span style="margin-left:10px;">Search</span>
+                                    </span>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- End of Search Form -->
+        </div>
+    </div>
+    
+    <script>
+        function clickPress(event) {
+            if (event.keyCode == 13) {
+                $('#submit').focus().click();
+                event.preventDefault();
+                
+            }
+        }
+
+        function initMap() {
+            var input = document.getElementById('input');
+            var options = {
+                componentRestrictions: { country: 'au' }
+            };
+
+            var autocomplete = new google.maps.places.Autocomplete(input, options);
+            google.maps.event.addListener(autocomplete, 'place_changed', function () {
+                var place = autocomplete.getPlace();
+                document.getElementById('input1').value = place.geometry.location.lat();
+                document.getElementById('input2').value = place.geometry.location.lng();
+                localStorage.setItem("storageLat", document.getElementById('input1').value);
+                localStorage.setItem("storageLng", document.getElementById('input2').value);
+                $('#submit').focus().click();
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB81OVqjvjWfuuaSkxjn5P95qkJfDT-u9g&libraries=places&callback=initMap" async defer></script>
+
+    <div class="container">
+        <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/leaflet.markercluster.js'></script>
+        <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.css' rel='stylesheet' />
+        <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.Default.css' rel='stylesheet' />
+        <table class="table-responsive" style="margin-left: 5%">
+            <tr style="vertical-align: top">
+                <td>
+                    <h2>Plants List:</h2>
+                    <table class="table table-hover" id="table"></table>
+                </td>
+                <td>
+                    <div id='map' style='width: 800px; height: 500px; margin-top: 2%; margin-left: 7%; margin-right: auto; overflow: hidden;'></div>
+                </td>
+            </tr>
+        </table>
+        <script>
+            L.mapbox.accessToken = 'pk.eyJ1IjoiZHpodTMxIiwiYSI6ImNqMTd3OTkxbTA1bWsyd3FxN3E1ZHIzbmIifQ.gdbgSUNiTB6Ho-5I-sPlBA';
+            var submit = document.getElementById('submit');
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function (position) {
+                    if (localStorage.getItem("storageLat") == 'null' || localStorage.getItem("storageLng") == 'null') {
+                        var map = L.mapbox.map('map', 'mapbox.streets').setView([position.coords.latitude, position.coords.longitude], 13);
+
+                    }
+                    else {
+                        var map = L.mapbox.map('map', 'mapbox.streets').setView([localStorage.getItem("storageLat"), localStorage.getItem("storageLng")], 13);
+                        localStorage.setItem("storageLat", 'null');
+                        localStorage.setItem("storageLng", 'null');
+                    }
+                    var markers = new L.MarkerClusterGroup();
+                    map.on('ready', function () {
+                        @foreach (var item in Model)
+                  {
+
+                      <text>
+
+                        var title = '@item.Plant.CommonName';
+                        var marker = L.marker(new L.LatLng('@item.Latitude', '@item.Longitude'),
+                        {
+                            icon: L.icon({ iconUrl: '/css/images/stop1.png', iconSize: [30, 30] }),
+                            title: title
+                        });
+                        marker.bindPopup(title);
+                        markers.addLayer(marker);
+                        </text>
+                  }
+
+                        map.addLayer(markers);
+
+                        var inBounds = [],
+                           // Get the map bounds - the top-left and bottom-right locations.
+                           bounds = map.getBounds();
+
+                        // For each marker, consider whether it is currently visible by comparing
+                        // with the current map bounds.
+                        markers.eachLayer(function (marker) {
+                            if (bounds.contains(marker.getLatLng())) {
+                                inBounds.push(marker.options.title)
+                            }
+
+                        });
+
+                        // Display a list of markers to table.
+                        var table = document.getElementById("table");  // set this to your table
+                        var thead = document.createElement("thead");
+                        var tbody = document.createElement("tbody");
+                        var headrow = document.createElement("tr");
+                        var th = document.createElement("th");
+                        th.textContent = "Common Name";
+                        headrow.appendChild(th);
+                        thead.appendChild(headrow);
+                        table.appendChild(thead);
+
+                        table.appendChild(tbody);
+                        table.appendChild(thead);
+
+                        inBounds.unique().forEach(function (item) {
+                            var row = document.createElement("tr");
+                            var cell = document.createElement("td");
+                            cell.textContent = item;
+                            row.appendChild(cell);
+                            tbody.appendChild(row);
+                        });
+                        table.appendChild(tbody);
+
+                        map.on('move', function () {
+                            // Construct an empty list to fill with onscreen markers.
+                            var inBounds = [],
+                            // Get the map bounds - the top-left and bottom-right locations.
+                            bounds = map.getBounds();
+
+                            // For each marker, consider whether it is currently visible by comparing
+                            // with the current map bounds.
+                            markers.eachLayer(function (marker) {
+                                if (bounds.contains(marker.getLatLng())) {
+                                    inBounds.push(marker.options.title)
+                                }
+
+                            });
+
+                            // Display a list of markers into table.
+                            var table = document.getElementById("table");  // set this to your table
+                            table.innerHTML = "";
+                            var tbody = document.createElement("tbody");
+                            var thead = document.createElement("thead");
+                            var headrow = document.createElement("tr");
+                            var th = document.createElement("th");
+                            th.textContent = "Common Name";
+                            headrow.appendChild(th);
+                            thead.appendChild(headrow);
+                            table.appendChild(thead);
+
+                            table.appendChild(tbody);
+                            table.appendChild(thead);
+
+                            inBounds.unique().forEach(function (item) {
+                                var row = document.createElement("tr");
+                                var cell = document.createElement("td");
+                                cell.textContent = item;
+                                row.appendChild(cell);
+                                tbody.appendChild(row);
+                            });
+                            table.appendChild(tbody);
+                        });
+
+                        submit.onclick = function (e) {
+                            e.preventDefault();
+                            var lat1 = document.getElementById('input1').value;
+                            var lng1 = document.getElementById('input2').value;
+                            map.setView([lat1, lng1], 13);
+
+                        };
+                    });
+
+
+                }, function (error) {
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            alert("user did not share geolocation data");
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            alert("could not detect current position");
+                            break;
+                        case error.TIMEOUT:
+                            alert("retrieving position timed out");
+                            break;
+                        default:
+                            alert("unknown error");
+                            break;
+                    }
+                });
+            }
+
+
+
+
+            Array.prototype.unique = function () {
+                var res = [];
+                var json = {};
+                for (var i = 0; i < this.length; i++) {
+                    if (!json[this[i]]) {
+                        res.push(this[i]);
+                        json[this[i]] = 1;
+                    }
+                }
+                return res;
+            }
+
+
+        </script>
+    </div>
+    <div>
+        <input id="input1" class="form-control" type="text" name="search" placeholder="Latitude" style="visibility: hidden; height: 0px" />
+        <input id="input2" class="form-control" type="text" name="search" placeholder="Longitude" style="visibility: hidden; height: 0px" /></div>
+</body>
+
