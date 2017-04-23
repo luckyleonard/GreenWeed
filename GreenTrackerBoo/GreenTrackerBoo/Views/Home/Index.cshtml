@@ -1,0 +1,116 @@
+﻿<!-- Carousel
+    ================================================== -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="item active">
+            <img class="evergreen" src="~/css/images/evergreen.jpg" />
+            <div class="container">
+                <div class="carousel-caption">
+                    <img class="stop" src="~/css/images/stop1.png" />
+                    <h1>STOP THE SPREAD OF INVASIVE PLANTS!</h1>
+                    <p>◆ Australia has many introduced invasive plants.<br />
+                       ◆ These invasive plants spread rapidly damaging the environment and threatening the existence of native plants.<br />
+                       ◆ The website, “Green Tracker”, will assist farmers by providing information and current sighting of invasive plants.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /.carousel -->
+<!-- Marketing messaging and featurettes
+    ================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container" style="margin-top: 5%;">
+    <div class="col-md-6 col-md-offset-3">
+        <!-- Search Form -->
+        <form role="form">
+            <!-- Search Field -->
+            <div class="row">
+                <h1 class="text-center">Search Your Area</h1>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input id="input1" class="form-control" type="text" name="search" placeholder="Latitude" style="visibility: hidden; height: 0px" />
+                        <input id="input" class="form-control" type="text" name="search" placeholder="Address or Postcode" onkeypress="clickPress(event)" />
+                        <input id="input2" class="form-control" type="text" name="search" placeholder="Longitude" style="visibility: hidden; height: 0px" />
+                        <span class="input-group-btn">
+                            <button id="passvalue" class="btn btn-success" type="button" >
+                                <span class="glyphicon glyphicon-search" aria-hidden="true">
+                                    <span style="margin-left:10px;">Search</span>
+                                </span>
+                            </button>                     
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!-- End of Search Form -->
+    </div>
+</div>
+
+<script>
+    function clickPress(event) {
+        if (event.keyCode == 13) {
+            $('#passvalue').focus().click();
+            event.preventDefault();
+
+        }
+    }
+    document.getElementById("passvalue").onclick = function () {
+        window.open("@Url.Action("TestResult", "Occurrences")", '_blank');
+    }
+</script>
+
+<script>
+    function initMap() {
+        localStorage.setItem("storageLat", 'null');
+        localStorage.setItem("storageLng", 'null');
+        var input = document.getElementById('input');
+        var options = {
+            componentRestrictions: { country: 'au' }
+        };
+
+        var autocomplete = new google.maps.places.Autocomplete(input, options);
+        google.maps.event.addListener(autocomplete, 'place_changed', function () {
+            var place = autocomplete.getPlace();
+            document.getElementById('input1').value = place.geometry.location.lat();
+            document.getElementById('input2').value = place.geometry.location.lng();
+            localStorage.setItem("storageLat", document.getElementById('input1').value);
+            localStorage.setItem("storageLng", document.getElementById('input2').value);
+           
+        });
+    }
+</script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB81OVqjvjWfuuaSkxjn5P95qkJfDT-u9g&libraries=places&callback=initMap" async defer></script>
+
+
+
+<section id="three-images">
+    <div class="container">
+        <article class="cf">
+            <!-- ***link to upcoming Map function(iteration 2)*** -->
+            <div class="img-circle-div">
+                <a href="@Url.Action("TestResult", "Occurrences")" target="_blank">
+                    <img src="~/css/images/circle1.jpg" />
+                    <h3>Explore the Map</h3>
+                    <p>What are the invasive plants near me? Try this!</p>
+                </a>
+             </div>
+           
+            <!-- ***link to upcoming report function(iteration 2)*** -->
+            <div class="img-circle-div">
+                <a href="@Url.Action("Report", "Home")" target="_blank">
+                    <img src="~/css/images/circle2.jpg" />
+                    <h3>Report My Finding</h3>
+                    <p>Find an invasive plant by yourself? Report it!</p>
+                </a>
+            </div>
+            <!-- ***link to upcoming community(experience sharing/comments) function(iteration 3)*** -->
+            <div class="img-circle-div">
+                <img src="~/css/images/circle3.jpg" />
+                <h3>Find My Community</h3>
+                <p>(Coming Soon...)</p>
+            </div>
+        </article>
+    </div>
+</section>
+

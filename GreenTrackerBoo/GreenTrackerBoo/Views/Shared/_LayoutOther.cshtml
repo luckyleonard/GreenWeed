@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.mapbox.com/mapbox.js/v3.1.0/mapbox.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/v3.1.0/mapbox.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/leaflet.markercluster.js'></script>
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.css' rel='stylesheet' />
+    <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.Default.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap core CSS -->
+    <link href="@Url.Content("~/css/bootstrap.css")" rel="stylesheet">
+    <link href="@Url.Content("~/css/carousel_1.css")" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="navbar-wrapper">
+        <div class="container">
+
+            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("Green Tracker", "Index", "Home", new object { }, new { @class = "navbar-brand" })
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Explore", "TestResult", "Occurrences", new { }, null)</li>
+                            <li>@Html.ActionLink("Report", "Report", "Home")</li>
+                            <li>@Html.ActionLink("About Us", "AboutUs", "Home")</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="item active">
+                <img class="evergreen" src="~/css/images/evergreen.jpg" />
+                <div class="container">
+                    <div class="carousel-caption">
+                        <img class="stop" src="~/css/images/stop1.png" />
+                        <h1>STOP THE SPREAD OF INVASIVE PLANTS!</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.carousel -->
+    @RenderBody()
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="@Url.Content("~/js/bootstrap.js")"></script>
+
+    <div class="container marketing">
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+        <!-- FOOTER -->
+        <footer>
+            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p>&copy; GreenTracker 2017 T.A.R.S., Inc. </p>
+        </footer>
+
+    </div><!-- /.container -->
+</body>
+</html>
