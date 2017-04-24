@@ -184,6 +184,7 @@
     <Compile Include="Context\ApplicationDataContext.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OccurencesController.cs" />
+    <Compile Include="Controllers\PlantsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -249,12 +250,36 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Home\AlligatorWeed.cshtml" />
+    <Content Include="Views\Plants\AlligatorWeed.cshtml" />
     <Content Include="Views\Home\AboutUs.cshtml" />
     <Content Include="Views\Home\Report.cshtml" />
     <Content Include="Views\Home\Explore.cshtml" />
     <Content Include="Views\Occurrences\TestResult.cshtml" />
     <Content Include="Views\Shared\_LayoutOther.cshtml" />
+    <Content Include="Views\Plants\BearSkinFescue.cshtml" />
+    <Content Include="Views\Plants\BlackKnapweed.cshtml" />
+    <Content Include="Views\Plants\BranchedBroomrape.cshtml" />
+    <Content Include="Views\Plants\CamelThorn.cshtml" />
+    <Content Include="Views\Plants\GiantKnotweed.cshtml" />
+    <Content Include="Views\Plants\GiraffeThorn.cshtml" />
+    <Content Include="Views\Plants\Hawkweed.cshtml" />
+    <Content Include="Views\Plants\Horsetail.cshtml" />
+    <Content Include="Views\Plants\IvyLeafedSida.cshtml" />
+    <Content Include="Views\Plants\JapaneseKnotweed.cshtml" />
+    <Content Include="Views\Plants\JapaneseKnotweedHybrid.cshtml" />
+    <Content Include="Views\Plants\KarooThorn.cshtml" />
+    <Content Include="Views\Plants\Lagarosiphon.cshtml" />
+    <Content Include="Views\Plants\LobedNeedleGrass.cshtml" />
+    <Content Include="Views\Plants\Marijuana.cshtml" />
+    <Content Include="Views\Plants\Mesquite.cshtml" />
+    <Content Include="Views\Plants\MexicanFatherGrass.cshtml" />
+    <Content Include="Views\Plants\NoddingThistle.cshtml" />
+    <Content Include="Views\Plants\PartheniumWeed.cshtml" />
+    <Content Include="Views\Plants\PerennialRagweed.cshtml" />
+    <Content Include="Views\Plants\PovertyWeed.cshtml" />
+    <Content Include="Views\Plants\Salvinia.cshtml" />
+    <Content Include="Views\Plants\TangledHypericum.cshtml" />
+    <Content Include="Views\Plants\WaterHyacinth.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

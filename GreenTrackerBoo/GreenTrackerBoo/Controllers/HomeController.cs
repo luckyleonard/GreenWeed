@@ -32,10 +32,6 @@ namespace GreenTrackerBoo.Controllers
             return View();
         }
 
-        public ActionResult AlligatorWeed()
-        {
-            ViewBag.Title = "Alligator Weed";
-            return View();
-        }
+
     }
 }
