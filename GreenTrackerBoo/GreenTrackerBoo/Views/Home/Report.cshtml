@@ -34,20 +34,30 @@
                                     <option value="Giraffe thorn">Acacia erioloba E. Mey</option>
                                 </optgroup>
                             </select>
-                            <input type="email" name="field2" placeholder="Your Email: ">
+                            <div id="errors" class="errorMessage" style="color:red"></div>
+                            <input id="email" type="email" name="field2" placeholder="Your Email: ">                          
                             <input type="text" name="field1" placeholder="Your Name: ">
                         </fieldset>
                         <fieldset>
                             <legend style='color: #3c763d'><span class="number">2</span> Additional Comments</legend>
-                            <textarea style='height: 135px;' name="field3" placeholder="More details about the plant you want to report:"></textarea>
+                            <textarea style='height: 150px;' name="field3" placeholder="More details about the plant you want to report:"></textarea>
                         </fieldset>
 
                     </div>
+<script>
+    function validateEmail(email)
+    {
+        var re = /\S+@@\S+\.\S+/;
+        return re.test(email);
+    };
+
+</script>
 
               <div class="form-style-5">
                             <fieldset >
-                                <legend style='color: #3c763d'><span class="number">3</span> Location Info</legend>
+                                <legend style='color: #3c763d'><span class="number">3</span> Location Info (Click on the Map to set marker)</legend>
                                 <section class="container">
+                                    <div id="errors1" class="errorMessage" style="color:red"></div>
                                     <div id="map" style='width: 82%; height: 300px;'></div>
                                     <script>
                                         L.mapbox.accessToken = 'pk.eyJ1IjoiZHpodTMxIiwiYSI6ImNqMTd3OTkxbTA1bWsyd3FxN3E1ZHIzbmIifQ.gdbgSUNiTB6Ho-5I-sPlBA';
@@ -83,21 +93,36 @@
                                                 });
                                         }
                                     </script>
-                                    <div>
-                                        <input id="lattext" class="form-control" type="text" name="search" placeholder="Latitude" style="width: 82%;margin-top:2%" />
+                                    <div><h4>Here is the location you want to report:</h4>
+                                        <input id="lattext" class="form-control" type="text" name="search" placeholder="Latitude" style="width: 82%" disabled="disabled" />
                                         <input id="lngtext" class="form-control" type="text" name="search" placeholder="Longitude" style="display:none" />
                                     </div>
                                 </section>
                             </fieldset>
                             <fieldset>
-                                <input type="submit" value="Submit" onclick="submit_click(event)" /> &ensp;
-                                <input type="submit" value="Cancel" />
+                                
+                                <input type="submit" value="Submit" onclick="submit_click(event)" />
                             </fieldset>
 
                         </div>
 <script>
     function submit_click(event) {
-        alert("Your report had been submitted successfully! Thank you!");
-        location.reload();
+        var email = document.getElementById('email').value;
+        var latlng = document.getElementById('lattext').value;
+        document.getElementById('errors1').innerHTML = "";
+        document.getElementById('errors').innerHTML = "";
+        if (validateEmail(email) && latlng != "") {
+            alert("*****Your report had been submitted successfully! Thank you!******");
+            location.reload();
+        }
+        else {
+            if (!validateEmail(email)) {
+                document.getElementById('errors').innerHTML = "***Please input a valid email address***";//error message 
+                $('html,body').scrollTop(0);
+            }
+            if (latlng === undefined || latlng == null || latlng == "") {
+                document.getElementById('errors1').innerHTML = "***Please mark the location on the map***";
+            }
+        }        
     }
 </script>
