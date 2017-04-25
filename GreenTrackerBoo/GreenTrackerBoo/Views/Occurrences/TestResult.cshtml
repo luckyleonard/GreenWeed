@@ -1,13 +1,17 @@
-﻿@model IEnumerable<GreenTrackerBoo.Models.Occurrence>
+﻿<!-- ***This is the Explore page of the website, users would be connected to this page every time
+    he/she opens from navigation bar, click on the explore my area or do the search on the search bar,
+    in this page, users could be given a list of search result and the distribution on the map, user
+    also could interact with map and go for more information by click the plant link.***-->
+
+
+@model IEnumerable<GreenTrackerBoo.Models.Occurrence>
 
 @{
     ViewBag.Title = "TestResult";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<!--include api of the map function -->
-
-
+<!-- ***This section is providing the function about search invasive plants on map by postcode/address.***-->
 <body>
     <div class="container" style="margin-top: 5%;">
         <div class="col-md-6 col-md-offset-3">
@@ -33,9 +37,12 @@
             <!-- End of Search Form -->
         </div>
     </div>
-    
+
+    <!-- scripts of  function -->
     <script>
+        //this function achieved when search button clicked
         function clickPress(event) {
+            //when enter press, achieve search button click instead of default function
             if (event.keyCode == 13) {
                 $('#submit').focus().click();
                 event.preventDefault();
@@ -43,9 +50,11 @@
             }
         }
 
+        //this function get the autocomplete function from google map API
         function initMap() {
             var input = document.getElementById('input');
             var options = {
+                //constraint search address to Australia
                 componentRestrictions: { country: 'au' }
             };
 
@@ -54,8 +63,6 @@
                 var place = autocomplete.getPlace();
                 document.getElementById('input1').value = place.geometry.location.lat();
                 document.getElementById('input2').value = place.geometry.location.lng();
-                localStorage.setItem("storageLat", document.getElementById('input1').value);
-                localStorage.setItem("storageLng", document.getElementById('input2').value);
                 $('#submit').focus().click();
             });
         }
@@ -78,16 +85,19 @@
             </tr>
         </table>
         <script>
+            //api from mapbox to show the result on the map
             L.mapbox.accessToken = 'pk.eyJ1IjoiZHpodTMxIiwiYSI6ImNqMTd3OTkxbTA1bWsyd3FxN3E1ZHIzbmIifQ.gdbgSUNiTB6Ho-5I-sPlBA';
             var submit = document.getElementById('submit');
 
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function (position) {
+                    //if get current location successful
                     if (localStorage.getItem("storageLat") == 'null' || localStorage.getItem("storageLng") == 'null') {
                         var map = L.mapbox.map('map', 'mapbox.streets').setView([position.coords.latitude, position.coords.longitude], 13);
 
                     }
                     else {
+                        //if user search something
                         var map = L.mapbox.map('map', 'mapbox.streets').setView([localStorage.getItem("storageLat"), localStorage.getItem("storageLng")], 13);
                         localStorage.setItem("storageLat", 'null');
                         localStorage.setItem("storageLng", 'null');
@@ -98,7 +108,7 @@
                   {
 
                       <text>
-
+                        //return the plant name on a arraylist
                         var title = '@item.Plant.CommonName';
                         var marker = L.marker(new L.LatLng('@item.Latitude', '@item.Longitude'),
                         {
@@ -197,7 +207,7 @@
                         };
                     });
 
-
+                //detect the error when get current loction funciton failed
                 }, function (error) {
                     switch (error.code) {
                         case error.PERMISSION_DENIED:
@@ -218,7 +228,7 @@
 
 
 
-
+            //get unique value function
             Array.prototype.unique = function () {
                 var res = [];
                 var json = {};

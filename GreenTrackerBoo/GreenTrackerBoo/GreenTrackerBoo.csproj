@@ -253,7 +253,6 @@
     <Content Include="Views\Plants\AlligatorWeed.cshtml" />
     <Content Include="Views\Home\AboutUs.cshtml" />
     <Content Include="Views\Home\Report.cshtml" />
-    <Content Include="Views\Home\Explore.cshtml" />
     <Content Include="Views\Occurrences\TestResult.cshtml" />
     <Content Include="Views\Shared\_LayoutOther.cshtml" />
     <Content Include="Views\Plants\BearSkinFescue.cshtml" />

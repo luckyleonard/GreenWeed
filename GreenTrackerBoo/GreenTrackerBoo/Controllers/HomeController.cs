@@ -6,8 +6,10 @@ using System.Web.Mvc;
 
 namespace GreenTrackerBoo.Controllers
 {
+    //This is the major controller for return the view for main pages.
     public class HomeController : Controller
     {
+        //method for return the Index page view
         public ActionResult Index()
         {
             ViewBag.Title="Green Tracker";

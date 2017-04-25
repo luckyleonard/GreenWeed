@@ -1,4 +1,9 @@
-﻿@{
+﻿<!-- ***This is the Report page of the whole website, users would be connected to this page every time
+    he/she click to the report function, in this page, user would get a report form to fill in, with
+    the basic informations of plant report,including the user's email,name,addtional message, the plant's
+    name and locaiton of the finding by clicking it on map.***-->
+
+@{
     ViewBag.Title = "Report";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
@@ -9,40 +14,42 @@
 
 <!-- CSS, Normalize First, minify for production, using the master.css covering all less/css files -->
 <link rel="stylesheet" type='text/css' href="/Content/mytemplate_report/master.css" />
-                    <div class="form-style-5">
-                        <fieldset>
-                            <legend style='color: #3c763d'><span class="number">1</span> Report the Invasive Plant</legend>
-                            <label for="job">Plant: *</label>
-                            <select id="job" name="field4">
-                                <optgroup label="Common Name">
-                                    <option value="fishkeeping">Alligator Weed</option>
-                                    <option value="reading">Bear-skin fescue</option>
-                                    <option value="boxing">Black knapweed</option>
-                                    <option value="debate">Branched broomrape</option>
-                                    <option value="gaming">Camel thorn</option>
-                                    <option value="snooker">Giant knotweed</option>
-                                    <option value="other_indoor">Giraffe thorn</option>
-                                </optgroup>
-                                <optgroup label="Scientific Name">
-                                    <option value="football">Alternanthera philoxeroides (Mart.) Griseb.</option>
-                                    <option value="swimming">Festuca gautieri (Hack.) K. Richt.</option>
-                                    <option value="fishing">Centaurea nigra L.</option>
-                                    <option value="climbing">Orobanche ramosa L.</option>
-                                    <option value="cycling">Alhagi maurorum Medik.</option>
-                                    <option value="other_outdoor">Fallopia sachalinensis (F. Schmidt ex Maxim) Ronse Decr.</option>
-                                    <option value="Giraffe thorn">Acacia erioloba E. Mey</option>
-                                </optgroup>
-                            </select>
-                            <div id="errors" class="errorMessage" style="color:red"></div>
-                            <input id="email" type="email" name="field2" placeholder="Your Email: ">                          
-                            <input type="text" name="field1" placeholder="Your Name: ">
-                        </fieldset>
-                        <fieldset>
-                            <legend style='color: #3c763d'><span class="number">2</span> Additional Comments</legend>
-                            <textarea style='height: 150px;' name="field3" placeholder="More details about the plant you want to report:"></textarea>
-                        </fieldset>
-                    </div>
+<!--report form -->                   
+<div class="form-style-5">
+    <fieldset>
+         <legend style='color: #3c763d'><span class="number">1</span> Report the Invasive Plant</legend>
+         <label for="job">Plant: *</label>
+         <select id="job" name="field4">
+             <optgroup label="Common Name">
+                 <option value="fishkeeping">Alligator Weed</option>  
+                 <option value="reading">Bear-skin fescue</option>                   
+                 <option value="boxing">Black knapweed</option>                    
+                 <option value="debate">Branched broomrape</option>                   
+                 <option value="gaming">Camel thorn</option>                   
+                 <option value="snooker">Giant knotweed</option>                   
+                 <option value="other_indoor">Giraffe thorn</option>               
+             </optgroup>
+             <optgroup label="Scientific Name">
+                 <option value="football">Alternanthera philoxeroides (Mart.) Griseb.</option>
+                 <option value="swimming">Festuca gautieri (Hack.) K. Richt.</option>
+                 <option value="fishing">Centaurea nigra L.</option>
+                 <option value="climbing">Orobanche ramosa L.</option>
+                 <option value="cycling">Alhagi maurorum Medik.</option>
+                 <option value="other_outdoor">Fallopia sachalinensis (F. Schmidt ex Maxim) Ronse Decr.</option>
+                 <option value="Giraffe thorn">Acacia erioloba E. Mey</option>
+             </optgroup>       
+         </select>
+        <div id="errors" class="errorMessage" style="color:red"></div>
+        <input id="email" type="email" name="field2" placeholder="Your Email: 
+    </fieldset>
+    <fieldset>
+        <legend style='color: #3c763d'><span class="number">2</span> Additional Comments</legend>
+        <textarea style='height: 150px;' name="field3" placeholder="More details about the plant you want to report:"></textarea>
+    </fieldset>
+</div>
+
 <script>
+    //validate the user input with email
     function validateEmail(email)
     {
         var re = /\S+@@\S+\.\S+/;
@@ -72,7 +79,7 @@
 
                                                     map.on('click', function (e) {
                                                         placeMarker(e.latlng);
-                                                        //e.latlng.lat是返回的lat e.latlng.lng返回lng
+                                                        //e.latlng.lat is reutrned lat,e.latlng.lng is reutrned lng
                                                         document.getElementById('lattext').value = e.latlng;
                                                         document.getElementById('lngtext').value = e.latlng.lng;
                                                     })
@@ -104,6 +111,7 @@
 
                         </div>
 <script>
+    //function when submit button clicked
     function submit_click(event) {
         var email = document.getElementById('email').value;
         var latlng = document.getElementById('lattext').value;

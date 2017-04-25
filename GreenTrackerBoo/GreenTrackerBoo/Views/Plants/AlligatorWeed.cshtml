@@ -1,4 +1,8 @@
-﻿@{
+﻿<!-- ***This is the page about Alligator Weed(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+    template, and customising it with the information about Alligator Weed. It has major 4 sections,
+    Home-Identify-Control-Contact. Details as followed. ***-->
+
+@{
     ViewBag.Title = "AlligatorWeed";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
@@ -6,11 +10,15 @@
 <div class="container">
     <h2>Alligator Weed</h2>
 </div>
+
+
 <div class="container marketing">
 
     <!-- START THE FEATURETTES -->
     <hr class="featurette-divider">
 
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
     <div class="row featurette">
         <div class="col-md-7">
             <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
@@ -23,6 +31,8 @@
 
     <hr class="featurette-divider">
 
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
     <div class="row featurette">
         <div class="col-md-5">
             <img class="featurette-image img-responsive" src="http://placehold.it/500x500" alt="Generic placeholder image">
@@ -35,6 +45,9 @@
 
     <hr class="featurette-divider">
 
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
     <div class="row featurette">
         <div class="col-md-7">
             <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
