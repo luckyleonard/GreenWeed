@@ -28,9 +28,9 @@ namespace GreenTrackerBoo.Controllers
             return View();
         }
 
-        public ActionResult Explore()
+        public ActionResult Library()
         {
-            ViewBag.Title = "Explore My Area";
+            ViewBag.Title = "Plant Library";
             return View();
         }
 

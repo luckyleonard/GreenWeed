@@ -1,8 +1,102 @@
-﻿
+﻿<!-- ***This is the page about Camel Thorn(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+    template, and customising it with the information about Camel Thorn. It has major 4 sections,
+    Home-Identify-Control-Contact. Details as followed. ***-->
+
 @{
     ViewBag.Title = "CamelThorn";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2>CamelThorn</h2>
+<div class="container">
+    <h2 style="font-family: 'Comic Sans MS'">Camel Thorn</h2>
+    <h3>Alhagi maurorum Medik.</h3>
+</div>
 
+
+<div class="container marketing" style="margin-top: -4%;">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">About Camel Thorn. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">
+                Camel thorn is declared under the Catchment and Land Protection Act (1994) as a State prohibited weed. The native range of camel thorn extends from India to Asia Minor and southern Russia. How camel thorn was introduced to Australia is unclear, though it was recorded at Rutherglen in 1915. Isolated infestations are also found in New South Wales, South Australia and Western Australia.
+                <br />
+                <b>Camel thorn roots can grow 8 m each year from the parent plant.</b>
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/camel_img1.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/camel_img2.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top: -5%;">
+            <h2 class="featurette-heading">Camel Thorn is a State prohibited weed: <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                State prohibited weeds either do not occur in Victoria, or are present and can reasonably be expected to be eradicated. State prohibited weeds are the highest category of noxious weeds under the Catchment and Land Protection Act (1994). Camel thorn is usually found along drainage lines and in irrigated pasture. It has a deep (to 2 m) and vigorous root system, making it strongly competitive with other plants. Lateral roots can grow up to 8 m each year from the parent plant. Camel thorn has been known to break through sealed bitumen roads, while sharp-tipped spines may pose a danger to stock. A major source of spread is from root fragments due to cultivation.            </p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">How can I identify it? <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                Camel thorn is found in the northern parts of Victoria, usually associated with irrigated pastures and neglected areas. It is a rigid, much-branched, spiny shrub commonly 25–60 cm tall but can grow to 1.5 m tall. Aerial growth dies in autumn and new shoots emerge from roots in spring.
+                Leaves are blue-green, arrow-head to oval shaped, often singular; more common on lower branches. Stems bear numerous yellow-tipped spines 1-2.5 cm long.
+                Flowers are pea-like, 7-10 mm long, brown to red and purple and in clusters of 1-8; in spring to summer. Pods are up to 2.5 cm long and have 1-5 seeds.
+            </p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/camel_img3.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/camel_img4.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top:-5%;">
+            <h2 class="featurette-heading">Control and Report. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                <b>Caution: Please do not attempt to treat or dispose of Camel Thorn yourself. The department will treat, remove and dispose of alligator weed safely, at no cost to the land owner.</b>
+                <br />If you suspect you may have seen Camel Thorn, please contact DEDJTR immediately. Phone 136 186, send an email to weed.spotters@ecodev.vic.gov.au using the our template here or make an online report here so that we can help you with most recent sightings.
+                <br /><b>
+                    or simply, report it from us:
+                </b>
+                <div>
+                    <!-- Report function would be completed in Iteration 2, not support for now -->
+                    <button type="button" class="btn yellow-btn normal-btn" onclick="ctClick();">Report</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function ctClick() {
+        localStorage.setItem("plantSelect", 'CT');
+        location.href = "@Url.Action("Report", "Home")";
+    }
+</script>

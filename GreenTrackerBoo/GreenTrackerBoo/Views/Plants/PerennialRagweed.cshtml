@@ -1,8 +1,104 @@
-﻿
+﻿<!-- ***This is the page about Perennial Ragweed(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+    template, and customising it with the information about Perennial Ragweed. It has major 4 sections,
+    Home-Identify-Control-Contact. Details as followed. ***-->
+
 @{
     ViewBag.Title = "PerennialRagweed";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2>PerennialRagweed</h2>
 
+<div class="container">
+    <h2 style="font-family: 'Comic Sans MS'">Perennial Ragweed</h2>
+    <h3>Ambrosia artemisiifolia, Ambrosia coronopifolia, Ambrosia californica, Ambrosia psilostachya</h3>
+</div>
+
+
+<div class="container marketing" style="margin-top: -4%;">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7" style="margin-top: -4%;">
+            <h2 class="featurette-heading">About Perennial Ragweed. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">
+                Perennial Ragweed refers to the ragged appearance of the plant and it perennial life form. Ambrosia is from the Greek word for 'food for the gods' because this plant was supposed to give immortality. Psilostachya is from the Greek words meaning 'bare ear' because this plant has a leafless spike or ear of male flowers. Perennial ragweed usually found as a weed along roadsides, in uncultivated fields, vacant lots and waste places. 
+
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/Perenial Ragweed1.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/Perenial Ragweed2.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top: -7%;">
+            <h2 class="featurette-heading">Perennial Ragweed is a State prohibited weed: <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                Perennial Ragweed is declared under the Catchment and Land Protection Act (1994) as a State prohibited weed.State prohibited weeds either do not occur in Victoria, or are present and can reasonably be expected to be eradicated. State prohibited weeds are the highest category of noxious weeds under the Catchment and Land Protection Act (1994). 
+                The fruit tangles in wool, fur and clothing. The seed is transported in mud clinging to vehicles and stock. Contaminated soil used for road making or garden dressing also contributes to spread. Clumps increase in size by extension of the underground root system that produces new shoots. Much of the spread around the world and in NSW was probably associated with the movement of Army vehicles during World War 2.
+
+            </p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">How can I identify it? <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                Separate heads for male and female flowers. Male heads higher than the female heads. Often very branched. 35-100 mm long. Male heads in raceme like clusters and tend to be nodding, hemi spherical clusters about 3 mm diameter. Female heads in a few to several headed clusters on short branches, or in single flowered heads in the axils of the upper leaves underneath the male spikes.
+
+            </p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/Perenial Ragweed3.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/Perenial Ragweed4.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top:-5%;">
+            <h2 class="featurette-heading">Control and Report. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                <b>Caution: Please do not attempt to treat or dispose of Perennial Ragweed yourself. The department will treat, remove and dispose of alligator weed safely, at no cost to the land owner.</b>
+                <br />If you suspect you may have seen Perennial Ragweed, please contact DEDJTR immediately. Phone 136 186, send an email to weed.spotters@ecodev.vic.gov.au using the our template here or make an online report here so that we can help you with most recent sightings.
+                <br /><b>
+                    or simply, report it from us:
+                </b>
+                <div>
+                    <!-- Report function would be completed in Iteration 2, not support for now -->
+                    <button type="button" class="btn yellow-btn normal-btn" onclick="prClick();">Report</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function prClick() {
+        localStorage.setItem("plantSelect", 'PR');
+        location.href = "@Url.Action("Report", "Home")";
+    }
+</script>

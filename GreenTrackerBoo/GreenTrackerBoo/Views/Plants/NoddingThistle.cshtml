@@ -1,8 +1,104 @@
-﻿
+﻿<!-- ***This is the page about Nodding Thistle(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+    template, and customising it with the information about Nodding Thistle. It has major 4 sections,
+    Home-Identify-Control-Contact. Details as followed. ***-->
+
 @{
     ViewBag.Title = "NoddingThistle";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2>NoddingThistle</h2>
+<div class="container">
+    <h2 style="font-family: 'Comic Sans MS'">Nodding Thistle</h2>
+    <h3>Carduus nutans</h3>
+</div>
 
+
+<div class="container marketing" style="margin-top: -4%;">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7" style="margin-top: -4%;">
+            <h2 class="featurette-heading">About Nodding Thistle. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">
+                Carduus is derived from the Greek kandos meaning thistle or the Greek cheuro, a technical term used in the carding of wool where the heads of some of the species were used.
+                Nutans is from the Latin word nuto meaning to nod referring to the nodding habit of the flower heads.
+                Nodding Thistle refers to the nodding habit of the flowering stems and its spiny or thistle like form.
+
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/nodding-thistle1.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/nodding-thistle2.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top: -5%;">
+            <h2 class="featurette-heading">Nodding Thistle is a State prohibited weed: <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                Nodding thistle is declared under the Catchment and Land Protection Act (1994) as a State prohibited weed.State prohibited weeds either do not occur in Victoria, or are present and can reasonably be expected to be eradicated. State prohibited weeds are the highest category of noxious weeds under the Catchment and Land Protection Act (1994). Nodding thistle is not readily grazed and the large size of the plants can quickly prevent stock access to pastures. Because the main germination period is late summer and early autumn nodding thistle can invade fertile annual pastures as the favoured pasture species die off. Nodding thistle infestations have been recorded in the eastern part of Victoria.
+               
+             </p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">How can I identify it? <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                Nodding thistle is an erect annual, or usually biennial, and occasionally triennial herb, most often 80 to 120 cm high. It usually has a single stem which branches in the upper half, but may become multi stemmed if the crown is damaged. Plants exist as a rosette before the stem elongates.
+
+            </p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/nodding-thistle3.gif" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/nodding-thistle4.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top:-5%;">
+            <h2 class="featurette-heading">Control and Report. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                <b>Caution: Please do not attempt to treat or dispose of Nodding Thistle yourself. The department will treat, remove and dispose of alligator weed safely, at no cost to the land owner.</b>
+                <br />If you suspect you may have seen Nodding Thistle, please contact DEDJTR immediately. Phone 136 186, send an email to weed.spotters@ecodev.vic.gov.au using the our template here or make an online report here so that we can help you with most recent sightings.
+                <br /><b>
+                    or simply, report it from us:
+                </b>
+                <div>
+                    <!-- Report function would be completed in Iteration 2, not support for now -->
+                    <button type="button" class="btn yellow-btn normal-btn" onclick="ntClick();">Report</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function ntClick() {
+        localStorage.setItem("plantSelect", 'NT');
+        location.href = "@Url.Action("Report", "Home")";
+    }
+</script>

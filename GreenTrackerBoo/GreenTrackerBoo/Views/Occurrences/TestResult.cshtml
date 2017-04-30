@@ -58,6 +58,35 @@
                 componentRestrictions: { country: 'au' }
             };
 
+            (function pacSelectFirst(input) {
+                // store the original event binding function
+                var _addEventListener = (input.addEventListener) ? input.addEventListener : input.attachEvent;
+
+                function addEventListenerWrapper(type, listener) {
+                    // Simulate a 'down arrow' keypress on hitting 'return' when no pac suggestion is selected,
+                    // and then trigger the original listener.
+                    if (type == "keydown") {
+                        var orig_listener = listener;
+                        listener = function (event) {
+                            var suggestion_selected = $(".pac-item-selected").length > 0;
+                            if (event.which == 13 && !suggestion_selected) {
+                                var simulated_downarrow = $.Event("keydown", {
+                                    keyCode: 40,
+                                    which: 40
+                                });
+                                orig_listener.apply(input, [simulated_downarrow]);
+                            }
+
+                            orig_listener.apply(input, [event]);
+                        };
+                    }
+
+                    _addEventListener.apply(input, [type, listener]);
+                }
+
+                input.addEventListener = addEventListenerWrapper;
+                input.attachEvent = addEventListenerWrapper;
+
             var autocomplete = new google.maps.places.Autocomplete(input, options);
             google.maps.event.addListener(autocomplete, 'place_changed', function () {
                 var place = autocomplete.getPlace();
@@ -65,6 +94,7 @@
                 document.getElementById('input2').value = place.geometry.location.lng();
                 $('#submit').focus().click();
             });
+        })(input);
         }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB81OVqjvjWfuuaSkxjn5P95qkJfDT-u9g&libraries=places&callback=initMap" async defer></script>
@@ -106,10 +136,12 @@
                     map.on('ready', function () {
                         @foreach (var item in Model)
                   {
+                            
 
                       <text>
                         //return the plant name on a arraylist
                         var title = '@item.Plant.CommonName';
+                        var link = '@item.Plant.PageLink';
                         var marker = L.marker(new L.LatLng('@item.Latitude', '@item.Longitude'),
                         {
                             icon: L.icon({ iconUrl: '/css/images/stop1.png', iconSize: [30, 30] }),
@@ -152,7 +184,17 @@
                         inBounds.unique().forEach(function (item) {
                             var row = document.createElement("tr");
                             var cell = document.createElement("td");
+                            //var a = document.createElement('a');
+                           // var linkText = document.createTextNode("my title text");
+                           // a.appendChild(linkText);
+                         //   a.title = item;
+                          //  a.href = itrm;
+                          //  cell.appendChild(a);
+
                             cell.textContent = item;
+                            cell.id = item;
+                            //$('td1').attr('href', item);
+                            //document.getElementById(item).textContent = item;
                             row.appendChild(cell);
                             tbody.appendChild(row);
                         });
@@ -241,7 +283,11 @@
                 return res;
             }
 
-
+            //remove the active class from Home to this page
+            $(document).ready(function () {
+                $("ul li").removeClass("active");
+                $('#exploreTag').addClass("active");
+            });
         </script>
     </div>
     <div>

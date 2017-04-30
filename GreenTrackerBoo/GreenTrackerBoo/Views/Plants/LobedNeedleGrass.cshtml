@@ -1,8 +1,106 @@
-﻿
+﻿<!-- ***This is the page about Lobed Needle Grass(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+    template, and customising it with the information about Lobed Needle Grass. It has major 4 sections,
+    Home-Identify-Control-Contact. Details as followed. ***-->
+
 @{
     ViewBag.Title = "LobedNeedleGrass";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2>LobedNeedleGrass</h2>
+<div class="container">
+    <h2 style="font-family: 'Comic Sans MS'">Lobed Needle Grass</h2>
+    <h3>Nassella charruana (Arechav.) Barkworth</h3>
+</div>
 
+
+<div class="container marketing" style="margin-top: -4%;">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7" style="margin-top: -4%;">
+            <h2 class="featurette-heading">About Lobed Needle Grass. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">
+                Lobed needle grass is declared under the Catchment and Land Protection Act (1994) as a State prohibited weed. Lobed needle grass is indigenous to Uruguay, Argentina and Brazil. In Australia the species has only been found to occur in the outer northern suburbs of Melbourne, Victoria. It is believed to have been present for more than 40 years in Epping.
+              
+                  <br /><b>Lobed needle grass will stay green in paddocks after all other grasses have turned brown.</b>
+
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/LobedNeedleGrass1.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/LobedNeedleGrass2.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top: -5%;">
+            <h2 class="featurette-heading">Lobed Needle Grass is a State prohibited weed: <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                Lobed needle grass is closely related to serrated tussock, widely regarded as the worst pasture weed in Australia, and has the potential to cause major economic and environmental damage. It can easily be overlooked because of its similarity to indigenous tussock grasses and other Nassella species. The potential distribution of lobed needle grass in Australia has been estimated to be 600,000 ha, with a substantial area of Victoria at risk. Lobed needle grass forms dense competitive infestations. In Victoria it has invaded open woodlands and native and introduced grasslands including grassland dominated by other Nassella species.
+          
+             </p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">How can I identify it? <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                Lobed needle grass is a perennial tussock that can grow up to 100 cm high.
+                Stems and leaves are tightly rolled and very smooth to touch. The bright green leaves feel like nylon cord when sliding fingers down the length of the leaf blade.
+                Seeds are around 6-8 cm long with two white lobes that look like wings surrounding the seed. The seed heads lean to one side and appear to shimmer in the afternoon sun.
+
+            </p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/LobedNeedleGrass3.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/LobedNeedleGrass4.gif" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top:-5%;">
+            <h2 class="featurette-heading">Control and Report. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                <b>Caution: Please do not attempt to treat or dispose of Lobed Needle Grass yourself. The department will treat, remove and dispose of alligator weed safely, at no cost to the land owner.</b>
+                <br />If you suspect you may have seen Lobed Needle Grass, please contact DEDJTR immediately. Phone 136 186, send an email to weed.spotters@ecodev.vic.gov.au using the our template here or make an online report here so that we can help you with most recent sightings.
+                <br /><b>
+                    or simply, report it from us:
+                </b>
+                <div>
+                    <!-- Report function would be completed in Iteration 2, not support for now -->
+                    <button type="button" class="btn yellow-btn normal-btn" onclick="lngClick();">Report</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function lngClick() {
+        localStorage.setItem("plantSelect", 'LNG');
+        location.href = "@Url.Action("Report", "Home")";
+    }
+</script>

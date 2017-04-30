@@ -1,8 +1,107 @@
-﻿
+﻿<!-- ***This is the page about Mexican Father Grass(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+    template, and customising it with the information about Mexican Father Grass. It has major 4 sections,
+    Home-Identify-Control-Contact. Details as followed. ***-->
+
 @{
     ViewBag.Title = "MexicanFatherGrass";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2>MexicanFatherGrass</h2>
 
+<div class="container">
+    <h2 style="font-family: 'Comic Sans MS'">Mexican Father Grass</h2>
+    <h3>Nassella tenuissima</h3>
+</div>
+
+
+<div class="container marketing" style="margin-top: -4%;">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7" style=" margin-top: -7%;">
+            <h2 class="featurette-heading">About Mexican Father Grass. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">
+                In 2008, Mexican feather grass was inadvertently sold by a number of retail chain stores throughout Victoria. Investigations have revealed that approximately 4000 Mexican feather grass plants may have been supplied to stores from January to May 2008. The distribution of the grass in Victoria is not known as there are still plants unaccounted for as a result of the sales in 2008.
+                Mexican feather grass is very similar to serrated tussock. Other grasses that are commonly reported as Mexican feather grass include fox tails (Pennisetum spp.) because the flowers look like feathers and the native poa (Poa spp.) as the growth habit is similar to that of a tussock. The difference in both cases are that the leaves of these grasses are flat, not tightly rolled like Mexican feather grass.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/MFG_Seed-resized.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/MFG_top3rd-resized.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top: -5%;">
+            <h2 class="featurette-heading">Mexican Father Grass is a State prohibited weed: <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                Ecological modelling indicates that the species could spread to more than 500 million hectares of land in Australia. If allowed to establish, the economic and environmental costs of an infestation this size are estimated at $10 million annually.
+                Mexican feather grass is closely related to serrated tussock, widely regarded as Australia's worst pasture weed. It is hardy, drought tolerant, unpalatable to stock and difficult to control.
+             </p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">How can I identify it? <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                Mexican feather grass is a dense upright tussock that grows to about 70cm high.
+                Leaves are thin and roll smoothly between the thumb and forefinger.
+                Serrations make the leaves feel coarse when sliding fingers down the length of the leaf blade.
+                Mature plants form small, white seeds that grow in the top third of the tussock.
+                Seeds have a long awn (tail) with one or more bends.
+
+            </p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/feather_grass_leaf.gif" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/MFG_sale-resized.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top:-5%;">
+            <h2 class="featurette-heading">Control and Report. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                <b>Caution: Please do not attempt to treat or dispose of Mexican Father Grass yourself. The department will treat, remove and dispose of alligator weed safely, at no cost to the land owner.</b>
+                <br />If you suspect you may have seen Mexican Father Grass, please contact DEDJTR immediately. Phone 136 186, send an email to weed.spotters@ecodev.vic.gov.au using the our template here or make an online report here so that we can help you with most recent sightings.
+                <br /><b>
+                    or simply, report it from us:
+                </b>
+                <div>
+                    <!-- Report function would be completed in Iteration 2, not support for now -->
+                    <button type="button" class="btn yellow-btn normal-btn" onclick="mfgClick();">Report</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function mfgClick() {
+        localStorage.setItem("plantSelect", 'MFG');
+        location.href = "@Url.Action("Report", "Home")";
+    }
+</script>

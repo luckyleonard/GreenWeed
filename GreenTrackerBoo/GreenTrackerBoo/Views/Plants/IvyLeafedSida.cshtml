@@ -1,8 +1,106 @@
-﻿
+﻿<!-- ***This is the page about Ivy-Leafed Sida(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+    template, and customising it with the information about Lobed Needle Grass. It has major 4 sections,
+    Home-Identify-Control-Contact. Details as followed. ***-->
+
 @{
     ViewBag.Title = "IvyLeafedSida";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2>IvyLeafedSida</h2>
 
+<div class="container">
+    <h2 style="font-family: 'Comic Sans MS'">Ivy-Leafed Sida</h2>
+    <h3>Malvella leprosa</h3>
+</div>
+
+
+<div class="container marketing" style="margin-top: -4%;">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7" style="margin-top: -4%;">
+            <h2 class="featurette-heading">About Ivy-Leafed Sida. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">
+                Ivy-leaf sida is native to western North America and has not established in any other country other than Australia. Ivy-leaf sida is not readily grazed by animals and can compete strongly with pastures, particularly in alkaline soils. The known distribution of ivy-leaf sida in Victoria is in the Pyramid Hill - Cohuna area. It is associated with irrigation channels and irrigated pastures.
+            
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/Ivy-Leafed Sida1.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/Ivy-Leafed Sida2.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top: -5%;">
+            <h2 class="featurette-heading">Ivy-Leafed Sida is a State prohibited weed: <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                Ivy-leaf sida is not readily grazed by animals and can compete strongly with pastures, particularly in alkaline soils. The known distribution of ivy-leaf sida in Victoria is in the Pyramid Hill - Cohuna area. It is associated with irrigation channels and irrigated pastures.
+                Ivy-leaf sida seeds may contaminate agricultural or earth-moving equipment and animal hides. Cultivation distributes root fragments which may grow to create a new infestation or spread an existing one
+            </p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">How can I identify it? <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                A deep-rooted perennial herb up to 30 cm high with both
+                erect and prostrate stems. Stems- to about 40 cm long, branched, light green, covered with star-shaped hairs.
+                <br /><b>Leaves</b> - 2.5 to 3.5 cm across, sometimes larger; fan- shaped with bluntly toothed margins; on short stalks; covered with star-shaped hairs wich make the plant appear grey-green; veins are prominent underneath the leaves.
+                <br /><b>Flowers</b> - 2.5 to 3.5 cm across, yellow or cream, 5 petals; at the ends of branches on short stalks between leaf stalks and main stems and in loose clusters at the ends of branches.
+
+</p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/Ivy-Leafed Sida3.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/Ivy-Leafed Sida4.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top:-5%;">
+            <h2 class="featurette-heading">Control and Report. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                <b>Caution: Please do not attempt to treat or dispose of Ivy-Leafed Sida yourself. The department will treat, remove and dispose of alligator weed safely, at no cost to the land owner.</b>
+                <br />If you suspect you may have seen Ivy-Leafed Sida, please contact DEDJTR immediately. Phone 136 186, send an email to weed.spotters@ecodev.vic.gov.au using the our template here or make an online report here so that we can help you with most recent sightings.
+                <br /><b>
+                    or simply, report it from us:
+                </b>
+                <div>
+                    <!-- Report function would be completed in Iteration 2, not support for now -->
+                    <button type="button" class="btn yellow-btn normal-btn" onclick="ilsClick();">Report</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function ilsClick() {
+        localStorage.setItem("plantSelect", 'ILS');
+        location.href = "@Url.Action("Report", "Home")";
+    }
+</script>

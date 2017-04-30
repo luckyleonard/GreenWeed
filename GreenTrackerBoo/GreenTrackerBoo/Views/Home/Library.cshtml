@@ -1,0 +1,193 @@
+﻿
+@{
+    ViewBag.Title = "Library";
+    Layout = "~/Views/Shared/_LayoutOther.cshtml";
+}
+
+<h2></h2>
+
+<section class="container" id="plantTable" >
+    <div class="container" id="wrapper">
+        <center>
+            <h2>Invasive Plant Library </h2>
+            <br />
+            <table id="keywords" class="table table-hover">
+                <thead>
+                    <tr id="title">
+                        <!-- ***Title of table***-->
+                        <th><span>Picture</span></th>
+                        <th><span>Common Name</span></th>
+                        <th style="width: 26%;"><span>Scientific Name</span></th>
+                        <th><span>Report</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ***Content of table***-->
+                    <tr id="plant1" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/AlligatorWeed';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/alligator-profile.jpg" /></td>
+                        <td>Alligator Weed</td>
+                        <td>Alternanthera philoxeroides</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="awClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant2" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/BlackKnapweed';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/black-knapweed-profile.jpg" /></td>
+                        <td>Black Knapweed</td>
+                        <td>Centaurea nigra L.</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn" onclick="bkClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant3" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/CamelThorn';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/camel_img1_profile.jpg" /></td>
+                        <td>Camel Thorn</td>
+                        <td>Alhagi maurorum Medik.</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="ctClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant4" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/GiantKnotweed';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/kw_japflower-profile.jpg" /></td>
+                        <td>Giant Knotweed</td>
+                        <td>Fallopia japonica</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="gkClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant5" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/IvyLeafedSida';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/ivy-leafed%20sida-profile.jpg" /></td>
+                        <td>Ivy-Leafed Sida</td>
+                        <td>Malvella leprosa</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="ilsClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant6" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/KarooThorn';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/karoothorn-profile.jpg" /></td>
+                        <td>Karoo Thorn</td>
+                        <td>Acacia karroo Hayne</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="ktClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant7" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/LobedNeedleGrass';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/lobedneedlegrass-profile.jpg" /></td>
+                        <td>Lobed Needle Grass</td>
+                        <td>Nassella charruana (Arechav.) Barkworth</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="lngClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant8" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/MexicanFatherGrass';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/mfg_seed-profile.jpg" /></td>
+                        <td>Mexican Father Grass</td>
+                        <td>Nassella tenuissima</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="mfgClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant9" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/NoddingThistle';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/nodding-thistle-profile.jpg" /></td>
+                        <td>Nodding Thistle</td>
+                        <td>Carduus nutans</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="ntClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant10" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/PerennialRagweed';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/perenial%20ragweed-profile.jpg" /></td>
+                        <td>Perennial Ragweed</td>
+                        <td>Ambrosia artemisiifolia</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="prClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant11" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/PovertyWeed';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/poverty_weed_profile.jpg" /></td>
+                        <td>Poverty Weed</td>
+                        <td>Iva axillaris Pursh</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="pwClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant12" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/Salvinia';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/salvinia-profile.jpg" /></td>
+                        <td>Salvinia</td>
+                        <td>Salvinia molesta</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="sClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant13" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/TangledHypericum';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/tangled_hypericum-profile.jpg" /></td>
+                        <td>Tangled Hypericum</td>
+                        <td>Hypericum triquetrifolium Turra</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="thClick();">Report</button></td>
+                    </tr>
+                    <tr id="plant14" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/WaterHyacinth';">
+                        <td class="lalign"><img src="~/css/images/plants/profile/wh-profile.jpg" /></td>
+                        <td>Water Hyacinth</td>
+                        <td>Eichhornia crassipes</td>
+                        <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="whClick();">Report</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>
+</section>
+
+<script>
+    //remove the active class from Home to this page
+    $(document).ready(function () {
+        $("ul li").removeClass("active");
+        $('#libraryTag').addClass("active");
+    });
+
+    function awClick() {
+        localStorage.setItem("plantSelect", 'AW');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function bkClick() {
+        localStorage.setItem("plantSelect", 'BK');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function ctClick() {
+        localStorage.setItem("plantSelect", 'CT');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function gkClick() {
+        localStorage.setItem("plantSelect", 'GK');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function ilsClick() {
+        localStorage.setItem("plantSelect", 'ILS');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function ktClick() {
+        localStorage.setItem("plantSelect", 'KT');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function lngClick() {
+        localStorage.setItem("plantSelect", 'LNG');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function mfgClick() {
+        localStorage.setItem("plantSelect", 'MFG');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function ntClick() {
+        localStorage.setItem("plantSelect", 'NT');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function prClick() {
+        localStorage.setItem("plantSelect", 'PR');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function pwClick() {
+        localStorage.setItem("plantSelect", 'PW');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function sClick() {
+        localStorage.setItem("plantSelect", 'S');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function thClick() {
+        localStorage.setItem("plantSelect", 'TH');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+    function whClick() {
+        localStorage.setItem("plantSelect", 'WH');
+        window.open("@Url.Action("Report", "Home")");
+    }
+
+</script>

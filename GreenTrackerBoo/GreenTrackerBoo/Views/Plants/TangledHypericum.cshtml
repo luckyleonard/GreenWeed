@@ -1,8 +1,103 @@
-﻿
+﻿<!-- ***This is the page about Tangled Hypericum(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+    template, and customising it with the information about Tangled Hypericum. It has major 4 sections,
+    Home-Identify-Control-Contact. Details as followed. ***-->
+
 @{
     ViewBag.Title = "TangledHypericum";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2>TangledHypericum</h2>
+<div class="container">
+    <h2 style="font-family: 'Comic Sans MS'">Tangled Hypericum</h2>
+    <h3>Hypericum triquetrifolium Turra</h3>
+</div>
 
+
+<div class="container marketing" style="margin-top: -4%;">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7" style="margin-top: -4%;">
+            <h2 class="featurette-heading">About Tangled Hypericum. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">
+                Tangled hypericum is declared under the Catchment and Land Protection Act (1994) as a State prohibited weed. It is native to Europe and the Mediterranean, and believed to have entered Victoria during the gold rush, where it has occurred at Tarnagulla since 1910. Its roots and rhizomes (underground stems) can be spread by cultivation equipment.   
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/tangled_hypericum1.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/tangled_hypericum2.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top: -5%;">
+            <h2 class="featurette-heading">Tangled Hypericum is a State prohibited weed: <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                State prohibited weeds either do not occur in Victoria, or are present and can reasonably be expected to be eradicated. State prohibited weeds are the highest category of noxious weeds under the Catchment and Land Protection Act (1994). 
+                Tangled hypericum is a very competitive plant with the ability to eliminate most other vegetation. It can be easily spread throughout a paddock and to new locations by contaminated cultivation equipment. Although unconfirmed, it is suspected to be poisonous to stock. It has a very high potential of infesting much of central Victoria.   
+             </p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">How can I identify it? <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                Tangled hypericum is an erect perennial herb to 45 cm tall with tangled branches. It reproduces from rhizomes and seed. It could invade open woodlands and agricultural land.
+                Arrowhead-shaped leaves (5-15 mm long) are arranged opposite each other along much-branched stems. Stems and leaves both have minute black glands, while only the leaves have translucent oil glands.
+                Short-stalked yellow flowers occur in clusters at branch ends in summer. Each flower has five petals. The fruit (3-4 mm long) is a capsule with three compartments.
+   
+            </p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/tangled_hypericum3.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/tangled_hypericum4.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top:-5%;">
+            <h2 class="featurette-heading">Control and Report. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                <b>Caution: Please do not attempt to treat or dispose of Tangled Hypericum yourself. The department will treat, remove and dispose of alligator weed safely, at no cost to the land owner.</b>
+                <br />If you suspect you may have seen Tangled Hypericum, please contact DEDJTR immediately. Phone 136 186, send an email to weed.spotters@ecodev.vic.gov.au using the our template here or make an online report here so that we can help you with most recent sightings.
+                <br /><b>
+                    or simply, report it from us:
+                </b>
+                <div>
+                    <!-- Report function would be completed in Iteration 2, not support for now -->
+                    <button type="button" class="btn yellow-btn normal-btn" onclick="thClick();">Report</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function thClick() {
+        localStorage.setItem("plantSelect", 'TH');
+        location.href = "@Url.Action("Report", "Home")";
+    }
+</script>

@@ -1,8 +1,109 @@
-﻿
+﻿<!-- ***This is the page about Black Knapweed(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+    template, and customising it with the information about Black Knapweed. It has major 4 sections,
+    Home-Identify-Control-Contact. Details as followed. ***-->
+
 @{
     ViewBag.Title = "BlackKnapweed";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2>BlackKnapweed</h2>
+<div class="container">
+    <h2 style="font-family: 'Comic Sans MS'">Black Knapweed</h2>
+    <h3>Centaurea nigra L.</h3>
+</div>
 
+
+<div class="container marketing" style="margin-top: -4%;">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">About Black knapweed. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">
+                Centaurea refers to the medicine man Chiron, because of the medicinal properties of some plants in this genus.
+                Nigra is Latin for black and refers to the dark coloured flower bracts.
+                Black Knapweed - Knap is from knop meaning knob or bud and refers to the conspicuous buds of these plants. Black refers to the dark bracts surrounding the flower head. An erect, red-purple flowered, perennial thistle with dark flower head bracts and many stems.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/black-knapweed-1.jpg"  alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/BlackKnapweed_Photo2.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top: -5%;">
+            <h2 class="featurette-heading">Black knapweed is a State prohibited weed: <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                State prohibited weeds are the highest category of declared noxious weeds in Victoria.
+                By definition they are either not yet in Victoria, or are here in small numbers, where their eradication is still possible.
+                Black knapweed Seed is distributed by attachment to passing animals. The pappus is too small to allow effective dispersal by wind.
+                Root fragments readily shoot when damaged and cultivation often spreads the infestation within a field.
+                Perennial roots are not affected by fire.
+
+            </p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">How can I identify it? <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                In Black Knapweed Bracts surrounding flower head are dark, not spiny, and have long comb like teeth hiding the base of the bract.
+                They Have Purple flowers.
+                Ridged stems turn purple when mature
+
+            </p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/black-knapweed-ide.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/Weeds_Creeping_Knapweed1.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top:-5%;">
+            <h2 class="featurette-heading">Control and Report. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                <b>Caution: Please do not attempt to treat or dispose of Black Knapweed yourself. The department will treat, remove and dispose of alligator weed safely, at no cost to the land owner.</b>
+                <br />If you suspect you may have seen Black Knapweed, please contact DEDJTR immediately. Phone 136 186, send an email to weed.spotters@ecodev.vic.gov.au using the our template here or make an online report here so that we can help you with most recent sightings.
+                <br /><b>
+                    or simply, report it from us:
+                </b>
+                <div>
+                    <!-- Report function would be completed in Iteration 2, not support for now -->
+                    <button type="button" class="btn yellow-btn normal-btn" onclick="bkClick();">Report</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function bkClick() {
+        localStorage.setItem("plantSelect", 'BK');
+        location.href = "@Url.Action("Report", "Home")";
+    }
+</script>

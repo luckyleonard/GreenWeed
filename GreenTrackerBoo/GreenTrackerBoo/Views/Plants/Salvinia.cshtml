@@ -1,8 +1,102 @@
-﻿
+﻿<!-- ***This is the page about Salvinia(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+    template, and customising it with the information about Poverty Weed. It has major 4 sections,
+    Home-Identify-Control-Contact. Details as followed. ***-->
+
 @{
     ViewBag.Title = "Salvinia";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2>Salvinia</h2>
+<div class="container">
+    <h2 style="font-family: 'Comic Sans MS'">Salvinia</h2>
+    <h3>Salvinia molesta</h3>
+</div>
 
+
+<div class="container marketing" style="margin-top: -4%;">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7" style="margin-top: -11%;">
+            <h2 class="featurette-heading">About Salvinia. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">
+                Salvinia was introduced to Australia as an ornamental, aquarium plant. It has since been found in waterways in QLD, NSW, NT, WA and in isolated open waterways in regional Victoria, where successful eradication has been achieved.
+                Salvinia has prolific growth in nutrient rich water when water temperatures are between 18 - 28°C. Dams can be completely covered by salvinia in one growing season. Therefore it is critical that an effective eradication program be implemented as soon as an infestation is discovered, to prevent linked open water systems from becoming infested, and eradication less viable.
+                Azolla plants (Azolla spp.)are also small, floating, perennial ferns with long free hanging roots, that are commonly mistaken for salvinia. The key difference is in the leaf shape and colour. Azolla has triangular shaped leaves that become red in colour when exposed to high levels of sunlight.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/salvinia-crowded-resized.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/salvinia-isolated-resized.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top: -5%;">
+            <h2 class="featurette-heading">Salvinia is a State prohibited weed: <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                Salvinia originated in South America and is a problematic weed in North America, Hawaii, the Philippines, South East Asia, PNG, India, Africa and New Zealand. In Australia it is declared as a prohibited weed in all States and Territories.
+                Salvinia is a floating fern that can quickly form dense mats and completely cover the water surface by doubling in biomass every few days when conditions are suitable. With this rapid growth, it can block waterways, impede irrigation and prevent recreational activities and decrease water quality, resulting in the loss of native flora and fauna.
+            </p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">How can I identify it? <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                Salvinia has small oval leaves that grow in opposite pairs on the leaf stem. These floating leaves are green and covered in waxy hairs which make the leaves water repellent. The leaf shape varies greatly depending on the growth stage of the plant and if the plant is crowded.
+             </p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/salvinia-roots-resized.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/salvinia-inpact-resized.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top:-5%;">
+            <h2 class="featurette-heading">Control and Report. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                <b>Caution: Please do not attempt to treat or dispose of Salvinia yourself. The department will treat, remove and dispose of alligator weed safely, at no cost to the land owner.</b>
+                <br />If you suspect you may have seen Salvinia, please contact DEDJTR immediately. Phone 136 186, send an email to weed.spotters@ecodev.vic.gov.au using the our template here or make an online report here so that we can help you with most recent sightings.
+                <br /><b>
+                    or simply, report it from us:
+                </b>
+                <div>
+                    <!-- Report function would be completed in Iteration 2, not support for now -->
+                    <button type="button" class="btn yellow-btn normal-btn" onclick="sClick();">Report</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function sClick() {
+        localStorage.setItem("plantSelect", 'S');
+        location.href = "@Url.Action("Report", "Home")";
+    }
+</script>

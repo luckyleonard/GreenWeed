@@ -1,8 +1,100 @@
-﻿
+﻿<!-- ***This is the page about Poverty Weed(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+    template, and customising it with the information about Poverty Weed. It has major 4 sections,
+    Home-Identify-Control-Contact. Details as followed. ***-->
+
 @{
     ViewBag.Title = "PovertyWeed";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2>PovertyWeed</h2>
+<div class="container">
+    <h2 style="font-family: 'Comic Sans MS'">Poverty Weed</h2>
+    <h3>Iva axillaris Pursh</h3>
+</div>
 
+
+<div class="container marketing" style="margin-top: -4%;">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7" style="margin-top: -4%;">
+            <h2 class="featurette-heading">About Poverty Weed. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">
+                Poverty weed is declared under the Catchment and Land Protection Act (1994) as a State prohibited weed. Poverty weed originated in North America where it is a significant weed of rangelands, cereals, overgrazed pastures, and irrigated crops in Canada and the north-western United States. It has not established on any other continent except Australia. It was first recorded from Newstead in north central Victoria in 1926 and there are currently infestations in northern Victoria.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/poverty_weed_flower.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/poverty_weed.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top: -5%;">
+            <h2 class="featurette-heading">Poverty Weed is a State prohibited weed: <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                State prohibited weeds either do not occur in Victoria, or are present and can reasonably be expected to be eradicated. State prohibited weeds are the highest category of noxious weeds under the Catchment and Land Protection Act (1994). Poverty weed is a strong competitor, and may be the only plant species present in dense infestations. Chemicals found in both the roots and leaves of the plant inhibit the growth of other plants, while large food reserves in its roots allow new growth to develop in drought conditions. It has a strong smell and taste and is unpalatable to stock. Spread mainly occurs when earth-moving or cultivation equipment drags pieces of root from infested to clean areas.</p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">How can I identify it? <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                A long-lived perennial herb usually about 20 to 30 cm high but can reach 40 cm. It reproduces from both roots and seeds. The top-growth dies off in autumn and re-shoots in spring.
+                Its leaves are aromatic (when crushed), hairy, grey-green, 10-30 mm long and grow directly from the main stem. Lower leaves are arranged opposite each other; upper leaves are smaller and alternately arranged.
+                The flower head is greenish yellow (5-7 mm across) nodding on a short stalk at the base of upper leaves and appears in summer.
+            </p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/poverty_weed_3.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/poverty_weed_leaves4.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top:-5%;">
+            <h2 class="featurette-heading">Control and Report. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                <b>Caution: Please do not attempt to treat or dispose of Poverty Weed yourself. The department will treat, remove and dispose of alligator weed safely, at no cost to the land owner.</b>
+                <br />If you suspect you may have seen Poverty Weed, please contact DEDJTR immediately. Phone 136 186, send an email to weed.spotters@ecodev.vic.gov.au using the our template here or make an online report here so that we can help you with most recent sightings.
+                <br /><b>
+                    or simply, report it from us:
+                </b>
+                <div>
+                    <!-- Report function would be completed in Iteration 2, not support for now -->
+                    <button type="button" class="btn yellow-btn normal-btn" onclick="pwClick();">Report</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function pwClick() {
+        localStorage.setItem("plantSelect", 'PW');
+        location.href = "@Url.Action("Report", "Home")";
+    }
+</script>

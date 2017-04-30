@@ -1,8 +1,104 @@
-﻿
+﻿<!-- ***This is the page about Karoo Thorn(one of invasive plants), this page is using _LayoutPlant.cshtml as the
+    template, and customising it with the information about Karoo Thorn. It has major 4 sections,
+    Home-Identify-Control-Contact. Details as followed. ***-->
+
 @{
     ViewBag.Title = "KarooThorn";
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2>KarooThorn</h2>
+<div class="container">
+    <h2 style="font-family: 'Comic Sans MS'">Karoo Thorn</h2>
+    <h3>Acacia karroo Hayne</h3>
+</div>
 
+
+<div class="container marketing" style="margin-top: -4%;">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7" style="margin-top: -4%;">
+            <h2 class="featurette-heading">About Karoo Thorn. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">
+                Karoo thorn and giraffe thorn are declared under the Catchment and Land Protection Act (1994) as State prohibited weeds. These trees are native to southern Africa. Karoo thorn has been introduced into Victoria through plantings in botanic gardens, zoos and public parks, however giraffe thorn has not been recorded in Australia. These trees have the potential to invade large areas of regional Victoria if introduced and not removed.
+                <br /><b>The white spines of Karoo thorn may be up to 25 cm long and occur in pairs.</b>
+   
+             </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/KarooThorn1.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/KarooThorn2.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top: -5%;">
+            <h2 class="featurette-heading">Karoo Thorn is a State prohibited weed: <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                Karoo thorn is one of the most widespread trees in southern Africa and is a weed in Europe, South America and South Africa. It has the potential to invade southern Australia, particularly in open grasslands and rangelands in the south-east. The spines injure grazing animals, and make thickets impenetrable. Giraffe thorn has been assessed as potentially highly invasive in Australia. Climate predictions indicate that it could occupy large areas of inland and northern Australia.
+            </p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">How can I identify it? <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                Karoo and giraffe thorn plants can grow as either shrubs or trees: Karoo thorn grows 4-25 m tall and giraffe thorn grows 2-16 m tall. Both have green fern-like leaves, and yellow ball-shaped flowers which appear in spring to summer.
+                Karoo thorn seed pods are smooth, sickle-shaped, growing to 16 cm long and split open exposing ripe seeds. Giraffe thorn seed pods are half-moon shaped growing to 13 cm long, they are covered in velvety grey hairs and do not open.
+                The white paired spines of the Karoo thorn can grow up to 25 cm. Giraffe thorn spines are also paired and white but only grow up to 6 cm long and often have a swollen base.
+
+            </p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/KarooThorn3.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/KarooThorn4.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top:-5%;">
+            <h2 class="featurette-heading">Control and Report. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                <b>Caution: Please do not attempt to treat or dispose of Karoo Thorn yourself. The department will treat, remove and dispose of alligator weed safely, at no cost to the land owner.</b>
+                <br />If you suspect you may have seen Karoo Thorn, please contact DEDJTR immediately. Phone 136 186, send an email to weed.spotters@ecodev.vic.gov.au using the our template here or make an online report here so that we can help you with most recent sightings.
+                <br /><b>
+                    or simply, report it from us:
+                </b>
+                <div>
+                    <!-- Report function would be completed in Iteration 2, not support for now -->
+                    <button type="button" class="btn yellow-btn normal-btn" onclick="ktClick();">Report</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function ktClick() {
+        localStorage.setItem("plantSelect", 'KT');
+        location.href = "@Url.Action("Report", "Home")";
+    }
+</script>

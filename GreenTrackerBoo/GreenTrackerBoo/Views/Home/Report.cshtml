@@ -18,29 +18,44 @@
 <div class="form-style-5">
     <fieldset>
          <legend style='color: #3c763d'><span class="number">1</span> Report the Invasive Plant</legend>
-         <label for="job">Plant: *</label>
-         <select id="job" name="field4">
+         <label for="plantList">Plant: *</label>
+         <select id="plantSel" name="field4">
              <optgroup label="Common Name">
-                 <option value="fishkeeping">Alligator Weed</option>  
-                 <option value="reading">Bear-skin fescue</option>                   
-                 <option value="boxing">Black knapweed</option>                    
-                 <option value="debate">Branched broomrape</option>                   
-                 <option value="gaming">Camel thorn</option>                   
-                 <option value="snooker">Giant knotweed</option>                   
-                 <option value="other_indoor">Giraffe thorn</option>               
+                 <option value="AW">Alligator Weed</option>                  
+                 <option value="BK">Black knapweed</option>                        
+                 <option value="CT">Camel thorn</option>                   
+                 <option value="GK">Giant knotweed</option>                   
+                 <option value="ILS">Ivy-Leafed Sida</option>      
+                 <option value="KT">Karoo Thorn</option>  
+                 <option value="LNG">Lobed Needle Grass</option>  
+                 <option value="MFG">Mexican Father Grass</option>  
+                 <option value="NT">Nodding Thistle</option>  
+                 <option value="PR">Perennial Ragweed</option>  
+                 <option value="PW">Poverty Weed</option>  
+                 <option value="S">Salvinia</option>  
+                 <option value="TH">Tangled Hypericum</option>  
+                 <option value="WH">Water Hyacinth</option>           
              </optgroup>
              <optgroup label="Scientific Name">
-                 <option value="football">Alternanthera philoxeroides (Mart.) Griseb.</option>
-                 <option value="swimming">Festuca gautieri (Hack.) K. Richt.</option>
-                 <option value="fishing">Centaurea nigra L.</option>
-                 <option value="climbing">Orobanche ramosa L.</option>
-                 <option value="cycling">Alhagi maurorum Medik.</option>
-                 <option value="other_outdoor">Fallopia sachalinensis (F. Schmidt ex Maxim) Ronse Decr.</option>
-                 <option value="Giraffe thorn">Acacia erioloba E. Mey</option>
+                 <option >Alternanthera philoxeroides (Mart.) Griseb.</option>
+                 <option >Centaurea nigra L.</option>
+                 <option >Alhagi maurorum Medik.</option>
+                 <option >Fallopia sachalinensis (F. Schmidt ex Maxim) Ronse Decr.</option>
+                 <option >Malvella leprosa</option>
+                 <option >Acacia karroo Hayne</option>  
+                 <option >Nassella charruana (Arechav.) Barkworth</option>  
+                 <option >Nassella tenuissima</option>  
+                 <option >Carduus nutans</option>  
+                 <option >Ambrosia artemisiifolia</option>  
+                 <option >Iva axillaris Pursh</option>  
+                 <option >Salvinia molesta</option>  
+                 <option >Hypericum triquetrifolium Turra</option>  
+                 <option >Eichhornia crassipes</option>  
              </optgroup>       
          </select>
         <div id="errors" class="errorMessage" style="color:red"></div>
-        <input id="email" type="email" name="field2" placeholder="Your Email: 
+        <input id="email" type="email" name="field2" placeholder="Your Email: " />
+        <input type="text" name="field1" placeholder="Your Name: ">
     </fieldset>
     <fieldset>
         <legend style='color: #3c763d'><span class="number">2</span> Additional Comments</legend>
@@ -63,7 +78,7 @@
                                 <legend style='color: #3c763d'><span class="number">3</span> Location Info (Click on the Map to set marker)</legend>
                                 <section class="container">
                                     <div id="errors1" class="errorMessage" style="color:red"></div>
-                                    <div id="map" style='width: 82%; height: 300px;'></div>
+                                    <div id="map" style="height: 300px; overflow: hidden; max-width: 70%;"></div>
                                     <script>
                                         L.mapbox.accessToken = 'pk.eyJ1IjoiZHpodTMxIiwiYSI6ImNqMTd3OTkxbTA1bWsyd3FxN3E1ZHIzbmIifQ.gdbgSUNiTB6Ho-5I-sPlBA';
 
@@ -98,8 +113,8 @@
                                                 });
                                         }
                                     </script>
-                                    <div><h4>Here is the location you want to report:</h4>
-                                        <input id="lattext" class="form-control" type="text" name="search" placeholder="Latitude" style="width: 82%" disabled="disabled" />
+                                    <div><h4 style ="font-family:Georgia ">Here is the location you want to report:</h4>
+                                        <input id="lattext" class="form-control" type="text" name="search" placeholder="Latitude" style="overflow:hidden; max-width:70%;" disabled="disabled" />
                                         <input id="lngtext" class="form-control" type="text" name="search" placeholder="Longitude" style="display:none" />
                                     </div>
                                 </section>
@@ -131,4 +146,13 @@
             }
         }        
     }
+
+    //remove the active class from Home to this page
+    $(document).ready(function () {
+        $("ul li").removeClass("active");
+        $('#reportTag').addClass("active");
+        var plantSelector = localStorage.getItem("plantSelect");
+        document.getElementById("plantSel").value = plantSelector;
+    });
+
 </script>
