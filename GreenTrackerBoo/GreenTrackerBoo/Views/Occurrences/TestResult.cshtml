@@ -184,20 +184,21 @@
                         inBounds.unique().forEach(function (item) {
                             var row = document.createElement("tr");
                             var cell = document.createElement("td");
-                            //var a = document.createElement('a');
-                           // var linkText = document.createTextNode("my title text");
-                           // a.appendChild(linkText);
-                         //   a.title = item;
-                          //  a.href = itrm;
-                          //  cell.appendChild(a);
-
                             cell.textContent = item;
                             cell.id = item;
-                            //$('td1').attr('href', item);
-                            //document.getElementById(item).textContent = item;
                             row.appendChild(cell);
                             tbody.appendChild(row);
                         });
+                        var larow = document.createElement("tr");
+                        var lacell = document.createElement("td");
+                        var la= document.createElement("a");
+                        la.href="@Url.Action("Library", "Home")";
+                        la.target = "_blank";
+                        la.text = "**Click here to check the Plant Library**";
+                        la.style = "color:#df1e37;"
+                        lacell.appendChild(la);
+                        larow.appendChild(lacell);
+                        tbody.appendChild(larow);
                         table.appendChild(tbody);
 
                         map.on('move', function () {
@@ -237,6 +238,16 @@
                                 row.appendChild(cell);
                                 tbody.appendChild(row);
                             });
+                            var larow = document.createElement("tr");
+                            var lacell = document.createElement("td");
+                            var la= document.createElement("a");
+                            la.href="@Url.Action("Library", "Home")";
+                            la.target = "_blank";
+                            la.text = "**Click here to check the Plant Library**";
+                            la.style = "color:#df1e37;"
+                            lacell.appendChild(la);
+                            larow.appendChild(lacell);
+                            tbody.appendChild(larow);
                             table.appendChild(tbody);
                         });
 

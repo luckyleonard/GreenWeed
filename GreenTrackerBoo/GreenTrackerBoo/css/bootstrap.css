@@ -5736,8 +5736,7 @@ button.close {
 }
 table a,
 .table a {
-  color: #fff;
-  text-decoration: underline;
+  color: #350f0f;
 }
 .has-warning .help-block,
 .has-warning .control-label {

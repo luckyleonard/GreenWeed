@@ -133,18 +133,25 @@
         document.getElementById('errors1').innerHTML = "";
         document.getElementById('errors').innerHTML = "";
         if (validateEmail(email) && latlng != "") {
-            alert("*****Your report had been submitted successfully! Thank you!******");
-            location.reload();
+            swal({ title: "Thank you!", text: "Your report had been submitted successfully!", type: "success", closeOnConfirm: true },
+            function () {
+                location.reload();
+            });
         }
         else {
+            $('html,body').scrollTop(0);
+            swal({ title: "Sorry, please try again :)", text: "At least email and location should be fufilled.", type: "warning", closeOnConfirm: true },
+                function () {
+                    $('html,body').scrollTop(0);
+                });
             if (!validateEmail(email)) {
                 document.getElementById('errors').innerHTML = "***Please input a valid email address***";//error message 
                 $('html,body').scrollTop(0);
             }
             if (latlng === undefined || latlng == null || latlng == "") {
                 document.getElementById('errors1').innerHTML = "***Please mark the location on the map***";
-            }
-        }        
+            }          
+        }
     }
 
     //remove the active class from Home to this page

@@ -209,6 +209,9 @@
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\carousel_1.css" />
     <Content Include="css\carousel.css" />
+    <Content Include="css\dist\sweetalert-dev.js" />
+    <Content Include="css\dist\sweetalert.css" />
+    <Content Include="css\dist\sweetalert.min.js" />
     <Content Include="css\images\plants\alligator4.jpg" />
     <Content Include="css\images\plants\AW_aquatic-resized.jpg" />
     <Content Include="css\images\plants\AW_roots-resized.jpg" />
