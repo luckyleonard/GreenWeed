@@ -137,7 +137,6 @@
                         @foreach (var item in Model)
                   {
                             
-
                       <text>
                         //return the plant name on a arraylist
                         var title = '@item.Plant.CommonName';
@@ -147,7 +146,13 @@
                             icon: L.icon({ iconUrl: '/css/images/stop1.png', iconSize: [30, 30] }),
                             title: title
                         });
-                        marker.bindPopup(title);
+                        var popupContent = '<div>' +
+                                           '<h2 style= "text-align:center">' + title + '</h2>'
+                                           + '<div>' + '<img src="~/css/images/plants/profile/alligator-profile.jpg" style = "width:200px"/>' + '</div>'
+                                           + '<div>' + '<a href="">' + 'Detail</a>' + '</div>'
+                                           + '<div>' + '<a href="@Url.Action("Report", "Home")">' + 'Report Same</a>' + '</div>'
+                                           + '</div>'
+                        marker.bindPopup(popupContent);
                         markers.addLayer(marker);
                         </text>
                   }

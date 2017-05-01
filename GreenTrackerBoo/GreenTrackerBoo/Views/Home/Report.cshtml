@@ -89,26 +89,24 @@
 
 
                                                     //center the map accord to user's location
-                                                    var map = L.mapbox.map('map', 'mapbox.streets').setView([position.coords.latitude, position.coords.longitude], 12);
+                                                    var map = L.mapbox.map('map', 'mapbox.streets').setView([position.coords.latitude, position.coords.longitude], 15);
                                                     var markerClick;
+                                                    markerClick = L.marker([position.coords.latitude, position.coords.longitude]);
+                                                    markerClick.addTo(map);
+                                                    document.getElementById('lattext').value = "LatLng(" + position.coords.latitude.toFixed(5) + ", " + position.coords.longitude.toFixed(5) + ")";
+                                                    document.getElementById('lngtext').value = position.coords.longitude;
 
                                                     map.on('click', function (e) {
                                                         placeMarker(e.latlng);
                                                         //e.latlng.lat is reutrned lat,e.latlng.lng is reutrned lng
                                                         document.getElementById('lattext').value = e.latlng;
                                                         document.getElementById('lngtext').value = e.latlng.lng;
+                                                        //e.geolocation.
+                                                        
                                                     })
 
                                                     function placeMarker(location) {
-
-                                                        if (markerClick == null) {
-                                                            markerClick = L.marker(location);
-                                                            markerClick.addTo(map);
-
-                                                        }
-                                                        else {
-                                                            markerClick.setLatLng(location);
-                                                        }
+                                                        markerClick.setLatLng(location);
                                                     }
                                                 });
                                         }
