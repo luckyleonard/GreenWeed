@@ -1424,7 +1424,7 @@ th {
 }
 .table > thead > tr > th {
   vertical-align: bottom;
-  border-bottom: 2px solid #0d747c;
+  border-bottom: 2px solid #3c763d;
 }
 .table > caption + thead > tr:first-child > th,
 .table > colgroup + thead > tr:first-child > th,
@@ -1465,11 +1465,11 @@ th {
 }
 .table-striped > tbody > tr:nth-child(odd) > td,
 .table-striped > tbody > tr:nth-child(odd) > th {
-  background-color: #0f7f88;
-}
+  background-color: #0f7f88; 
+} 
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
-  background-color: #13a0aa;
+  background-color: #6eb26e;
 }
 table col[class*="col-"] {
   position: static;

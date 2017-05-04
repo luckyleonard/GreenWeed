@@ -29,6 +29,7 @@ namespace GreenTrackerBoo.Models
         public string ScientificName { get; set; }
         public string Description { get; set; }
         public string PageLink { get; set; }
+        public string iconPic { get; set; }
     
         public virtual ICollection<Occurrence> Occurrence { get; set; }
         public virtual ICollection<Report> Report { get; set; }

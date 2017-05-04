@@ -4,5 +4,104 @@
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2>JapaneseKnotweed</h2>
 
+<div class="container">
+    <h2 style="font-family: 'Comic Sans MS'">Japanese Knotweed</h2>
+    <h3>Fallopia japonica, Fallopia sachalinensis, Fallopia x bohemica</h3>
+</div>
+
+
+<div class="container marketing" style="margin-top: -4%;">
+
+    <!-- START THE FEATURETTES -->
+    <hr class="featurette-divider">
+
+    <!-- ***This is the home section, could provides general introduction about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=home to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7" style=" margin-top: -8%;">
+            <h2 class="featurette-heading">About Japanese Knotweed. <span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">
+                Knotweeds can form dense, leafy thickets smothering the under story. They can rapidly invade riverbanks and sites subject to disturbance. Knotweeds die back over winter leaving bare soils open to erosion and young shoots can grow as rapidly as 8 cm a day in favorable conditions. The vigorous potential of knotweeds is reflected by their ability to regenerate from rhizomes buried up to 1 m deep and to penetrate asphalt 5 cm thick.
+                In Scotland and other areas of the UK, mortgages have been denied as a result of knotweed infestations, because of the plants ability to grow through concrete structures. The ability to penetrate concrete and asphalt is due to the plants origins of regeneration after volcanic eruptions, on the high altitude slopes of Japanese volcanoes.
+            </p>
+        </div>
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/KW_japflower-resized.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/KW_pavement-resized.jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top: -5%;">
+            <h2 class="featurette-heading">Japanese Knotweed is a State prohibited weed: <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                Knotweed is native to eastern Asia. It is listed by the World Conservation Union as one of the world's worst invasive species and is now a problem weed in parts of Europe and North America.The invasive root system and strong growth can damage concrete foundations, buildings, roads, paving, retaining walls and architectural sites. It can also reduce the carrying capacity of waterways.
+                In Victoria, three species of knotweed are declared as State prohibited weeds; Japanese knotweed (Fallopia japonica), giant knotweed (Fallopia sachalinensis) and a hybrid of the two (Fallopia x bohemica).
+            </p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the control section, could provides suggestion about how to control Alligator Weed,
+    or the contact details about related organization to control them, this also using the css file
+    from Content/template_page, assigned with ID=control to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">How can I identify it? <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">
+                Knotweeds are semi-woody perennials. They flower in summer and most of the foliage will die back over autumn and winter
+                Knotweed stems are hollow, bamboo like and can become tough and woody with age.
+                New stems may be purple-red in colour.
+                Japanese knotweed leaves have a flat leaf base.
+                Japanese knotweed has white flowers', clustered in slender branch like spikes.
+                Giant knotweed leaves have a heart shaped leaf base.
+                Giant knotweed flowers are green-yellow, clustered in loose, branched florescence's.
+                The knotweed hybrid will usually have leaves similar to the Japanese knotweed but can display characteristics of either species.
+
+            </p>
+        </div>
+
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/KW_stem-resized.jpg" alt="Generic placeholder image">
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- ***This is the identify section, could provides the identifying methods about Alligator Weed, using the css file
+    from Content/template_page, assigned with ID=identify to corresponding the function of navigator.*** -->
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive" src="~/css/images/plants/KW_japleaf-resized (1).jpg" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7" style="margin-top:-5%;">
+            <h2 class="featurette-heading">Control and Report. <span class="text-muted">See for yourself.</span></h2>
+            <p class="lead">
+                <b>Caution: Please do not attempt to treat or dispose of Japanese Knotweed yourself. The department will treat, remove and dispose of alligator weed safely, at no cost to the land owner.</b>
+                <br />If you suspect you may have seen Japanese Knotweed, please contact DEDJTR immediately. Phone 136 186, send an email to weed.spotters@ecodev.vic.gov.au using the our template here or make an online report here so that we can help you with most recent sightings.
+                <br /><b>
+                    or simply, report it from us:
+                </b>
+                <div>
+                    <!-- Report function would be completed in Iteration 2, not support for now -->
+                    <button type="button" class="btn yellow-btn normal-btn" onclick="jkClick();">Report</button>
+                </div>
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function jkClick() {
+        localStorage.setItem("plantSelect", 'JK');
+        location.href = "@Url.Action("Report", "Home")";
+    }
+</script>

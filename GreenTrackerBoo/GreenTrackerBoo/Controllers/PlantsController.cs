@@ -112,9 +112,9 @@ namespace GreenTrackerBoo.Controllers
             return View();
         }
 
-        public ActionResult MexicanFatherGrass()
+        public ActionResult MexicanFeatherGrass()
         {
-            ViewBag.Title = "Mexican Father Grass";
+            ViewBag.Title = "Mexican Feather Grass";
             return View();
         }
 

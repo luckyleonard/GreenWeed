@@ -334,7 +334,7 @@ body {
     height:35px;
 }
 .form-style-5 .number {
-    background: #1abc9c;
+    background: #58b725;
     color: #fff;
     height: 30px;
     width: 30px;
@@ -355,19 +355,19 @@ body {
     padding: 19px 39px 18px 39px;
     color: #FFF;
     margin: 0 auto;
-    background: #1abc9c;
+    background: #58b725;
     font-size: 18px;
     text-align: center;
     font-style: normal;
     width: 35%;
-    border: 1px solid #16a085;
+    border: 1px solid #58b725;
     border-width: 1px 1px 3px;
     margin-bottom: 10px;
 }
 .form-style-5 input[type="submit"]:hover,
 .form-style-5 input[type="button"]:hover
 {
-    background: #109177;
+    background: #58b725;
 }
 
 #map {
@@ -403,7 +403,6 @@ body {
   background: #fff;
   margin: 0 auto;
   padding: 10px 17px;
-  -webkit-box-shadow: 2px 2px 3px -1px rgba(0,0,0,0.35);
 }
 
 #keywords {
@@ -415,7 +414,7 @@ body {
 
 #keywords thead {
   
-  background: #c9dff0;
+  background: #58b725;
 }
 #keywords thead tr th { 
   font-weight: bold;
@@ -438,6 +437,8 @@ body {
   color: #555;
 }
 #keywords tbody tr td {
+  vertical-align: middle;
+  cursor: pointer;
   text-align: center;
   padding: 15px 10px;
 }

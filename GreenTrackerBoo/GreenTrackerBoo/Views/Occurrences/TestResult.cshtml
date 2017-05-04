@@ -115,195 +115,236 @@
             </tr>
         </table>
         <script>
-            //api from mapbox to show the result on the map
-            L.mapbox.accessToken = 'pk.eyJ1IjoiZHpodTMxIiwiYSI6ImNqMTd3OTkxbTA1bWsyd3FxN3E1ZHIzbmIifQ.gdbgSUNiTB6Ho-5I-sPlBA';
-            var submit = document.getElementById('submit');
+    //api from mapbox to show the result on the map
+    L.mapbox.accessToken = 'pk.eyJ1IjoiZHpodTMxIiwiYSI6ImNqMTd3OTkxbTA1bWsyd3FxN3E1ZHIzbmIifQ.gdbgSUNiTB6Ho-5I-sPlBA';
+    var submit = document.getElementById('submit');
 
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function (position) {
-                    //if get current location successful
-                    if (localStorage.getItem("storageLat") == 'null' || localStorage.getItem("storageLng") == 'null') {
-                        var map = L.mapbox.map('map', 'mapbox.streets').setView([position.coords.latitude, position.coords.longitude], 13);
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            //if get current location successful
+            if (localStorage.getItem("storageLat") == 'null' || localStorage.getItem("storageLng") == 'null') {
+                var map = L.mapbox.map('map', 'mapbox.streets').setView([position.coords.latitude, position.coords.longitude], 13);
+            }
+            else {
+                //if user search something
+                var map = L.mapbox.map('map', 'mapbox.streets').setView([localStorage.getItem("storageLat"), localStorage.getItem("storageLng")], 13);
+                localStorage.setItem("storageLat", 'null');
+                localStorage.setItem("storageLng", 'null');
+            }
+            var markerClick;
+            markerClick = L.marker([position.coords.latitude, position.coords.longitude]);
+            var popupContent = '<div>' +
+                               '<h2 style= "text-align:center">' + "You're Here" + '</h2>'
+                               + '<div>'
+            markerClick.bindPopup(popupContent);
+            markerClick.addTo(map);
 
-                    }
-                    else {
-                        //if user search something
-                        var map = L.mapbox.map('map', 'mapbox.streets').setView([localStorage.getItem("storageLat"), localStorage.getItem("storageLng")], 13);
-                        localStorage.setItem("storageLat", 'null');
-                        localStorage.setItem("storageLng", 'null');
-                    }
-                    var markers = new L.MarkerClusterGroup();
-                    map.on('ready', function () {
-                        @foreach (var item in Model)
-                  {
-                            
+            var markers = new L.MarkerClusterGroup();
+            map.on('ready', function () {
+                @foreach (var item in Model)
+                   {
+
                       <text>
-                        //return the plant name on a arraylist
-                        var title = '@item.Plant.CommonName';
-                        var link = '@item.Plant.PageLink';
-                        var marker = L.marker(new L.LatLng('@item.Latitude', '@item.Longitude'),
-                        {
-                            icon: L.icon({ iconUrl: '/css/images/stop1.png', iconSize: [30, 30] }),
-                            title: title
-                        });
-                        var popupContent = '<div>' +
-                                           '<h2 style= "text-align:center">' + title + '</h2>'
-                                           + '<div>' + '<img src="~/css/images/plants/profile/alligator-profile.jpg" style = "width:200px"/>' + '</div>'
-                                           + '<div>' + '<a href="">' + 'Detail</a>' + '</div>'
-                                           + '<div>' + '<a href="@Url.Action("Report", "Home")">' + 'Report Same</a>' + '</div>'
-                                           + '</div>'
-                        marker.bindPopup(popupContent);
-                        markers.addLayer(marker);
-                        </text>
+                //return the plant name on a arraylist
+                var title = '@item.Plant.CommonName';
+                var link = '@item.Plant.PageLink'
+                var marker = L.marker(new L.LatLng('@item.Latitude', '@item.Longitude'),
+                {
+                    icon: L.icon({ iconUrl: '/css/images/stop1.png', iconSize: [30, 30] }),
+                    title: title
+                });
+                var popupContent = '<div>' +
+                '<h2 style= "text-align:center">' + title + '</h2>'
+                + '<div>' + '<img src="~/css/images/plants/icons/aw.jpg"  style = "width:200px"/>' + '</div>'
+                + '<div>' + '<a href="@item.Plant.PageLink" target="_blank">' + 'Detail</a>' + '</div>'
+                + '<div>' + '<a href="@Url.Action("Report", "Home")">' + 'Report</a>' + '</div>'
+                + '</div>'
+                marker.bindPopup(popupContent);
+                markers.addLayer(marker);
+                </text>
                   }
 
-                        map.addLayer(markers);
+                map.addLayer(markers);
 
-                        var inBounds = [],
-                           // Get the map bounds - the top-left and bottom-right locations.
-                           bounds = map.getBounds();
+                var inBounds = [],
+                   // Get the map bounds - the top-left and bottom-right locations.
+                   bounds = map.getBounds();
 
-                        // For each marker, consider whether it is currently visible by comparing
-                        // with the current map bounds.
-                        markers.eachLayer(function (marker) {
-                            if (bounds.contains(marker.getLatLng())) {
-                                inBounds.push(marker.options.title)
-                            }
+                // For each marker, consider whether it is currently visible by comparing
+                // with the current map bounds.
+                markers.eachLayer(function (marker) {
+                    if (bounds.contains(marker.getLatLng())) {
+                        inBounds.push(marker.options.title)
+                    }
 
-                        });
+                });
 
-                        // Display a list of markers to table.
-                        var table = document.getElementById("table");  // set this to your table
-                        var thead = document.createElement("thead");
-                        var tbody = document.createElement("tbody");
-                        var headrow = document.createElement("tr");
-                        var th = document.createElement("th");
-                        th.textContent = "Common Name";
-                        headrow.appendChild(th);
-                        thead.appendChild(headrow);
-                        table.appendChild(thead);
+                // Display a list of markers to table.
+                var table = document.getElementById("table");  // set this to your table
+                var thead = document.createElement("thead");
+                var tbody = document.createElement("tbody");
+                var headrow = document.createElement("tr");
+                var th = document.createElement("th");
+                th.textContent = "Common Name (Click for more info)";
+                headrow.appendChild(th);
+                thead.appendChild(headrow);
+                table.appendChild(thead);
 
-                        table.appendChild(tbody);
-                        table.appendChild(thead);
+                table.appendChild(tbody);
+                table.appendChild(thead);
 
+                if (inBounds.length > 0) {
+                    inBounds.unique().forEach(function (item) {
+                        var row = document.createElement("tr");
+                        var cell = document.createElement("td");
+                        var la = document.createElement("a");
+                        la.text = item;
+                        var link = getLink(item);
+                        la.href = link;
+                        la.target = "_blank";
+                        cell.appendChild(la);
+                        row.appendChild(cell);
+                        tbody.appendChild(row);
+                    });
+                }
+                else {
+                    var row = document.createElement("tr");
+                    var cell = document.createElement("td");
+                    cell.textContent = "**Congrats! No invasive plants here!**"
+                    row.appendChild(cell);
+                    tbody.appendChild(row);
+                }
+                var larow = document.createElement("tr");
+                var lacell = document.createElement("td");
+                var la= document.createElement("a");
+                la.href="@Url.Action("Library", "Home")";
+                la.target = "_blank";
+                la.text = "Click here to check all Plant Library";
+                la.style = "color:#df1e37;"
+                lacell.appendChild(la);
+                larow.appendChild(lacell);
+                tbody.appendChild(larow);
+                table.appendChild(tbody);
+
+                map.on('move', function () {
+                    // Construct an empty list to fill with onscreen markers.
+                    var inBounds = [],
+                    // Get the map bounds - the top-left and bottom-right locations.
+                    bounds = map.getBounds();
+
+                    // For each marker, consider whether it is currently visible by comparing
+                    // with the current map bounds.
+                    markers.eachLayer(function (marker) {
+                        if (bounds.contains(marker.getLatLng())) {
+                            inBounds.push(marker.options.title)
+                        }
+
+                    });
+
+                    // Display a list of markers into table.
+                    var table = document.getElementById("table");  // set this to your table
+                    table.innerHTML = "";
+                    var tbody = document.createElement("tbody");
+                    var thead = document.createElement("thead");
+                    var headrow = document.createElement("tr");
+                    var th = document.createElement("th");
+                    th.textContent = "Common Name (Click for more info)";
+                    headrow.appendChild(th);
+                    thead.appendChild(headrow);
+                    table.appendChild(thead);
+
+                    table.appendChild(tbody);
+                    table.appendChild(thead);
+
+                    if (inBounds.length > 0) {
                         inBounds.unique().forEach(function (item) {
                             var row = document.createElement("tr");
                             var cell = document.createElement("td");
-                            cell.textContent = item;
-                            cell.id = item;
+                            var la = document.createElement("a");
+                            la.text = item;
+                            var link = getLink(item);
+                            la.href = link;
+                            la.target = "_blank";
+                            cell.appendChild(la);
                             row.appendChild(cell);
                             tbody.appendChild(row);
                         });
-                        var larow = document.createElement("tr");
-                        var lacell = document.createElement("td");
-                        var la= document.createElement("a");
-                        la.href="@Url.Action("Library", "Home")";
-                        la.target = "_blank";
-                        la.text = "**Click here to check the Plant Library**";
-                        la.style = "color:#df1e37;"
-                        lacell.appendChild(la);
-                        larow.appendChild(lacell);
-                        tbody.appendChild(larow);
-                        table.appendChild(tbody);
-
-                        map.on('move', function () {
-                            // Construct an empty list to fill with onscreen markers.
-                            var inBounds = [],
-                            // Get the map bounds - the top-left and bottom-right locations.
-                            bounds = map.getBounds();
-
-                            // For each marker, consider whether it is currently visible by comparing
-                            // with the current map bounds.
-                            markers.eachLayer(function (marker) {
-                                if (bounds.contains(marker.getLatLng())) {
-                                    inBounds.push(marker.options.title)
-                                }
-
-                            });
-
-                            // Display a list of markers into table.
-                            var table = document.getElementById("table");  // set this to your table
-                            table.innerHTML = "";
-                            var tbody = document.createElement("tbody");
-                            var thead = document.createElement("thead");
-                            var headrow = document.createElement("tr");
-                            var th = document.createElement("th");
-                            th.textContent = "Common Name";
-                            headrow.appendChild(th);
-                            thead.appendChild(headrow);
-                            table.appendChild(thead);
-
-                            table.appendChild(tbody);
-                            table.appendChild(thead);
-
-                            inBounds.unique().forEach(function (item) {
-                                var row = document.createElement("tr");
-                                var cell = document.createElement("td");
-                                cell.textContent = item;
-                                row.appendChild(cell);
-                                tbody.appendChild(row);
-                            });
-                            var larow = document.createElement("tr");
-                            var lacell = document.createElement("td");
-                            var la= document.createElement("a");
-                            la.href="@Url.Action("Library", "Home")";
-                            la.target = "_blank";
-                            la.text = "**Click here to check the Plant Library**";
-                            la.style = "color:#df1e37;"
-                            lacell.appendChild(la);
-                            larow.appendChild(lacell);
-                            tbody.appendChild(larow);
-                            table.appendChild(tbody);
-                        });
-
-                        submit.onclick = function (e) {
-                            e.preventDefault();
-                            var lat1 = document.getElementById('input1').value;
-                            var lng1 = document.getElementById('input2').value;
-                            map.setView([lat1, lng1], 13);
-
-                        };
-                    });
-
-                //detect the error when get current loction funciton failed
-                }, function (error) {
-                    switch (error.code) {
-                        case error.PERMISSION_DENIED:
-                            alert("user did not share geolocation data");
-                            break;
-                        case error.POSITION_UNAVAILABLE:
-                            alert("could not detect current position");
-                            break;
-                        case error.TIMEOUT:
-                            alert("retrieving position timed out");
-                            break;
-                        default:
-                            alert("unknown error");
-                            break;
                     }
+                    else {
+                        var row = document.createElement("tr");
+                        var cell = document.createElement("td");
+                        cell.textContent = "**Congrats! No invasive plants here!**"
+                        row.appendChild(cell);
+                        tbody.appendChild(row);
+                    }
+                    var larow = document.createElement("tr");
+                    var lacell = document.createElement("td");
+                    var la= document.createElement("a");
+                    la.href="@Url.Action("Library", "Home")";
+                    la.target = "_blank";
+                    la.text = "Click here to check all Plant Library";
+                    la.style = "color:#df1e37;"
+                    lacell.appendChild(la);
+                    larow.appendChild(lacell);
+                    tbody.appendChild(larow);
+                    table.appendChild(tbody);
                 });
-            }
 
+                submit.onclick = function (e) {
+                    e.preventDefault();
+                    var lat1 = document.getElementById('input1').value;
+                    var lng1 = document.getElementById('input2').value;
+                    map.setView([lat1, lng1], 13);
 
-
-            //get unique value function
-            Array.prototype.unique = function () {
-                var res = [];
-                var json = {};
-                for (var i = 0; i < this.length; i++) {
-                    if (!json[this[i]]) {
-                        res.push(this[i]);
-                        json[this[i]] = 1;
-                    }
-                }
-                return res;
-            }
-
-            //remove the active class from Home to this page
-            $(document).ready(function () {
-                $("ul li").removeClass("active");
-                $('#exploreTag').addClass("active");
+                };
             });
+
+            //detect the error when get current loction funciton failed
+        }, function (error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    alert("user did not share geolocation data");
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    alert("could not detect current position");
+                    break;
+                case error.TIMEOUT:
+                    alert("retrieving position timed out");
+                    break;
+                default:
+                    alert("unknown error");
+                    break;
+            }
+        });
+    }
+
+
+
+    //get unique value function
+    Array.prototype.unique = function () {
+        var res = [];
+        var json = {};
+        for (var i = 0; i < this.length; i++) {
+            if (!json[this[i]]) {
+                res.push(this[i]);
+                json[this[i]] = 1;
+            }
+        }
+        return res;
+    }
+
+    //retrieve links
+    function getLink(commonName){
+        var commonNameLink = commonName.replace(/\s+/g, '');
+        var link = "https://greentracker.azurewebsites.net/Plants/" + commonNameLink;
+        return link;
+    }
+
+    //remove the active class from Home to this page
+    $(document).ready(function () {
+        $("ul li").removeClass("active");
+        $('#exploreTag').addClass("active");
+    });
         </script>
     </div>
     <div>
