@@ -11,12 +11,12 @@ namespace GreenTrackerBoo.Models
     public partial class Report
     {
         [Key]
-        public string ReportID { get; set; }
+        public int ReportID { get; set; }
         public string PlantID { get; set; }
-        public System.DateTime ReportDate { get; set; }
-        public decimal ReportLat { get; set; }
-        public decimal ReportLon { get; set; }
+        public float ReportLat { get; set; }
+        public float ReportLon { get; set; }
         public string AdditionalMessage { get; set; }
+        public string userEmail { get; set; }
 
         public virtual Plant Plant { get; set; }
     }

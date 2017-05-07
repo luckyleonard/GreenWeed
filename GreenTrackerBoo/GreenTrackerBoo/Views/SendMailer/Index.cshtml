@@ -1,0 +1,220 @@
+﻿@model GreenTrackerBoo.Models.MailModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutOther.cshtml";
+}
+
+<!--include api of the map function -->
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.0/mapbox-gl.js'></script>
+
+<!-- CSS, Normalize First, minify for production, using the master.css covering all less/css files -->
+<link rel="stylesheet" type='text/css' href="/Content/mytemplate_report/master.css" />
+@using (Html.BeginForm())
+{
+<div class="form-style-5">
+    <fieldset>
+        <legend style='color: #3c763d'><span class="number">1</span> Report the Invasive Plant</legend>
+        <label for="plantList">Plant: *</label>
+        <select id="plantSel" name="field4">
+            <optgroup label="Common Name">
+                <option value="AW">Alligator Weed</option>
+                <option value="BK">Black knapweed</option>
+                <option value="CT">Camel thorn</option>
+                <option value="GK">Giant knotweed</option>
+                <option value="ILS">Ivy-Leafed Sida</option>
+                <option value="JK">Japanese Knotweed</option>
+                <option value="KT">Karoo Thorn</option>
+                <option value="L">Lobed Needle Grass</option>
+                <option value="LNG">Lobed Needle Grass</option>
+                <option value="MFG">Mexican Father Grass</option>
+                <option value="NT">Nodding Thistle</option>
+                <option value="PR">Perennial Ragweed</option>
+                <option value="PW">Poverty Weed</option>
+                <option value="S">Salvinia</option>
+                <option value="TH">Tangled Hypericum</option>
+                <option value="WH">Water Hyacinth</option>
+            </optgroup>
+            <optgroup label="Scientific Name">
+                <option>Alternanthera philoxeroides (Mart.) Griseb.</option>
+                <option>Centaurea nigra L.</option>
+                <option>Alhagi maurorum Medik.</option>
+                <option>Fallopia sachalinensis (F. Schmidt ex Maxim) Ronse Decr.</option>
+                <option>Malvella leprosa</option>
+                <option>Acacia karroo Hayne</option>
+                <option>Nassella charruana (Arechav.) Barkworth</option>
+                <option>Nassella tenuissima</option>
+                <option>Carduus nutans</option>
+                <option>Ambrosia artemisiifolia</option>
+                <option>Iva axillaris Pursh</option>
+                <option>Salvinia molesta</option>
+                <option>Hypericum triquetrifolium Turra</option>
+                <option>Eichhornia crassipes</option>
+            </optgroup>
+        </select>
+        
+            @Html.ValidationSummary()
+            <p style="display:none">@Html.TextBoxFor(m => m.From, new { @Value = "sxin14@student.monash.edu" })</p>
+            <label>Your Email: * </label>
+            <p>@Html.TextBoxFor(m => m.To, new { @Value = "", id="email"})</p>
+            <div id="errors" class="errorMessage" style="color:red"></div>
+            <label>Your Name:  </label>
+            <p>@Html.TextBoxFor(m => m.ClientName, new { @Value = "" })</p>
+            <p style="display:none">@Html.TextBoxFor(m => m.Subject, new { @Value = "Report Confirmation" })</p>
+            <p style="display:none">@Html.TextAreaFor(m => m.Body, new { @Value = "" })</p>      
+    </fieldset>
+    <fieldset>
+        <legend style='color: #3c763d'><span class="number">2</span> Additional Comments</legend>
+        <textarea style='height: 150px;' name="field3" placeholder="More details about the plant you want to report:"></textarea>
+    </fieldset>
+</div>
+<!--report form -->
+    <!--
+<div class="form-style-5">
+    <fieldset>
+        <legend style='color: #3c763d'><span class="number">1</span> Report the Invasive Plant</legend>
+        <label for="plantList">Plant: *</label>
+        <select id="plantSel" name="field4">
+            <optgroup label="Common Name">
+                <option value="AW">Alligator Weed</option>
+                <option value="BK">Black knapweed</option>
+                <option value="CT">Camel thorn</option>
+                <option value="GK">Giant knotweed</option>
+                <option value="ILS">Ivy-Leafed Sida</option>
+                <option value="JK">Japanese Knotweed</option>
+                <option value="KT">Karoo Thorn</option>
+                <option value="L">Lobed Needle Grass</option>
+                <option value="LNG">Lobed Needle Grass</option>
+                <option value="MFG">Mexican Father Grass</option>
+                <option value="NT">Nodding Thistle</option>
+                <option value="PR">Perennial Ragweed</option>
+                <option value="PW">Poverty Weed</option>
+                <option value="S">Salvinia</option>
+                <option value="TH">Tangled Hypericum</option>
+                <option value="WH">Water Hyacinth</option>
+            </optgroup>
+            <optgroup label="Scientific Name">
+                <option>Alternanthera philoxeroides (Mart.) Griseb.</option>
+                <option>Centaurea nigra L.</option>
+                <option>Alhagi maurorum Medik.</option>
+                <option>Fallopia sachalinensis (F. Schmidt ex Maxim) Ronse Decr.</option>
+                <option>Malvella leprosa</option>
+                <option>Acacia karroo Hayne</option>
+                <option>Nassella charruana (Arechav.) Barkworth</option>
+                <option>Nassella tenuissima</option>
+                <option>Carduus nutans</option>
+                <option>Ambrosia artemisiifolia</option>
+                <option>Iva axillaris Pursh</option>
+                <option>Salvinia molesta</option>
+                <option>Hypericum triquetrifolium Turra</option>
+                <option>Eichhornia crassipes</option>
+            </optgroup>
+        </select>
+        <div id="errors" class="errorMessage" style="color:red"></div>
+        <input id="email" type="email" name="field2" placeholder="Your Email: " />
+        <input type="text" name="field1" placeholder="Your Name: ">
+    </fieldset>
+    <fieldset>
+        <legend style='color: #3c763d'><span class="number">2</span> Additional Comments</legend>
+        <textarea style='height: 150px;' name="field3" placeholder="More details about the plant you want to report:"></textarea>
+    </fieldset>
+</div>
+        -->
+
+<script>
+    //validate the user input with email
+    function validateEmail(email) {
+        var re = /\S+@@\S+\.\S+/;
+        return re.test(email);
+    };
+
+</script>
+
+<div class="form-style-5">
+    <fieldset>
+        <legend style='color: #3c763d'><span class="number">3</span> Location Info (Click on the Map to set marker)</legend>
+        <section class="container">
+            <div id="errors1" class="errorMessage" style="color:red"></div>
+            <div id="map" style="height: 300px; overflow: hidden; max-width: 70%;"></div>
+            <script>
+                L.mapbox.accessToken = 'pk.eyJ1IjoiZHpodTMxIiwiYSI6ImNqMTd3OTkxbTA1bWsyd3FxN3E1ZHIzbmIifQ.gdbgSUNiTB6Ho-5I-sPlBA';
+
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        function (position) {
+                            //initialLocation = new L.LatLng(position.coords.latitude, position.coords.longitude);
+
+
+                            //center the map accord to user's location
+                            var map = L.mapbox.map('map', 'mapbox.streets').setView([position.coords.latitude, position.coords.longitude], 15);
+                            var markerClick;
+                            markerClick = L.marker([position.coords.latitude, position.coords.longitude]);
+                            markerClick.addTo(map);
+                            document.getElementById('lattext').value = "LatLng(" + position.coords.latitude.toFixed(5) + ", " + position.coords.longitude.toFixed(5) + ")";
+                            document.getElementById('lngtext').value = position.coords.longitude;
+
+                            map.on('click', function (e) {
+                                placeMarker(e.latlng);
+                                //e.latlng.lat is reutrned lat,e.latlng.lng is reutrned lng
+                                document.getElementById('lattext').value = e.latlng;
+                                document.getElementById('lngtext').value = e.latlng.lng;
+                                //e.geolocation.
+
+                            })
+
+                            function placeMarker(location) {
+                                markerClick.setLatLng(location);
+                            }
+                        });
+                }
+            </script>
+            <div>
+                <h4 style="font-family:Georgia ">Here is the location you want to report:</h4>
+                <input id="lattext" class="form-control" type="text" name="search" placeholder="Latitude" style="overflow:hidden; max-width:70%;" disabled="disabled" />
+                <input id="lngtext" class="form-control" type="text" name="search" placeholder="Longitude" style="display:none" />
+            </div>
+        </section>
+    </fieldset>
+    <fieldset>
+
+        <input type="submit" value="Submit" onclick="submit_click(event)" />
+    </fieldset>
+
+</div>
+<script>
+    //function when submit button clicked
+    function submit_click(event) {
+        var email = document.getElementById('email').value;
+        var latlng = document.getElementById('lattext').value;
+        document.getElementById('errors1').innerHTML = "";
+        document.getElementById('errors').innerHTML = "";
+        if (validateEmail(email) && latlng != "") {
+            swal({ title: "Thank you!", text: "Your report had been submitted successfully!", type: "success", closeOnConfirm: true },
+            function () {
+            });
+        }
+        else {
+            $('html,body').scrollTop(0);
+            swal({ title: "Sorry, please try again :)", text: "At least email and location should be fufilled.", type: "warning", closeOnConfirm: true },
+                function () {
+                    $('html,body').scrollTop(0);
+                });
+            if (!validateEmail(email)) {
+                document.getElementById('errors').innerHTML = "***Please input a valid email address***";//error message
+                $('html,body').scrollTop(0);
+            }
+            if (latlng === undefined || latlng == null || latlng == "") {
+                document.getElementById('errors1').innerHTML = "***Please mark the location on the map***";
+            }
+        }
+    }
+
+    //remove the active class from Home to this page
+    $(document).ready(function () {
+        $("ul li").removeClass("active");
+        $('#reportTag').addClass("active");
+        var plantSelector = localStorage.getItem("plantSelect");
+        document.getElementById("plantSel").value = plantSelector;
+    });
+
+</script>
+}

@@ -4,14 +4,13 @@
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<h2></h2>
 
 <section class="container" id="plantTable" >
     <div class="container" id="wrapper">
         <center>
             <h2>Invasive Plant Library </h2>
             <br />
-            <table id="keywords" class="table table-hover">
+            <table id="keywords" class="table table-hover display">
                 <thead>
                     <tr id="title" style="background-color: #b5eaaa;">
                         <!-- ***Title of table***-->
@@ -120,74 +119,129 @@
         $('#libraryTag').addClass("active");
     });
 
+
+
     function awClick() {
-        localStorage.setItem("plantSelect", 'AW');
+        localStorage.setItem("plantSelect", 'P1');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function bkClick() {
-        localStorage.setItem("plantSelect", 'BK');
+        localStorage.setItem("plantSelect", 'P3');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function ctClick() {
-        localStorage.setItem("plantSelect", 'CT');
+        localStorage.setItem("plantSelect", 'P5');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function gkClick() {
-        localStorage.setItem("plantSelect", 'GK');
+        localStorage.setItem("plantSelect", 'P6');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function ilsClick() {
-        localStorage.setItem("plantSelect", 'ILS');
+        localStorage.setItem("plantSelect", 'P10');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function ktClick() {
-        localStorage.setItem("plantSelect", 'KT');
+        localStorage.setItem("plantSelect", 'P13');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function lngClick() {
-        localStorage.setItem("plantSelect", 'LNG');
+        localStorage.setItem("plantSelect", 'P15');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function mfgClick() {
-        localStorage.setItem("plantSelect", 'MFG');
+        localStorage.setItem("plantSelect", 'P18');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function ntClick() {
-        localStorage.setItem("plantSelect", 'NT');
+        localStorage.setItem("plantSelect", 'P19');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function prClick() {
-        localStorage.setItem("plantSelect", 'PR');
+        localStorage.setItem("plantSelect", 'P21');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function pwClick() {
-        localStorage.setItem("plantSelect", 'PW');
+        localStorage.setItem("plantSelect", 'P22');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function sClick() {
-        localStorage.setItem("plantSelect", 'S');
+        localStorage.setItem("plantSelect", 'P23');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function thClick() {
-        localStorage.setItem("plantSelect", 'TH');
+        localStorage.setItem("plantSelect", 'P24');
         window.open("@Url.Action("Report", "Home")");
     }
 
     function whClick() {
-        localStorage.setItem("plantSelect", 'WH');
+        localStorage.setItem("plantSelect", 'P25');
         window.open("@Url.Action("Report", "Home")");
     }
 
 </script>
+
+
+<table class="table-sort table-sort-search">
+    <thead>
+        <tr>
+            <th class="table-sort">First Name</th>
+            <th class="table-sort">Last Name</th>
+            <th class="table-sort">Email</th>
+            <th>Phone Number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>John</td>
+            <td>Smith</td>
+            <td><a href="mailto:john.s@gmail.com">john.s@gmail.com</a></td>
+            <td>(613) 873-2982</td>
+        </tr>
+        <tr>
+            <td>Sean</td>
+            <td>MacIsaac</td>
+            <td><a href="mailto:seanjmacisaac@gmail.com">seanjmacisaac@gmail.com</a></td>
+            <td>(613) 871-6191</td>
+        </tr>
+        <tr>
+            <td>Tim</td>
+            <td>Zarby</td>
+            <td><a href="mailto:zarbytown214@hotmail.com">zarbytown214@hotmail.com</a></td>
+            <td>(613) 743-5389</td>
+        </tr>
+        <tr>
+            <td>Andrew</td>
+            <td>Nichols</td>
+            <td><a href="mailto:andy_money2003@gmail.com">andy_money2003@gmail.com</a></td>
+            <td>(613) 741-3384</td>
+        </tr>
+        <tr>
+            <td>Ally</td>
+            <td>O'Neil</td>
+            <td><a href="mailto:allyoneil@gmail.com">allyoneil@gmail.com</a></td>
+            <td>(613) 642-9831</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<script type="text/javascript">
+    $(function () {
+        $('table.table-sort').tablesort();
+    });
+</script>
+

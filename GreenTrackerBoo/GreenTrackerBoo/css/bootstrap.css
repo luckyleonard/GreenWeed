@@ -288,13 +288,13 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #e8d069;
+  color: #58b725;
   text-decoration: none;
 }
 a:hover,
 a:focus {
   color: #e8d069;
-  text-decoration: underline;
+  text-decoration: none;
 }
 a:focus {
   outline: thin dotted;
@@ -3787,6 +3787,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+  font-family:'Comic Sans MS';
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -3821,6 +3822,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-nav > li > a {
     padding-top: 15px;
     padding-bottom: 15px;
+    font-family:'Comic Sans MS';
   }
   .navbar-nav.navbar-right:last-child {
     margin-right: -15px;

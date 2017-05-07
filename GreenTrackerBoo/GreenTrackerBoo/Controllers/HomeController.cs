@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using GreenTrackerBoo.Models;
+using System.Net;
+using System.Net.Mail;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq; 
 
 namespace GreenTrackerBoo.Controllers
 {
@@ -16,15 +21,62 @@ namespace GreenTrackerBoo.Controllers
             return View();
         }
 
+        public ActionResult GetStarted()
+        {
+            ViewBag.Title = "Get Started";
+            return View();
+        }
+
         public ActionResult AboutUs()
         {
             ViewBag.Title = "About Us";
             return View();
         }
 
+    
         public ActionResult Report()
         {
-            ViewBag.Title = "Report My Finding";
+            ViewBag.Title = "Report My Finding";           
+
+            return View();
+        }
+
+        private PlantContext db = new PlantContext();
+
+        [HttpPost]
+        public ActionResult Report(FormCollection formCollection)
+        {
+            var report = new Report();
+            report.ReportLon = float.Parse(formCollection["Longitude"]);
+            report.ReportLat = float.Parse(formCollection["Latitude1"]);
+            report.PlantID = formCollection["CommonName"];
+            report.AdditionalMessage = formCollection["AddMsg"];
+            report.userEmail = formCollection["Email"];
+            db.Reports.Add(report);
+            db.SaveChanges();
+
+            MailMessage mail = new MailMessage();
+            mail.To.Add(formCollection["Email"]);
+            var test = formCollection["Email"];
+
+            mail.From = new MailAddress("sxin14@student.monash.edu");
+            mail.Subject = "Report Confirmation";
+            string Body = "Hi " + formCollection["Name"] + " :"
+                + "</br>" + "Thank You! Your report is successful :)" +
+                "</br>" + "Check more about invasive plants!"
+                + "</br>" + "https://greentracker.azurewebsites.net";
+            mail.Body = Body;
+            mail.IsBodyHtml = true;
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.UseDefaultCredentials = false;
+            smtp.Credentials = new System.Net.NetworkCredential
+            ("sxin14@student.monash.edu", "Yangshu1517");// Enter seders User name and password
+            smtp.EnableSsl = true;
+            smtp.Send(mail);
+
+ 
             return View();
         }
 
