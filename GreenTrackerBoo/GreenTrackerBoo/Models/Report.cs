@@ -13,10 +13,11 @@ namespace GreenTrackerBoo.Models
         [Key]
         public int ReportID { get; set; }
         public string PlantID { get; set; }
-        public float ReportLat { get; set; }
-        public float ReportLon { get; set; }
+        public Nullable<double> ReportLat { get; set; }
+        public Nullable<double> ReportLon { get; set; }
         public string AdditionalMessage { get; set; }
         public string userEmail { get; set; }
+        public string userName { get; set; }
 
         public virtual Plant Plant { get; set; }
     }

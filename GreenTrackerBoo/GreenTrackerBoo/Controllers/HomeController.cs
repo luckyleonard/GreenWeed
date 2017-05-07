@@ -52,6 +52,7 @@ namespace GreenTrackerBoo.Controllers
             report.PlantID = formCollection["CommonName"];
             report.AdditionalMessage = formCollection["AddMsg"];
             report.userEmail = formCollection["Email"];
+            report.userName = formCollection["Name"];
             db.Reports.Add(report);
             db.SaveChanges();
 
@@ -86,6 +87,18 @@ namespace GreenTrackerBoo.Controllers
             return View();
         }
 
+        public ActionResult ViewReport()
+        {
+            ViewBag.Title = "View All Reports";
+            var reports = db.Reports.Include("plant").ToList();
+            return View(reports);
+        }
+
+        public ActionResult externalLink()
+        {
+            ViewBag.Title = "External Resources";
+            return View();
+        }
 
     }
 }

@@ -212,6 +212,9 @@
     <Content Include="css\dist\sweetalert-dev.js" />
     <Content Include="css\dist\sweetalert.css" />
     <Content Include="css\dist\sweetalert.min.js" />
+    <Content Include="css\images\Agriculture-Victoria_logo.jpg" />
+    <Content Include="css\images\landcare_inline_rev_cmyk370.png" />
+    <Content Include="css\images\logo.jpg" />
     <Content Include="css\images\plants\alligator4.jpg" />
     <Content Include="css\images\plants\AW_aquatic-resized.jpg" />
     <Content Include="css\images\plants\AW_roots-resized.jpg" />
@@ -312,6 +315,7 @@
     <Content Include="css\images\plants\WH_daughters.jpg" />
     <Content Include="css\images\plants\WH_roots.jpg" />
     <Content Include="css\images\plants\WH_swollen-stems.jpg" />
+    <Content Include="css\images\services-agfarm1.jpg" />
     <Content Include="css\images\stop1.png" />
     <Content Include="css\tablesort.css" />
     <Content Include="css\templatemo-style.css" />
@@ -383,6 +387,8 @@
     <Content Include="Views\Plants\WaterHyacinth.cshtml" />
     <Content Include="Views\Home\Library.cshtml" />
     <Content Include="Views\Home\GetStarted.cshtml" />
+    <Content Include="Views\Home\ViewReport.cshtml" />
+    <Content Include="Views\Home\externalLink.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,6 +4,11 @@
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
+<style>
+    .profile-img {
+        width:200px;
+    } 
+</style>
 
 <section class="container" id="plantTable" >
     <div class="container" id="wrapper">
@@ -23,85 +28,85 @@
                 <tbody>
                     <!-- ***Content of table***-->
                     <tr id="plant1" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/AlligatorWeed';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/alligator-profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/alligator-profile.jpg" /></td>
                         <td>Alligator Weed</td>
                         <td>Alternanthera philoxeroides</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="awClick();">Report</button></td>
                     </tr>
                     <tr id="plant2" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/BlackKnapweed';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/black-knapweed-profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/black-knapweed-profile.jpg" /></td>
                         <td>Black Knapweed</td>
                         <td>Centaurea nigra L.</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn" onclick="bkClick();">Report</button></td>
                     </tr>
                     <tr id="plant3" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/CamelThorn';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/camel_img1_profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/camel_img1_profile.jpg" /></td>
                         <td>Camel Thorn</td>
                         <td>Alhagi maurorum Medik.</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="ctClick();">Report</button></td>
                     </tr>
                     <tr id="plant4" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/GiantKnotweed';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/kw_japflower-profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/kw_japflower-profile.jpg" /></td>
                         <td>Giant Knotweed</td>
                         <td>Fallopia japonica</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="gkClick();">Report</button></td>
                     </tr>
                     <tr id="plant5" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/IvyLeafedSida';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/ivy-leafed%20sida-profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/ivy-leafed%20sida-profile.jpg" /></td>
                         <td>Ivy-Leafed Sida</td>
                         <td>Malvella leprosa</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="ilsClick();">Report</button></td>
                     </tr>
                     <tr id="plant6" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/KarooThorn';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/karoothorn-profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/karoothorn-profile.jpg" /></td>
                         <td>Karoo Thorn</td>
                         <td>Acacia karroo Hayne</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="ktClick();">Report</button></td>
                     </tr>
                     <tr id="plant7" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/LobedNeedleGrass';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/lobedneedlegrass-profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/lobedneedlegrass-profile.jpg" /></td>
                         <td>Lobed Needle Grass</td>
                         <td>Nassella charruana (Arechav.) Barkworth</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="lngClick();">Report</button></td>
                     </tr>
                     <tr id="plant8" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/MexicanFeatherGrass';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/mfg_seed-profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/mfg_seed-profile.jpg" /></td>
                         <td>Mexican Feather Grass</td>
                         <td>Nassella tenuissima</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="mfgClick();">Report</button></td>
                     </tr>
                     <tr id="plant9" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/NoddingThistle';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/nodding-thistle-profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/nodding-thistle-profile.jpg" /></td>
                         <td>Nodding Thistle</td>
                         <td>Carduus nutans</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="ntClick();">Report</button></td>
                     </tr>
                     <tr id="plant10" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/PerennialRagweed';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/perenial%20ragweed-profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/perenial%20ragweed-profile.jpg" /></td>
                         <td>Perennial Ragweed</td>
                         <td>Ambrosia artemisiifolia</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="prClick();">Report</button></td>
                     </tr>
                     <tr id="plant11" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/PovertyWeed';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/poverty_weed_profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/poverty_weed_profile.jpg" /></td>
                         <td>Poverty Weed</td>
                         <td>Iva axillaris Pursh</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="pwClick();">Report</button></td>
                     </tr>
                     <tr id="plant12" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/Salvinia';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/salvinia-profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/salvinia-profile.jpg" /></td>
                         <td>Salvinia</td>
                         <td>Salvinia molesta</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="sClick();">Report</button></td>
                     </tr>
                     <tr id="plant13" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/TangledHypericum';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/tangled_hypericum-profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/tangled_hypericum-profile.jpg" /></td>
                         <td>Tangled Hypericum</td>
                         <td>Hypericum triquetrifolium Turra</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="thClick();">Report</button></td>
                     </tr>
                     <tr id="plant14" onclick="window.document.location = 'https://greentracker.azurewebsites.net/Plants/WaterHyacinth';">
-                        <td class="lalign"><img src="~/css/images/plants/profile/wh-profile.jpg" /></td>
+                        <td class="lalign"><img class="profile-img" src="~/css/images/plants/profile/wh-profile.jpg" /></td>
                         <td>Water Hyacinth</td>
                         <td>Eichhornia crassipes</td>
                         <td><button style="margin-top:0%" type="button" class="btn yellow-btn normal-btn btn-aaa" onclick="whClick();">Report</button></td>
@@ -194,54 +199,5 @@
 </script>
 
 
-<table class="table-sort table-sort-search">
-    <thead>
-        <tr>
-            <th class="table-sort">First Name</th>
-            <th class="table-sort">Last Name</th>
-            <th class="table-sort">Email</th>
-            <th>Phone Number</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>John</td>
-            <td>Smith</td>
-            <td><a href="mailto:john.s@gmail.com">john.s@gmail.com</a></td>
-            <td>(613) 873-2982</td>
-        </tr>
-        <tr>
-            <td>Sean</td>
-            <td>MacIsaac</td>
-            <td><a href="mailto:seanjmacisaac@gmail.com">seanjmacisaac@gmail.com</a></td>
-            <td>(613) 871-6191</td>
-        </tr>
-        <tr>
-            <td>Tim</td>
-            <td>Zarby</td>
-            <td><a href="mailto:zarbytown214@hotmail.com">zarbytown214@hotmail.com</a></td>
-            <td>(613) 743-5389</td>
-        </tr>
-        <tr>
-            <td>Andrew</td>
-            <td>Nichols</td>
-            <td><a href="mailto:andy_money2003@gmail.com">andy_money2003@gmail.com</a></td>
-            <td>(613) 741-3384</td>
-        </tr>
-        <tr>
-            <td>Ally</td>
-            <td>O'Neil</td>
-            <td><a href="mailto:allyoneil@gmail.com">allyoneil@gmail.com</a></td>
-            <td>(613) 642-9831</td>
-        </tr>
-    </tbody>
-</table>
 
-
-
-<script type="text/javascript">
-    $(function () {
-        $('table.table-sort').tablesort();
-    });
-</script>
 

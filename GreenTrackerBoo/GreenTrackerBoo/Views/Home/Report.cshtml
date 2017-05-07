@@ -154,9 +154,13 @@
             document.getElementById('errors').innerHTML = "";
             document.getElementById('captcha').innerHTML = "";
             if (document.getElementById('plantSel').value != "" && v.length != 0 && validateEmail(email) && latlng != "") {
-                swal({ title: "Thank you!", text: "Your report had been submitted successfully!", type: "success", closeOnConfirm: true },
+                swal({
+                    title: "Thank you!", text: "Your report had been submitted successfully! Do you want check your report on Map?", type: "success", showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes!", closeOnConfirm: true
+                },
                 function () {
-                    location.reload();
+                    location.href = "https://greentracker.azurewebsites.net/Home/ViewReport";
                 });
             }
             else {

@@ -28,6 +28,15 @@
 </head>
 
 <body>
+    <style>
+        .navbar ul{
+            display: none;
+        }
+
+        .navbar li:hover > ul {
+            display: block;
+        }
+    </style>
     <div class="navbar-wrapper">
         <div class="container">
 
@@ -43,12 +52,30 @@
                            @Html.ActionLink("Green Tracker", "Index", "Home", new object { }, new { @class = "navbar-brand" })
                            </div>
                       <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <ul class="nav navbar-nav navbar-right" style="display:block">
+                            <li class="active">@Html.ActionLink("Home", "Index", "Home")
+                            
+                            </li>
                             <li>@Html.ActionLink("Explore", "TestResult", "Occurrences", new { },null)</li>
                             <li>@Html.ActionLink("Library", "Library", "Home")</li>
-                            <li>@Html.ActionLink("Report", "Report", "Home")</li>
-                            <li>@Html.ActionLink("About Us", "AboutUs", "Home")</li>
+                            <li>
+                                @Html.ActionLink("Report", "Report", "Home")
+                                <ul >
+                                    <li >@Html.ActionLink("Report", "Report", "Home",null, new { @style = "color:white" })</li>
+                                    <li>@Html.ActionLink("View Reports", "ViewReport", "Home", null, new { @style = "color:white" })</li>                                 
+                                </ul>
+                            </li>
+                            <li>@Html.ActionLink("More", "externalLink", "Home")
+                                <ul >
+                                <li>
+                                     @Html.ActionLink("External Resource", "externalLink", "Home", null, new { @style = "color:white" })
+                                   </li>
+                                    <li>
+                                        @Html.ActionLink("About Us", "AboutUs", "Home", null, new { @style = "color:white" })
+                                    </li>   
+                                
+                                    
+                                </ul></li>
                         </ul>
                     </div>
                 </div>
