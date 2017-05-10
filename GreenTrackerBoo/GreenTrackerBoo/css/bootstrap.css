@@ -8,7 +8,7 @@
 */
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
-  font-family: sans-serif;
+  font-family: -webkit-body;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -106,7 +106,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, monospace;
+  font-family: -webkit-body;
   font-size: 1em;
 }
 button,
@@ -273,7 +273,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Cabin", Arial, sans-serif;
+  font-family: -webkit-body;
   font-size: 14px;
   line-height: 1.42857143;
   color: #ffffff;
@@ -283,7 +283,7 @@ input,
 button,
 select,
 textarea {
-  font-family: inherit;
+  font-family: -webkit-body;
   font-size: inherit;
   line-height: inherit;
 }
@@ -362,7 +362,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: 'Lobster', cursive;
+  font-family: -webkit-body;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;
@@ -690,7 +690,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: -webkit-body;
 }
 code {
   padding: 2px 4px;
@@ -1469,7 +1469,7 @@ th {
 } 
 .table-hover > tbody > tr:hover > td,
 .table-hover > tbody > tr:hover > th {
-  background-color: #6eb26e;
+  background-color: rgba(17, 17, 17, 0);
 }
 table col[class*="col-"] {
   position: static;
@@ -2374,7 +2374,7 @@ input[type="button"].btn-block {
   transition: height 0.35s ease;
 }
 @font-face {
-  font-family: 'Glyphicons Halflings';
+  font-family: -webkit-body;
   src: url('../fonts/glyphicons-halflings-regular.eot');
   src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
@@ -2382,7 +2382,7 @@ input[type="button"].btn-block {
   position: relative;
   top: 1px;
   display: inline-block;
-  font-family: 'Glyphicons Halflings';
+  font-family: -webkit-body;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -3787,7 +3787,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
-  font-family:'Comic Sans MS';
+  font-family:-webkit-body;
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -3822,7 +3822,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .navbar-nav > li > a {
     padding-top: 15px;
     padding-bottom: 15px;
-    font-family:'Comic Sans MS';
+    font-family:-webkit-body;
   }
   .navbar-nav.navbar-right:last-child {
     margin-right: -15px;
@@ -5517,7 +5517,7 @@ button.close {
   height: 20px;
   margin-top: -10px;
   margin-left: -10px;
-  font-family: serif;
+  font-family: -webkit-body;
 }
 .carousel-control .icon-prev:before {
   content: '\2039';
@@ -5702,7 +5702,7 @@ button.close {
   }
 }
 .navbar-brand {
-  font-family: 'Lobster', cursive;
+  font-family: fantasy;
 }
 .btn .caret {
   border-top-color: #fff;
@@ -5765,7 +5765,7 @@ table a,
   border-color: #93e08b;
 }
 legend {
-  font-family: 'Lobster', cursive;
+  font-family: -webkit-body;
   color: #3c763d;
 }
 .input-group-addon {

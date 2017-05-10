@@ -14,16 +14,16 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="item active">
-            <img class="evergreen" src="~/css/images/evergreen.jpg" />
+            <img class="evergreen" src="~/css/images/backgroud.jpeg" />
             <div class="container" style=" margin-top: -2%;">
-                <div class="carousel-caption">
+                <div class="carousel-caption" style="margin-bottom: 2%;">
                     <img class="stop" src="~/css/images/stop1.png" />
-                    <h1 style="font-family:'Comic Sans MS'">STOP THE SPREAD OF INVASIVE PLANTS!</h1>
-                    <p style="font-family:'Comic Sans MS'">
-                        ◆ Australia has many introduced invasive plants.<br />
-                        ◆ These plants spread rapidly damaging the environment.<br />
-                        ◆ The website will assist farmers by providing information
-                        <br />and current sighting of invasive plants.
+                    <h1 style="font-weight:bold;">PUT A STOP TO INVASIVE PLANTS!</h1>
+                    <p style="font-weight:bold;">
+                        ◆ Australia is home to an abundance of invasive plants.<br />
+                        ◆ Invasive plants spread rapidly causing damage to the environment.<br />
+                        ◆ Green Tracker will assist in providing sightings and information of these plants.
+                        <br />
                     </p>
                 </div>
             </div>
@@ -49,29 +49,29 @@
               <!-- ***link to plants library function*** -->
             <div class="img-circle-div">
                 <a href="@Url.Action("Library", "Home")">
-                    <img src="~/css/images/circle1.jpg" />
-                    <h3 style="font-family:'Comic Sans MS'">LEARNING</h3>
-                    <p style="font-size: 18px; font-family: 'Comic Sans MS'">Have no idea what are invasive plants? </p>
-                    <p style="font-size: 18px; font-family: 'Comic Sans MS'">Have a look at it!</p>
+                    <img style="width: 215px;" src="~/css/images/plants/perenial%20ragweed4.jpg" />
+                    <h3 >LEARNING</h3>
+                    <p style="font-size: 18px; ">Have no idea what are invasive plants? </p>
+                    <p style="font-size: 18px;">Have a look at it!</p>
                 </a>
 
             </div><!-- ***link to Map function*** -->
             <div class="img-circle-div">
                 <a href="@Url.Action("TestResult", "Occurrences")" >
-                    <img src="~/css/images/circle2.jpg" />
-                    <h3 style="font-family:'Comic Sans MS'">EXPLORING</h3>
-                    <p style="font-size: 18px; font-family: 'Comic Sans MS'">What are the invasive plants near me? </p>
-                    <p style="font-size: 18px; font-family: 'Comic Sans MS'">Try this!</p>
+                    <img style="width: 215px;" src="~/css/images/plants/tangled_hypericum2.jpg" />
+                    <h3 >EXPLORING</h3>
+                    <p style="font-size: 18px; ">What are the invasive plants near me? </p>
+                    <p style="font-size: 18px; ">Try this!</p>
                 </a>
              </div>
                    
             <!-- ***link to  report function*** -->
             <div class="img-circle-div">
                 <a href="@Url.Action("Report", "Home")" >
-                    <img src="~/css/images/circle3.jpg" />
-                    <h3 style="font-family:'Comic Sans MS'">REPORTING</h3>
-                    <p style="font-size: 18px; font-family: 'Comic Sans MS'">Find an invasive plant by yourself? </p>
-                    <p style ="font-size: 18px; font-family: 'Comic Sans MS'">Report it!</p>
+                    <img style="width: 215px;" src="~/css/images/plants/camel_img1.jpg" />
+                    <h3 >REPORTING</h3>
+                    <p style="font-size: 18px; ">Find an invasive plant by yourself? </p>
+                    <p style ="font-size: 18px; ">Report it!</p>
                 </a>
             </div>
             <!-- ***link to upcoming community(group-sharing) function(iteration 3)*** 
@@ -101,9 +101,7 @@
                         <input id="input2" class="form-control" type="text" name="search" placeholder="Longitude" style="visibility: hidden; height: 0px" />
                         <span class="input-group-btn">
                             <button id="passvalue" class="btn btn-success" type="button">
-                                <span class="glyphicon glyphicon-search" aria-hidden="true">
-                                    <span style="margin-left: 10px; font-family: 'Comic Sans MS'">Search</span>
-                                </span>
+                                    <span style="margin-left: 10px;">Search</span>
                             </button>
                         </span>
                     </div>

@@ -16,7 +16,7 @@
                 <!-- Search Field -->
                 <div class="row">
                     <h1 class="text-center">New Reported Plants:</h1>
-                    <h3 class="text-center" style="font-family:'Comic Sans MS'">(Click on plant to get more information)</h3>
+                    <h3 class="text-center" >(Click on plant to get more information)</h3>
                     <div class="form-group">
                         <!-- 
                         <div class="input-group">
@@ -187,7 +187,7 @@
                             + '<div>' + '<img src="@item.Plant.iconPic"  style = "width:150px"/>' + '</div>'
                             + '<div>' + '<a href="@item.Plant.PageLink" target="_blank">' + 'Details about this plant</a>' + '</div>'
                             + '<div>' + 'Reported by ' + userName + '</div>'
-                            + '<div>' + 'Email: ' + email + '</div>'
+                            //+ '<div>' + 'Email: ' + email + '</div>'
                             + '</div>'
                             marker.bindPopup(popupContent);
                             markers.addLayer(marker);
@@ -211,3 +211,10 @@
             </body>
 
 
+<script>
+    //remove the active class from Home to this page
+    $(document).ready(function () {
+        $("ul li").removeClass("active");
+        $('#reportTag').addClass("active");
+    });
+</script>

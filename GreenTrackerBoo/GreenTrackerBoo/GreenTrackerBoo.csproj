@@ -213,6 +213,7 @@
     <Content Include="css\dist\sweetalert.css" />
     <Content Include="css\dist\sweetalert.min.js" />
     <Content Include="css\images\Agriculture-Victoria_logo.jpg" />
+    <Content Include="css\images\backgroud.jpeg" />
     <Content Include="css\images\landcare_inline_rev_cmyk370.png" />
     <Content Include="css\images\logo.jpg" />
     <Content Include="css\images\plants\alligator4.jpg" />

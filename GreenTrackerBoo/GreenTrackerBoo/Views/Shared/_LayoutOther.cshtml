@@ -40,9 +40,16 @@
     <style>
         .navbar ul {
             display: none;
+            list-style: none;
+        }
+        .navbar ul li{
+            list-style: none;
         }
 
         .navbar li:hover > ul {
+            margin: 0;
+            padding-left: 15px;
+            list-style: none;
             display: block;
         }
     </style>
@@ -66,27 +73,28 @@
                                     @Html.ActionLink("Home", "Index", "Home")
 
                             </li>
-                            <li>@Html.ActionLink("Explore", "TestResult", "Occurrences", new { }, null)</li>
-                            <li>@Html.ActionLink("Library", "Library", "Home")</li>
-                            <li>
-                                @Html.ActionLink("Report", "Report", "Home")
-                                <ul>
-                                    <li>@Html.ActionLink("Report", "Report", "Home", null, new { @style = "color:white" })</li>
-                                    <li>@Html.ActionLink("View Reports", "ViewReport", "Home", null, new { @style = "color:white" })</li>
-                                </ul>
-                            </li>
-                            <li>
-                                @Html.ActionLink("More", "externalLink", "Home")
-                            <ul><li>
-                                  @Html.ActionLink("External Resource", "externalLink", "Home", null, new { @style = "color:white" })
-                                 </li>
-                                <li>
-                                    @Html.ActionLink("About Us", "AboutUs", "Home", null, new { @style = "color:white" })
+                                <li id="exploreTag">@Html.ActionLink("Explore", "TestResult", "Occurrences", new { }, null)</li>
+                                <li id="libraryTag">@Html.ActionLink("Library", "Library", "Home")</li>
+                                <li id="reportTag">
+                                    @Html.ActionLink("Report", "Report", "Home")
+                                    <ul>
+                                        <li>@Html.ActionLink("Report", "Report", "Home", null, new { @style = "color:white" })</li>
+                                        <li>@Html.ActionLink("View Reports", "ViewReport", "Home", null, new { @style = "color:white" })</li>
+                                    </ul>
                                 </li>
-                                
+                                <li id="aboutTag">
+                                    @Html.ActionLink("More", "externalLink", "Home")
+                                    <ul>
+                                        <li>
+                                            @Html.ActionLink("External Resource", "externalLink", "Home", null, new { @style = "color:white" })
+                                        </li>
+                                        <li>
+                                            @Html.ActionLink("About Us", "AboutUs", "Home", null, new { @style = "color:white" })
+                                        </li>
 
-                            </ul>
-                        </li>
+
+                                    </ul>
+                                </li>
                         </ul>
                     </div>
                 </div>
@@ -98,11 +106,11 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="item active">
-                <img class="evergreen" src="~/css/images/evergreen.jpg" />
+                <img class="evergreen" src="~/css/images/backgroud.jpeg" />
                 <div class="container">
                     <div class="carousel-caption">
                         <img class="stop" src="~/css/images/stop1.png" />
-                        <h1 style="font-family:'Comic Sans MS'">STOP THE SPREAD OF INVASIVE PLANTS!</h1>
+                        <h1 style="font-weight:bold;">PUT A STOP TO INVASIVE PLANTS!</h1>
                     </div>
                 </div>
             </div>
