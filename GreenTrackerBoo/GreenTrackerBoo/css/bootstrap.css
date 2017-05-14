@@ -3444,6 +3444,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group {
   margin-left: -1px;
+      margin-top: 0%;
 }
 .nav {
   margin-bottom: 0;

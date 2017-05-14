@@ -10,6 +10,7 @@
 }
 
 
+
 <!--include api of the map function -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.35.0/mapbox-gl.js'></script>
 
@@ -81,9 +82,8 @@
         <div class="form-style-5">
             <fieldset>
                 <legend style='color: #3c763d'><span class="number">3</span> Location Info (Click on the Map to set marker)</legend>
-                <section class="container">
                     <div id="errors1" class="errorMessage" style="color:red"></div>
-                    <div id="map" style="height: 300px; overflow: hidden; max-width: 70%;"></div>
+                    <div id="map" style="height: 300px; overflow: hidden;"></div>
 
                     <script>
                         L.mapbox.accessToken = 'pk.eyJ1IjoiZHpodTMxIiwiYSI6ImNqMTd3OTkxbTA1bWsyd3FxN3E1ZHIzbmIifQ.gdbgSUNiTB6Ho-5I-sPlBA';
@@ -92,10 +92,20 @@
                             navigator.geolocation.getCurrentPosition(
                                 function (position) {
                                     //initialLocation = new L.LatLng(position.coords.latitude, position.coords.longitude);
+                                    var southWest = L.latLng(-39.13006, 140.98377),
+                                        northEast = L.latLng(-34.84988, 149.78004),
+                                        bounds = L.latLngBounds(southWest, northEast);
 
+                                    var map = L.mapbox.map('map', 'mapbox.streets', {
+                                        // set that bounding box as maxBounds to restrict moving the map
+                                        maxBounds: bounds,
+                                        maxZoom: 18,
+                                        minZoom: 7
+                                    }).setView([position.coords.latitude, position.coords.longitude], 15);
+                                    //center the map accord to user's location
 
                                     //center the map accord to user's location
-                                    var map = L.mapbox.map('map', 'mapbox.streets').setView([position.coords.latitude, position.coords.longitude], 15);
+                                    //var map = L.mapbox.map('map', 'mapbox.streets').setView([position.coords.latitude, position.coords.longitude], 15);
                                     var markerClick;
                                     markerClick = L.marker([position.coords.latitude, position.coords.longitude]);
                                     markerClick.addTo(map);
@@ -125,11 +135,10 @@
 
                     <div>
                         <h4 >Here is the location you want to report:</h4>
-                        <input id="lattext" class="form-control" type="text" name="Latitude" placeholder="Latitude" style="overflow:hidden; max-width:70%;" disabled="disabled" />
+                        <input id="lattext" class="form-control" type="text" name="Latitude" placeholder="Latitude" style="overflow:hidden;" disabled="disabled" />
                         <input id="lattext1" class="form-control" type="text" name="Latitude1" placeholder="Longitude" style="display:none" />
                         <input id="lngtext" class="form-control" type="text" name="Longitude" placeholder="Longitude" style="display:none" />
                     </div>
-                </section>
             </fieldset>
             <fieldset> 
                 <div><span id="captcha" style="color:red" /></div>             

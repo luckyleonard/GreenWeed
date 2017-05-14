@@ -267,6 +267,8 @@ body {
     }
 }
 
+
+
 .form-style-5{
     max-width: 70%;
     padding: 10px 20px;
@@ -276,6 +278,12 @@ body {
     background: #f4f7f8;
     border-radius: 8px;
     font-family: monospace;
+}
+
+@media (max-width: 610px) {
+    .form-style-5{
+       max-width: 90%;
+    }
 }
 .form-style-5 fieldset{
     border: none;
@@ -359,7 +367,6 @@ body {
     font-size: 18px;
     text-align: center;
     font-style: normal;
-    width: 35%;
     border: 1px solid #58b725;
     border-width: 1px 1px 3px;
     margin-bottom: 10px;
@@ -369,6 +376,8 @@ body {
 {
     background: #58b725;
 }
+
+
 
 #map {
             position: relative;
@@ -398,11 +407,42 @@ body {
 
 /** css for result table **/
 #wrapper {
+  text-align:center;
   display: block;
   width: 850px;
   background: #fff;
   margin: 0 auto;
   padding: 10px 17px;
+  width: 80%;
+}
+@media (max-width: 550px) {
+    #wrapper {
+      margin-left: 5%;
+    }
+}
+
+#librarytable{
+
+}
+@media (max-width: 450px) {
+    #librarytable {
+      margin-left: -10%;
+    }
+}
+@media (max-width: 395px) {
+    #librarytable {
+      margin-left: -20%;
+    }
+}
+
+#librarytable tr th{
+    text-align:center;
+        height: 50px;
+}
+
+#librarytable tr td {
+     vertical-align: middle;
+     cursor: pointer;
 }
 
 #keywords {
@@ -554,3 +594,4 @@ ul.sdt_menu li div.sdt_box a:first-child{
 ul.sdt_menu li div.sdt_box a:hover{
 	color:#fff;
 }
+

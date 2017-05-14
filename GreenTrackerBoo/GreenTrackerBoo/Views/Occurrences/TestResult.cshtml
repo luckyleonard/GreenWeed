@@ -23,7 +23,7 @@
                     <div class="form-group">
                         <div class="input-group">
                             <input id="input" class="form-control" type="text" name="search" placeholder="Address or Postcode" onkeypress="clickPress(event)" />
-                            <span class="input-group-btn">
+                           <span class="input-group-btn">
                                 <button id="submit" class="btn btn-success" type="submit">
                                         <span style="margin-left:10px;">Search</span>
                                 </button>
@@ -103,12 +103,12 @@
         <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.Default.css' rel='stylesheet' />
         <table class="table-responsive" style="margin-left: 5%">
             <tr style="vertical-align: top">
-                <td>
+                <td style="width: 20%">
                     <h2>Plants Here:</h2>
                     <table class="table table-hover" id="table"></table>
                 </td>
                 <td>
-                    <div id='map' style='width: 800px; height: 500px; margin-top: 2%; margin-left: 7%; margin-right: auto; overflow: hidden;'></div>
+                    <div id='map' style='width: 88%; height: 500px; margin-top: 2%; margin-left: 2%; margin-right: auto; overflow: hidden;'></div>
                 </td>
             </tr>
         </table>
@@ -217,7 +217,7 @@
                 var la= document.createElement("a");
                 la.href="@Url.Action("Library", "Home")";
                 la.target = "_blank";
-                la.text = "Click here to check all Plant Library";
+                la.text = "Click here to check Invasive plant library";
                 la.style = "color:#df1e37;"
                 lacell.appendChild(la);
                 larow.appendChild(lacell);

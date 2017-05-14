@@ -40,9 +40,10 @@
             display: none;
             list-style: none;
         }
-        .navbar ul li{
-            list-style: none;
-        }
+            .navbar ul li {
+                list-style: none;
+                font-weight: bold;
+            }
 
         .navbar li:hover > ul {
             margin: 0;
@@ -69,9 +70,9 @@
                             <ul class="nav navbar-nav navbar-right" style="display:block">
                                 <li class="active">
                                     @Html.ActionLink("Home", "Index", "Home") </li>
-                                <li>@Html.ActionLink("Take A Quiz", "Quiz", "Home")</li>
-                                <li>@Html.ActionLink("External Links", "externalLink", "Home")</li>
-                                <li>@Html.ActionLink("About Us", "AboutUs", "Home")</li>
+                                <li id="quizTag">@Html.ActionLink("Take A Quiz", "Quiz", "Home")</li>
+                                <li id="linkTag">@Html.ActionLink("External Links", "externalLink", "Home")</li>
+                                <li id="aboutTag">@Html.ActionLink("About Us", "AboutUs", "Home")</li>
                         </ul>
                     </div>
                 </div>

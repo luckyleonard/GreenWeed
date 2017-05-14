@@ -104,7 +104,7 @@
         <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-markercluster/v1.0.0/MarkerCluster.Default.css' rel='stylesheet' />
         
 
-            <div id='map' style='width: 800px; height: 500px; margin-top: 2%; margin-left: 15%; margin-right: auto; overflow: hidden;'></div>
+            <div id='map' style='width: 80%; height: 500px; margin-top: 2%; margin-left: 10%; margin-right: auto; overflow: hidden;'></div>
         <br />
         <!---->
         <div style="margin-top:5%">
@@ -177,6 +177,7 @@
                             var link = '@item.Plant.PageLink';
                             var userName = '@item.userName';
                             var email = '@item.userEmail';
+                            var date = '@item.ReportDate';
                             var marker = L.marker(new L.LatLng('@item.ReportLat', '@item.ReportLon'),
                             {
                                 icon: L.icon({ iconUrl: '@item.Plant.iconPic', iconSize: [30, 30] }),
@@ -187,7 +188,7 @@
                             + '<div>' + '<img src="@item.Plant.iconPic"  style = "width:150px"/>' + '</div>'
                             + '<div>' + '<a href="@item.Plant.PageLink" target="_blank">' + 'Details about this plant</a>' + '</div>'
                             + '<div>' + 'Reported by ' + userName + '</div>'
-                            //+ '<div>' + 'Email: ' + email + '</div>'
+                            + '<div>' + 'Report Date: ' + date + '</div>'
                             + '</div>'
                             marker.bindPopup(popupContent);
                             markers.addLayer(marker);

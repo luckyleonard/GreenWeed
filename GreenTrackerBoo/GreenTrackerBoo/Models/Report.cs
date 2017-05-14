@@ -18,6 +18,7 @@ namespace GreenTrackerBoo.Models
         public string AdditionalMessage { get; set; }
         public string userEmail { get; set; }
         public string userName { get; set; }
+        public string ReportDate { get; set; }
 
         public virtual Plant Plant { get; set; }
     }

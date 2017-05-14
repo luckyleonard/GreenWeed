@@ -59,6 +59,7 @@ namespace GreenTrackerBoo.Controllers
             report.AdditionalMessage = formCollection["AddMsg"];
             report.userEmail = formCollection["Email"];
             report.userName = formCollection["Name"];
+            report.ReportDate = DateTime.Now.ToString("dd/MM/yyyy");
             db.Reports.Add(report);
             db.SaveChanges();
 
