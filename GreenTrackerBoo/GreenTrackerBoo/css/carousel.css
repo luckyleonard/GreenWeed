@@ -38,7 +38,7 @@ body {
 /* Carousel base class */
 .carousel {
   height: 500px;
-  margin-bottom: 60px;
+  margin-bottom: 25px;
 }
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
@@ -147,7 +147,7 @@ body {
 }
 
 .evergreen{
-    opacity:0.5;
+    opacity:0.7;
     z-index:0;
 }
 
@@ -163,7 +163,7 @@ body {
 }
 
 #three-images{padding:4em 0 6em 0}
-.img-circle-div{display:inline;float:left;width:31.372549019607842%;margin:0 .9803921568627451%;*width:31.32046568627451%;*margin:0 .9283088235294117%;text-align:center}
+.img-circle-div{display:inline;float:left;width:22.372549%;margin:0 .9803921568627451%;*width:31.32046568627451%;*margin:0 .9283088235294117%;text-align:center}
 #three-images img{border-radius:50%;box-shadow:0 1px 2px rgba(0,0,0,.25)}
 
 
@@ -275,7 +275,7 @@ body {
     padding: 20px;
     background: #f4f7f8;
     border-radius: 8px;
-    font-family: -webkit-body;
+    font-family: monospace;
 }
 .form-style-5 fieldset{
     border: none;
@@ -298,7 +298,7 @@ body {
 .form-style-5 input[type="url"],
 .form-style-5 textarea,
 .form-style-5 select {
-    font-family: -webkit-body;
+    font-family: monospace;
     background: rgba(255,255,255,.1);
     border: none;
     border-radius: 4px;

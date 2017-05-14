@@ -318,7 +318,6 @@
     <Content Include="css\images\plants\WH_swollen-stems.jpg" />
     <Content Include="css\images\services-agfarm1.jpg" />
     <Content Include="css\images\stop1.png" />
-    <Content Include="css\tablesort.css" />
     <Content Include="css\templatemo-style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -390,6 +389,7 @@
     <Content Include="Views\Home\GetStarted.cshtml" />
     <Content Include="Views\Home\ViewReport.cshtml" />
     <Content Include="Views\Home\externalLink.cshtml" />
+    <Content Include="Views\Home\Quiz.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -33,6 +33,12 @@ namespace GreenTrackerBoo.Controllers
             return View();
         }
 
+        public ActionResult Quiz()
+        {
+            ViewBag.Title = "Quiz";
+            return View();
+        }
+
     
         public ActionResult Report()
         {

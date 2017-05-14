@@ -34,11 +34,12 @@
             list-style: none;
         }
 
-         .navbar ul li {
-            margin: 0;
-            padding-left: 0;
-            list-style: none;
-        }
+            .navbar ul li {
+                margin: 0;
+                padding-left: 0;
+                list-style: none;
+                font-weight:bold;
+            }
 
         .navbar li:hover > ul {
             margin: 0;
@@ -63,29 +64,10 @@
                            </div>
                       <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav navbar-right" style="display:block">
-                            <li class="active">@Html.ActionLink("Home", "Index", "Home")
-                            
-                            </li>
-                            <li>@Html.ActionLink("Explore", "TestResult", "Occurrences", new { },null)</li>
-                            <li>@Html.ActionLink("Library", "Library", "Home")</li>
-                            <li>
-                                @Html.ActionLink("Report", "Report", "Home")
-                                <ul >
-                                    <li >@Html.ActionLink("Report", "Report", "Home",null, new { @style = "color:white" })</li>
-                                    <li>@Html.ActionLink("View Reports", "ViewReport", "Home", null, new { @style = "color:white" })</li>                                 
-                                </ul>
-                            </li>
-                            <li>@Html.ActionLink("More", "externalLink", "Home")
-                                <ul >
-                                <li>
-                                     @Html.ActionLink("External Resource", "externalLink", "Home", null, new { @style = "color:white" })
-                                   </li>
-                                    <li>
-                                        @Html.ActionLink("About Us", "AboutUs", "Home", null, new { @style = "color:white" })
-                                    </li>   
-                                
-                                    
-                                </ul></li>
+                            <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Take A Quiz", "Quiz", "Home")</li>
+                            <li>@Html.ActionLink("External Links", "externalLink", "Home")</li>
+                            <li>@Html.ActionLink("About Us", "AboutUs", "Home")</li>
                         </ul>
                     </div>
                 </div>
@@ -97,13 +79,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="@Url.Content("~/js/bootstrap.js")"></script>
 
-    <div class="container marketing">
+    <div class="container marketing" style="margin-top: -5%;">
 
         <hr class="featurette-divider">
 
         <!-- /END THE FEATURETTES -->
         <!-- FOOTER -->
-        <footer>
+        <footer style="margin-top: -5%">
             <p class="pull-right"><a href="#">Back to top</a></p>
             <p>&copy; GreenTracker 2017 T.A.R.S., Inc. </p>
         </footer>

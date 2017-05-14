@@ -16,7 +16,7 @@
         <div class="item active">
             <img class="evergreen" src="~/css/images/backgroud.jpeg" />
             <div class="container" style=" margin-top: -2%;">
-                <div class="carousel-caption" style="margin-bottom: 2%;">
+                <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.36);">
                     <img class="stop" src="~/css/images/stop1.png" />
                     <h1 style="font-weight:bold;">PUT A STOP TO INVASIVE PLANTS!</h1>
                     <p style="font-weight:bold;">
@@ -26,8 +26,10 @@
                         <br />
                     </p>
                 </div>
+
             </div>
         </div>
+
     </div>
 </div>
 <style>
@@ -39,6 +41,28 @@
 </style>
 
 
+ <!-- ***This section is providing the function about search invasive plants on map by postcode/address.***-->
+<div class="container" style="margin-top: -1%;">
+    <div class="col-md-6 col-md-offset-3">
+        <form role="form">
+            <div class="row">
+                <h1 class="text-center">Search Your Area</h1>
+                <div class="form-group">
+                    <div class="input-group">
+                        <input id="input1" class="form-control" type="text" name="search" placeholder="Latitude" style="visibility: hidden; height: 0px" />
+                        <input id="input" class="form-control" type="text" name="search" placeholder="Address or Postcode" onkeypress="clickPress(event)" />
+                        <input id="input2" class="form-control" type="text" name="search" placeholder="Longitude" style="visibility: hidden; height: 0px" />
+                        <span class="input-group-btn">
+                            <button id="passvalue" class="btn btn-success" type="button">
+                                <span style="margin-left: 10px;">Search</span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 
 
 
@@ -49,68 +73,42 @@
               <!-- ***link to plants library function*** -->
             <div class="img-circle-div">
                 <a href="@Url.Action("Library", "Home")">
-                    <img style="width: 215px;" src="~/css/images/plants/perenial%20ragweed4.jpg" />
+                    <img style=" width: 200px;" src="~/css/images/plants/perenial%20ragweed4.jpg" />
                     <h3 >LEARNING</h3>
-                    <p style="font-size: 18px; ">Have no idea what are invasive plants? </p>
-                    <p style="font-size: 18px;">Have a look at it!</p>
+                    <p style="font-size: 18px; ">Find Invasive Plant! </p>
+                    <!--<p style="font-size: 18px;">Have a look at it!</p>-->
                 </a>
 
             </div><!-- ***link to Map function*** -->
             <div class="img-circle-div">
                 <a href="@Url.Action("TestResult", "Occurrences")" >
-                    <img style="width: 215px;" src="~/css/images/plants/tangled_hypericum2.jpg" />
+                    <img style=" width: 200px;" src="~/css/images/plants/tangled_hypericum2.jpg" />
                     <h3 >EXPLORING</h3>
-                    <p style="font-size: 18px; ">What are the invasive plants near me? </p>
-                    <p style="font-size: 18px; ">Try this!</p>
+                    <p style="font-size: 18px; ">Invasive Plants Near You! </p>
                 </a>
              </div>
                    
             <!-- ***link to  report function*** -->
             <div class="img-circle-div">
                 <a href="@Url.Action("Report", "Home")" >
-                    <img style="width: 215px;" src="~/css/images/plants/camel_img1.jpg" />
+                    <img style=" width: 200px;" src="~/css/images/plants/camel_img1.jpg" />
                     <h3 >REPORTING</h3>
-                    <p style="font-size: 18px; ">Find an invasive plant by yourself? </p>
-                    <p style ="font-size: 18px; ">Report it!</p>
+                    <p style="font-size: 18px; ">Report An Invasive Plant! </p>
                 </a>
             </div>
-            <!-- ***link to upcoming community(group-sharing) function(iteration 3)*** 
+            <!-- ***link to upcoming community(group-sharing) function(iteration 3)*** -->
             <div class="img-circle-div">
-                <img src="~/css/images/circle3.jpg" />
-                <h3 style="font-family:'Comic Sans MS'">Find My Community</h3>
-                <p style="font-size:18px">(Coming Soon...)</p>
-            </div>
-           -->
+                <a href="@Url.Action("ViewReport", "Home")">
+                    <img style=" width: 200px;" src="~/css/images/plants/wh-flowers-web-300.jpg" />
+                    <h3>SIGHTINGS</h3>
+                    <p style="font-size:18px">Invasive Plants Found!</p>
+                </a>
+             </div>
+           
         </article>
     </div>
 </section>
 
- <!-- ***This section is providing the function about search invasive plants on map by postcode/address.***-->
-<div class="container" style="margin-top: -1%;">
-    <div class="col-md-6 col-md-offset-3">
-        <!-- Search Form -->
-        <form role="form">
-            <!-- Search Field -->
-            <div class="row">
-                <h1 class="text-center">Search Your Area</h1>
-                <div class="form-group">
-                    <!-- Search input -->
-                    <div class="input-group">
-                        <input id="input1" class="form-control" type="text" name="search" placeholder="Latitude" style="visibility: hidden; height: 0px" />
-                        <input id="input" class="form-control" type="text" name="search" placeholder="Address or Postcode" onkeypress="clickPress(event)" />
-                        <input id="input2" class="form-control" type="text" name="search" placeholder="Longitude" style="visibility: hidden; height: 0px" />
-                        <span class="input-group-btn">
-                            <button id="passvalue" class="btn btn-success" type="button">
-                                    <span style="margin-left: 10px;">Search</span>
-                            </button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <!-- End of Search Form -->
-    </div>
-</div>
 
 <!-- scripts of  function -->
 <script>
