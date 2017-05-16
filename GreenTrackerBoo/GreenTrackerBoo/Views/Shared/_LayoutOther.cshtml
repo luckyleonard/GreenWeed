@@ -20,7 +20,7 @@
     <script src="~/css/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="@Url.Content("~/")css/dist/sweetalert.css">
     <script src='https://www.google.com/recaptcha/api.js' type="text/javascript"></script> 
-
+    <link rel="icon" href="@Url.Content("~/css/images/stop1.png")" />
 
     <title>@ViewBag.Title</title>
     <!-- Bootstrap core CSS -->
@@ -35,6 +35,11 @@
 </head>
 
 <body>
+    <script>
+        $(document).ready(function () {
+            $("ul li").removeClass("active");
+        });
+    </script>
     <style>
         .navbar ul {
             display: none;
@@ -88,7 +93,7 @@
                 <div class="container">
                     <div class="carousel-caption">
                         <img class="stop" src="~/css/images/stop1.png" />
-                        <h1 style="font-weight:bold;">PUT A STOP TO INVASIVE PLANTS!</h1>
+                        <h1 style="font-weight: bold; word-spacing: -4px;">PUT A STOP TO INVASIVE PLANTS!</h1>
                     </div>
                 </div>
             </div>

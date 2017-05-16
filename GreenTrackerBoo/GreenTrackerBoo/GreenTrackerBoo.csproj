@@ -318,6 +318,7 @@
     <Content Include="css\images\plants\WH_swollen-stems.jpg" />
     <Content Include="css\images\services-agfarm1.jpg" />
     <Content Include="css\images\stop1.png" />
+    <Content Include="css\images\white-background.jpg" />
     <Content Include="css\templatemo-style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
