@@ -3,7 +3,58 @@
     Layout = "~/Views/Shared/_LayoutOther.cshtml";
 }
 
-<section class="container">
+<style>
+    #nav {
+        width: 11%;
+        position: fixed;
+        top: 305px;
+        left: 0;
+        background: #333;
+        margin: 0;
+        padding: 15px;
+        list-style: none;
+        border-radius: 0 10px 10px 0;
+        box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    }
+
+        #nav a {
+            display: block;
+            padding: 10px 10px;
+            color: #fff;
+        }
+
+            #nav a:hover {
+                color: #ff0;
+            }
+
+
+</style>
+
+
+
+<script>
+    /*
+    Smooth scroll functionality for anchor links (animates the scroll
+    rather than a sudden jump in the page)
+*/
+    $('.js-anchor-link').click(function (e) {
+        e.preventDefault();
+        var target = $($(this).attr('href'));
+        if (target.length) {
+            var scrollTo = target.offset().top;
+            $('body, html').animate({ scrollTop: scrollTo + 'px' }, 800);
+        }
+    });
+</script>
+
+<ul id="nav">
+    <li><a href="#section-1" class="js-anchor-link">Classifications</a></li>
+    <li><a href="#section-2" class="js-anchor-link">Weed Spotters</a></li>
+    <li><a href="#section-3" class="js-anchor-link">Parks Victoria</a></li>
+    <li><a href="#section-4" class="js-anchor-link">Landcare Australia</a></li>
+    <li><a href="#section-5" class="js-anchor-link">Agfarm</a></li>
+</ul>
+<section id="section-1" class="container">
     <div class="container" style="width: 90%;">
         <h1 style=" color: black">Invasive Plant Classifications</h1>
         <p style=" font-size: large; color: #011f02;">
@@ -23,7 +74,7 @@
 </section>
 
 
-<section class="container">
+<section id="section-2" class="container">
     <div class="container" style="width: 90%;">
         <h1 style="color: black">Weed Spotters</h1>
         <p style="font-size: large; color: #011f02;">
@@ -43,7 +94,7 @@
 </section>
 
 
-<section class="container">
+<section id="section-3" class="container">
     <div class="container" style="width: 90%;">
         <h1 style=" color: black">Parks Victoria</h1>
         <p style="font-size: large; color: #011f02;">
@@ -64,7 +115,7 @@
     </div>
 </section>
 
-<section class="container">
+<section id="section-4" class="container">
     <div class="container" style="width: 90%;">
         <h1 style="color: black">Landcare Australia</h1>
         <p style=" font-size: large; color: #011f02;">
@@ -78,7 +129,7 @@
     </div>
 </section>
 
-<section class="container">
+<section id="section-5" class="container">
     <div class="container" style="width: 90%;">
         <h1 style=" color: black">Agfarm</h1>
         <p style="font-size: large; color: #011f02;">

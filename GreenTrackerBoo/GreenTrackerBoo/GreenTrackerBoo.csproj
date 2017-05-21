@@ -318,6 +318,7 @@
     <Content Include="css\images\plants\WH_swollen-stems.jpg" />
     <Content Include="css\images\services-agfarm1.jpg" />
     <Content Include="css\images\stop1.png" />
+    <Content Include="css\images\white-background-1.jpg" />
     <Content Include="css\images\white-background.jpg" />
     <Content Include="css\templatemo-style.css" />
     <Content Include="favicon.ico" />
@@ -387,7 +388,6 @@
     <Content Include="Views\Plants\TangledHypericum.cshtml" />
     <Content Include="Views\Plants\WaterHyacinth.cshtml" />
     <Content Include="Views\Home\Library.cshtml" />
-    <Content Include="Views\Home\GetStarted.cshtml" />
     <Content Include="Views\Home\ViewReport.cshtml" />
     <Content Include="Views\Home\externalLink.cshtml" />
     <Content Include="Views\Home\Quiz.cshtml" />

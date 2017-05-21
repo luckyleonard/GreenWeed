@@ -99,6 +99,7 @@ body {
 
 
 
+
 /* RESPONSIVE CSS
 -------------------------------------------------- */
 
@@ -267,7 +268,34 @@ body {
     }
 }
 
+ #nav {
+        width: 11%;
+        position: fixed;
+        top: 305px;
+        left: 0;
+        background: #333;
+        margin: 0;
+        padding: 15px;
+        list-style: none;
+        border-radius: 0 10px 10px 0;
+        box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    }
 
+        #nav a {
+            display: block;
+            padding: 10px 10px;
+            color: #fff;
+        }
+
+            #nav a:hover {
+                color: #ff0;
+            }
+
+@media (max-width: 1305px) {
+     #nav {
+        display:none;
+    }
+}
 
 .form-style-5{
     max-width: 70%;

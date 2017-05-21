@@ -25,6 +25,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 
 <body>
@@ -47,11 +48,17 @@
             list-style: none;
             display: block;
         }
+        .navbar-brand {
+            font-family: fantasy !important;
+        }
+        * {
+            font-family:Arial !important;
+        }
     </style>
     <div class="navbar-wrapper">
-        <div class="container">
+        <div class="container" >
 
-            <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div id="nava" class="navbar navbar-inverse navbar-static-top" role="navigation" style="/*background-color: rgba(0, 0, 0, 0.36); position: fixed*/ " >
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -60,10 +67,10 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                           @Html.ActionLink("Green Tracker", "Index", "Home", new object { }, new { @class = "navbar-brand" })
-                           </div>
-                      <div class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav navbar-right" style="display:block">
+                        @Html.ActionLink("Green Tracker", "Index", "Home", new object { }, new { @class = "navbar-brand" })
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right" style="display: block;  }">
                             <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("Take A Quiz", "Quiz", "Home")</li>
                             <li>@Html.ActionLink("External Links", "externalLink", "Home")</li>
